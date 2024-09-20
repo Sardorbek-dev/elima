@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Bootstrap Carousel Section -->
+<section class="slider-section pt-0">
+    <div id="mainCarousel" class="carousel slide border-radius-20 bg-grey py-4 pt-lg-5 pb-lg-0 ps-lg-5 pe-lg-4 px-3 px-md-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- First Slide -->
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row justify-content-center align-items-end">
+                        <!-- Text Section -->
+                        <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                            <div class="gap-10 d-flex flex-wrap justify-content-center justify-content-lg-start">
+                                <div class="">
+                                    <h1 class="title mb-4">Швейное производство с 20-летней историей качества</h1>
+                                    <p class="body-1 mb-4">Рюкзаки, сумки, спецодежда и снаряжение, созданные с использованием современных технологий и уникального дизайна</p>
+                                </div>
+                                <div class="d-md-flex gap-3 mb-lg-5">
+                                    <a href="#" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
+                                    <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
+                                        <i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path>
+                                                    <path fill="#262626" d="M19.777 4.43a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z"></path>
+                                                </g>
+                                            </svg>
+                                        </i>
+                                    <span class="ms-2 text-uppercase">Напишите нам</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="col-lg-6 col-md-8 col-10 text-end order-1 order-lg-2 mb-4 mb-lg-0">
+                            <img src="{% static 'img/slider-img.png' %}" alt="Швейное производство" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Slide -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row justify-content-center align-items-end">
+                        <!-- Text Section -->
+                        <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                            <div class="gap-10 d-flex flex-wrap justify-content-center justify-content-lg-start">
+                                <div class="">
+                                    <h1 class="title mb-4">Швейное производство с 20-летней историей качества</h1>
+                                    <p class="body-1 mb-4">Рюкзаки, сумки, спецодежда и снаряжение, созданные с использованием современных технологий и уникального дизайна</p>
+                                </div>
+                                <div class="d-md-flex gap-3 mb-lg-5">
+                                    <a href="#" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
+                                    <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
+                                        <i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path>
+                                                    <path fill="#262626" d="M19.777 4.43a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z"></path>
+                                                </g>
+                                            </svg>
+                                        </i>
+                                    <span class="ms-2 text-uppercase">Напишите нам</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="col-lg-6 col-md-8 col-10 text-end order-1 order-lg-2 mb-4 mb-lg-0">
+                            <img src="{% static 'img/slider-img.png' %}" alt="Швейное производство" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls (Arrows) -->
+
+        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="prev" class="prev-arrow-carousel d-none d-lg-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
+        </a>
+        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="next" class="next-arrow-carousel d-none d-lg-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
+        </a>
+
+    </div>
+</section>
+
+<section class="history-section">
+    <div class="row mb-lg-5 mb-4">
+        <div class="col-lg-6">
+            <h2 class="heading-2 mb-lg-0 mb-3">Наша история и<br class="d-none d-lg-block">достижения</h2>
+        </div>
+        <div class="col-lg-6 col-xl-5 col-xxl-4">
+            <p class="body-1 mb-0">Более 20 лет в швейном производстве, создавая качественные и инновационные решения.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
+                <span class="display-1 text-accent w-100">20+</span>
+                <h3 class="heading-3 mt-md-5 pt-lg-5">лет опыта и развития</h3>
+            </div>
+        </div>
+        <div class="col-lg my-4 my-lg-0">
+            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
+                <span class="display-1 text-accent w-100">55%</span>
+                <h3 class="heading-3 mt-md-5 pt-lg-4 mb-0">выручки от государственных заказов</h3>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
+                <span class="display-1 text-accent w-100">90%</span>
+                <h3 class="heading-3 mt-md-5 pt-lg-5">удовлетворенности клиентов</h3>
+            </div>
+        </div>
+        <div class="col-12 mt-4 pt-2">
+            <button type="button" class="btn btn-accent w-100">Подробнее о компании</button>
+        </div>
+    </div>
+</section>
+
+<section class="product-section">
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h2 class="heading-2 mb-0">Наши товары</h2>
+        </div>
+        <div class="col-lg-4">
+            <p class="body-1 mb-0">Широкий ассортимент продукции для любых задач и условий.</p>
+        </div>
+    </div>
+    <div class="row align-items-end">
+        <div class="col-lg-6">
+            <a href="#" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20 mb-3 text-center py-5">
+                    <img src="{% static 'img/big-pro-1.png' %}" class="img-fluid" alt="product">
+                </div>
+                <h4 class="heading-4">Рюкзаки</h4>
+                <p class="body-2">Городские, туристические, спортивные<br> и школьные рюкзаки. </p>
+            </a>
+        </div>
+        <div class="col-lg">
+            <a href="#" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20 mb-3 text-center">
+                    <img src="{% static 'img/product-img-regular-1.png' %}" class="img-fluid" alt="product">
+                </div>
+                <h4 class="heading-4">Сумки</h4>
+                <p class="body-2">Туристические, спортивные и школьные рюкзаки. </p>
+            </a>
+        </div>
+        <div class="col-lg">
+            <a href="#" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20 mb-3 text-center">
+                    <img src="{% static 'img/product-img-regular-2.png' %}" class="img-fluid" alt="product">
+                </div>
+                <h4 class="heading-4">Куртки</h4>
+                <p class="body-2">Городские, спортивные и школьные куртки. </p>
+            </a>
+        </div>
+        <div class="col-12 mt-4 pt-2">
+            <button type="button" class="btn btn-accent w-100">Посмотреть каталог</button>
+        </div>
+    </div>
+</section>
+
+<section class="newsevent-section">
+    <div class="row mb-4">
+        <div class="col-lg-6 col-10">
+            <h2 class="heading-2 mb-3 mb-lg-2">Новости и события</h2>
+        </div>
+        <div class="col-lg-5 col-10">
+            <p class="body-1 mb-lg-0 mb-3">Будьте в курсе последних новостей и достижений компании 'ELIMA'.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg mb-4 mb-lg-0">
+            <div class="bg-grey border-radius-20 p-3">
+                <div class="d-flex justify-content-between mb-5 pb-4">
+                    <img src="{% static 'img/Union-1.png' %}" alt="" class="img-fluid w-50-m">
+                    <span class="body-3">5 августа 2024</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h4 class="heading-4">Расширение производственных мощностей</h4>
+                    <a href="#" class="arrow-circle d-none d-md-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                            <path fill="rgba(38,38,38,0.2)" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 p-3">
+                <div class="d-flex justify-content-between mb-5 pb-4">
+                    <img src="{% static 'img/Union-2.png' %}" alt="" class="img-fluid w-50-m">
+                    <span class="body-3">1 августа 2024</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h4 class="heading-4">Новые поступления на маркетплейс UZUM</h4>
+                    <a href="#" class="arrow-circle d-none d-md-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                            <path fill="rgba(38,38,38,0.2)" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-4 pt-3">
+            <button type="button" class="btn btn-accent-light w-100">Все новости</button>
+        </div>
+    </div>
+</section>
+
+<section class="feedback-section">
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h2 class="heading-2">Отзывы наших клиентов</h2>
+        </div>
+        <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 col-11">
+            <p class="body-1 mb-0">Что говорят о нас те, кто доверился качеству продукции 'ELIMA'.</p>
+        </div>
+    </div>
+    <div class="row gy-4 gy-lg-0 mt-lg-4">
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 p-4">
+                <img src="{% static 'img/Company-logo-1.png' %}" alt="">
+                <p class="body-2 my-4">Продукция 'ELIMA' впечатлила нас своим качеством и долговечностью. Мы уверены, что наши сотрудники обеспечены лучшим снаряжением на рынке.</p>
+                <h5 class="heading-5 mb-0">Иван Петров</h5>
+                <span class="body-3 mb-2 d-block">Главный инженер, ООО 'ТехноСпец'</span>
+                <span class="d-flex">
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 p-4">
+                <img src="{% static 'img/Company-logo-2.png' %}" alt="">
+                <p class="body-2 my-4">Рюкзаки от 'ELIMA' стали незаменимыми в наших экспедициях. Они выдерживают любые условия, от жаркой пустыни до холодных гор.</p>
+                <h5 class="heading-5 mb-0">Мария Кузнецова</h5>
+                <span class="body-3 mb-2 d-block">Руководитель отдела закупок, АО 'Экспедиция'</span>
+                <span class="d-flex">
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="bg-grey border-radius-20 p-4">
+                <img src="{% static 'img/Company-logo-3.png' %}" alt="">
+                <p class="body-2 my-4">Мы работаем с 'ELIMA' уже несколько лет, и каждый раз убеждаемся в их профессионализме. Отличное качество и оперативные поставки.</p>
+                <h5 class="heading-5 mb-0">Иван Петров</h5>
+                <span class="body-3 mb-2 d-block">Коммерческий директор, ООО 'СпортПрофи'</span>
+                <span class="d-flex">
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="faq-section">
+    <div class="row justify-content-between">
+        <div class="col-xl-4 col-lg-5">
+            <h2 class="heading-2 mb-4">Частые вопросы</h2>
+            <p class="body-1 d-none d-lg-block">Не нашли ответ? Напишите нам <br>— мы всегда на связи.</p>
+            <i class="bg-accent-light rounded-circle icon-45 d-none d-lg-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="#006B3C" fill-rule="evenodd">
+                        <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                        <path fill="#006B3C" d="M19.777 4.43a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" />
+                    </g>
+                </svg>
+            </i>
+        </div>
+        <div class="col-lg-6">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item mb-4">
+                <h2 class="accordion-header">
+                  <button class="heading-3 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Сколько дней срок производства
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                    Срок зависит от выбранной модели и материалов, от 20 до 60 дней
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-4">
+                <h2 class="accordion-header">
+                  <button class="heading-3 accordion-button pb-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    От чего зависит стоимость
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-4">
+                <h2 class="accordion-header">
+                  <button class="heading-3 accordion-button pb-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Какая гарантия
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-4">
+                <h2 class="accordion-header">
+                  <button class="heading-3 accordion-button pb-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Можно ли заказать из другого города
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="body-1 d-block d-lg-none">Не нашли ответ? Напишите нам — мы всегда на связи.</p>
+            <i class="bg-accent-light rounded-circle icon-45 d-block d-lg-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="#006B3C" fill-rule="evenodd">
+                        <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                        <path fill="#006B3C" d="M19.777 4.43a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" />
+                    </g>
+                </svg>
+            </i>
+        </div>
+    </div>
+</section>
+<section class="leaveRequest-section mb-4">
+    <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
+                <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="name" class="form-control" id="fullname" placeholder="ФИО">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control" id="PhoneNumber" placeholder="Номер телефона">
+                    </div>
+                    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}
