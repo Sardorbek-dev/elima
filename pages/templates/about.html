@@ -2,5 +2,18 @@
 {% load static %}
 
 {% block content %}
+<nav class="breadcrumb mt-4">
+    <a class="breadcrumb-item link-1 text-black text-uppercase" href="{% url 'home' %}">Главная</a>
+    <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">О компании</span>
+</nav>
 
+<h1 class="display-1 mb-4 mt-300 text-accent-extra-light">Качество, проверенное временем</h1>
+<div class="row mb-lg-5 mb-4">
+    <div class="col-md-6 mt-4 mt-md-0">
+        <p class="body-2 mb-0 text-accent-light">Работаем с 2002 года</p>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-6 col-9 mt-4 mt-md-0">
+        <p class="body-2 mb-0 text-accent-light">Создаем надежные решения для вашего комфорта</p>
+    </div>
+</div>
 {% endblock  %}

@@ -342,7 +342,7 @@ a.prev-arrow-carousel{
     box-shadow: none;
 }
 .about-banner{
-    background: url(../images/Hero.jpg) no-repeat center top;
+    background: url(../img/Hero.jpg) no-repeat center top;
     background-size: cover;
 }
 .mt-300{margin-top: 300px;}

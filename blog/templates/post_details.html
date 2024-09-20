@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="breadcrumb mt-4">
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">Главная</a>
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'news' %}">новости</a>
+    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">Новое оборудование...</span>
+</nav>
+<section class="pt-3">
+    <div class="row justify-content-center">
+        <div class="col-xl-8">
+            <div class="mx-lg-5 px-lg-5">
+                <h3 class="heading-3 mt-3 mb-3">{{ post.title }}</h3>
+                <p class="body-3 mb-0 text-black-opacity">Новость <span class="ms-3">{{ post.created_at|date:"d F Y" }}</span></p>
+            </div>
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" alt="news detail" class="img-fluid mt-4 pt-2">
+            {% else %}
+                <img src="{% static 'images/default-image.png' %}" class="img-fluid w-100" alt="default image">
+            {% endif %}
+            <div class="mx-lg-5 px-lg-5 mt-4 pt-2">
+                <div class="mb-5">
+                    <p class="body-2">{{ post.content|safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="history-section">
+    <div class="row justify-content-between mb-4">
+        <div class="col-lg-12">
+            <h2 class="heading-2">Другие новости</h2>
+        </div>
+    </div>
+    <div class="row gy-4">
+        <div class="col-xl-4 col-md-6">
+            <a href="news-details.html" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20">
+                    <img src="images/news-1.png" class="img-fluid w-100" alt="news image">
+                </div>
+                <h3 class="heading-3 mt-3">Участие в международной выставке текстиля</h3>
+                <p class="body-3 mb-0 text-black-opacity">15 августа 2024</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <a href="news-details.html" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20">
+                    <img src="images/news-2.png" class="img-fluid w-100" alt="news image">
+                </div>
+                <h3 class="heading-3 mt-3">Новая коллекция зимних курток 2024</h3>
+                <p class="body-3 mb-0 text-black-opacity">10 июля 2024</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <a href="news-details.html" class="text-black text-decoration-none">
+                <div class="bg-grey border-radius-20">
+                    <img src="images/news-3.png" class="img-fluid w-100" alt="news image">
+                </div>
+                <h3 class="heading-3 mt-3">Новое оборудование для автоматизации производства</h3>
+                <p class="body-3 mb-0 text-black-opacity">5 июня 2024</p>
+            </a>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-accent w-100 mt-4">Все новости</button>
+        </div>
+    </div>
+</section>
+<section class="leaveRequest-section mb-4">
+    <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
+                <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="name" class="form-control" id="fullname" placeholder="ФИО">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control" id="PhoneNumber" placeholder="Номер телефона">
+                    </div>
+                    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}
