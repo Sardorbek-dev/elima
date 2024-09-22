@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elima</title>
-  <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/css/bootstrap/flexslider.css' %}">
 </head>
 <body>
     <!-- Body main wrapper start -->
-    <div class="container">
 
         <!-- HEADER AREA START -->
         {% block navbar %}
@@ -21,7 +21,7 @@
                         <nav class="navbar navbar-expand-lg custom-nav" aria-label="Thirteenth navbar example">
                             <div class="container-fluid">
                                 <a class="navbar-brand col-lg-1 py-0 me-0 align-items-center" href="{% url 'home' %}">
-                                    <img class="align-top" src="images/logo-icon.png" alt="">
+                                    <img class="align-top" src="{% static 'img/logo-icon.png' %}" alt="">
                                     <span class="ms-1 text-uppercase">Elima</span>
                                 </a>
 
@@ -34,7 +34,7 @@
                                                         <a class="nav-link" href="{% url 'home' %}">Главная</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{% url 'products' %}">каталог</a>
+                                                        <a class="nav-link" href="{% url 'product_list' %}">каталог</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}">О компании</a>
@@ -69,18 +69,35 @@
                                             </div>
                                         </div>
                                         <div class="d-flex col-lg-3 justify-content-end align-items-center">
-                                            <ul class="navbar-nav me-xl-4 me-2">
+                                            <ul class="navbar-nav me-xl-4 me-2 lang-drop">
                                                 <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img src="images/RU.png" alt="" class="me-1"> Ру</a>
-                                                    <ul class="dropdown-menu dropdown-menu-end position-absolute">
-                                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                    <a class="nav-link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <img src="{% static 'img/RU.png' %}" alt="" class="me-1">
+                                                         Ру
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="Dropdown">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#"><img src="{% static 'img/RU.png' %}" alt="" class="me-2">Русский
+                                                                <i class="ms-4">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#006B3C" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"/></svg>
+                                                                </i>
+                                                            </a>
+                                                        </li>
+                                                        <li><hr class="dropdown-divider" /></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#"><img src="{% static 'img/EN.png' %}" alt="" class="me-2">English</a>
+                                                        </li>
+                                                        <li></li>
+                                                            <a class="dropdown-item" href="#"><img src="{% static 'img/UZ.png' %}" alt="" class="me-2">Uzbek</a>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                             <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                                                 <span class="navbar-toggler-icon"></span>
+                                                <span class="navbar-toggler-icon-close d-none">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="34" viewBox="0 0 21 21"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" d="m7.5 7.5l6 6m0-6l-6 6"/></svg>
+                                                </span>
                                             </button>
                                             <div class="social-icon d-none d-lg-block">
                                                 <a href="#" title="">
@@ -107,9 +124,24 @@
                                 </div>
                             </div>
                         </nav>
+                        <nav class="breadcrumb mt-4">
+                            <a class="breadcrumb-item link-1 text-black text-uppercase" href="{% url 'home' %}">Главная</a>
+                            <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">О компании</span>
+                        </nav>
+
+                        <h1 class="display-1 mb-4 mt-300 text-accent-extra-light">Качество, проверенное временем</h1>
+                        <div class="row mb-lg-5 mb-4">
+                            <div class="col-md-6 mt-4 mt-md-0">
+                                <p class="body-2 mb-0 text-accent-light">Работаем с 2002 года</p>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-9 mt-4 mt-md-0">
+                                <p class="body-2 mb-0 text-accent-light">Создаем надежные решения для вашего комфорта</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             {% else %}
+            <div class="container">
                 <!-- Default Navbar -->
                 <nav class="navbar navbar-expand-lg custom-nav" aria-label="Thirteenth navbar example">
                     <div class="container-fluid">
@@ -127,7 +159,7 @@
                                                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{% url 'products' %}">каталог</a>
+                                                <a class="nav-link" href="{% url 'product_list' %}">каталог</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{% url 'about' %}">О компании</a>
@@ -162,18 +194,35 @@
                                     </div>
                                 </div>
                                 <div class="d-flex col-lg-3 justify-content-end align-items-center">
-                                    <ul class="navbar-nav me-xl-4 me-2">
+                                    <ul class="navbar-nav me-xl-4 me-2 lang-drop">
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/RU.png' %}" alt="" class="me-1"> Ру</a>
-                                            <ul class="dropdown-menu dropdown-menu-end position-absolute">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <a class="nav-link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="{% static 'img/RU.png' %}" alt="" class="me-1">
+                                                 Ру
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="Dropdown">
+                                                <li>
+                                                    <a class="dropdown-item" href="#"><img src="{% static 'img/RU.png' %}" alt="" class="me-2">Русский
+                                                        <i class="ms-4">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#006B3C" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"/></svg>
+                                                        </i>
+                                                    </a>
+                                                </li>
+                                                <li><hr class="dropdown-divider" /></li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#"><img src="{% static 'img/EN.png' %}" alt="" class="me-2">English</a>
+                                                </li>
+                                                <li></li>
+                                                    <a class="dropdown-item" href="#"><img src="{% static 'img/UZ.png' %}" alt="" class="me-2">Uzbek</a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
                                     <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample12" aria-controls="navbarsExample12" aria-expanded="false" aria-label="Toggle navigation">
                                         <span class="navbar-toggler-icon"></span>
+                                        <span class="navbar-toggler-icon-close d-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="34" viewBox="0 0 21 21"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" d="m7.5 7.5l6 6m0-6l-6 6"/></svg>
+                                        </span>
                                     </button>
                                     <div class="social-icon d-none d-lg-block">
                                         <a href="#" title="">
@@ -209,7 +258,7 @@
         {% endblock %}
 
     </div>
-    <footer class="bg-black pb-4">
+    <footer class="bg-black-footer pb-4">
         <div class="container position-relative">
             <div class="row">
                 <div class="col-xl-3 col-lg-4">
@@ -231,7 +280,7 @@
                         <span class="body-3 text-accent-extra-light">11:10-17:00</span>
                     </div>
                     <div class="my-5">
-                        <a href="#" class="heading-4 text-accent-extra-light text-decoration-none">+998 (91) 123-4567</a>
+                        <a href="#" class="heading-4 text-accent-extra-light text-decoration-none">+998 (91) 123-4567</a><br>
                         <a href="mailto:info@elima.uz" class="heading-4 text-accent-extra-light text-decoration-none">info@elima.uz</a>
                     </div>
                     <div class="social-icon">
@@ -280,6 +329,25 @@
     </footer>
     <!-- Main JS -->
     <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/jquery.flexslider.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: false,
+                itemWidth: 350,
+                itemMargin: 25,
+                minItems: 1,
+                maxItems: 3
+            });
+        });
+        $(document).ready(function(){
+          $(".navbar-toggler").click(function(){
+            $(".custom-nav").toggleClass("expand");
+          });
+        });
+    </script>
 </body>
 </html>

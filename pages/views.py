@@ -20,6 +20,3 @@ class AboutView(TemplateView):
         context['is_about_page'] = True
         return context
 
-
-class ProductsView(TemplateView):
-    template_name = 'products.html'

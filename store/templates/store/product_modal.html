@@ -1,0 +1,74 @@
+<div
+    class="modal fade"
+    id="modalId{{ product.unique_id }}"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-large modal-dialog-centered" role="document">
+        <div class="modal-content border-radius-40">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="border-radius-20 overflow-hidden">
+                            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <button
+                            type="button"
+                            class="btn-close position-absolute top-0 end-0 bg-accent-light rounded-circle me-lg-3 me-4 mt-lg-3 mt-4"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                                <path fill="black" d="m12 13.4l-2.917 2.925q-.277.275-.704.275t-.704-.275q-.275-.275-.275-.7t.275-.7L10.6 12L7.675 9.108Q7.4 8.831 7.4 8.404t.275-.704q.275-.275.7-.275t.7.275L12 10.625L14.892 7.7q.277-.275.704-.275t.704.275q.3.3.3.713t-.3.687L13.375 12l2.925 2.917q.275.277.275.704t-.275.704q-.3.3-.712.3t-.688-.3z"></path>
+                            </svg>
+                        </button>
+                        <h5 class="heading-4 mb-2">{{ product.name }}</h5>
+                        <p class="body-3 mb-4 me-md-4">{{ product.description }}</p>
+                        <h5 class="heading-5 mb-2">Характеристики</h5>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="mb-4">
+                                    <span class="body-3 fw-bold">Размеры</span>
+                                    <p class="body-3 mb-0">{{ product.size }}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="body-3 fw-bold">Цена</span>
+                                    <p class="body-3 mb-0">{{ product.price }} сум</p>
+                                </div>
+                                <div class="">
+                                    <span class="body-3 fw-bold">Мин. объем</span>
+                                    <p class="body-3">{{ product.min_amount }}</p>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="mb-2">
+                                    <span class="body-3 fw-bold">Материал</span>
+                                    <p class="body-3 mb-0">{{ product.material }}</p>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="body-3 fw-bold">Утеплитель</span>
+                                    <p class="body-3 mb-0">{{ product.warming_material }}</p>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="body-3 fw-bold">Подкладка</span>
+                                    <p class="body-3">{{ product.filling }}</p>
+                                </div>
+                                <div class="">
+                                    <span class="body-3 fw-bold">Капюшон</span>
+                                    <p class="body-3">{{ product.hood }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-accent w-100 mt-4 text-uppercase" data-bs-toggle="modal" data-bs-target="#leaveinrequest-modal">Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

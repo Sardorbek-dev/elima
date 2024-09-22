@@ -2,18 +2,459 @@
 {% load static %}
 
 {% block content %}
-<nav class="breadcrumb mt-4">
-    <a class="breadcrumb-item link-1 text-black text-uppercase" href="{% url 'home' %}">Главная</a>
-    <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">О компании</span>
-</nav>
+<div class="container">
+    <div class="row mt-4 pt-2">
+        <div class="col-lg mb-3 mb-lg-0">
+            <div class="bg-accent-light-opacity rounded-pill px-4 py-3 d-flex align-items-end justify-content-center">
+                <span class="display-1 text-accent">22</span>
+                <h3 class="body-2 text-accent ms-3">года в бизнеса</h3>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="bg-accent-light-opacity rounded-pill px-4 py-3 d-flex align-items-end justify-content-center">
+                <span class="display-1 text-accent">>1000</span>
+                <h3 class="body-2 text-accent ms-3">продукции</h3>
+            </div>
+        </div>
+    </div>
+    <section class="product-section">
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="heading-2 mb-0">Наш путь</h2>
+            </div>
+            <div class="col-lg-5 col-md-8 mt-4 mt-lg-0">
+                <p class="body-1 mb-0">От одной швейной машины до ведущего производителя на рынке.</p>
+            </div>
+        </div>
+        <div class="px-3 px-md-0">
+            <div class="row justify-content-center align-items-end position-relative">
+                <div class="col-lg-3 col-md-6 pb-5 mb-lg-4 text-end pe-0 d-none d-md-block">
+                    <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2002</span>
+                    <span class="rounded-circle bg-accent p-2 d-inline-block ms-1 me-less-1"></span>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="border-radius-20 mb-3">
+                        <img src="{% static 'img/about-1.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <div class="mb-3 pe-0 d-block d-md-none ms-less-2">
+                        <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
+                        <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2002</span>
+                    </div>
+                    <h4 class="heading-4 text-accent">Основание и начальные шаги</h4>
+                    <p class="body-3 mb-0">Начало в 2002 году с одной арендованной швейной машиной и небольшой командой энтузиастов. </p>
+                </div>
+                <div class="col-12 my-4"></div>
 
-<h1 class="display-1 mb-4 mt-300 text-accent-extra-light">Качество, проверенное временем</h1>
-<div class="row mb-lg-5 mb-4">
-    <div class="col-md-6 mt-4 mt-md-0">
-        <p class="body-2 mb-0 text-accent-light">Работаем с 2002 года</p>
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-9 mt-4 mt-md-0">
-        <p class="body-2 mb-0 text-accent-light">Создаем надежные решения для вашего комфорта</p>
-    </div>
+                <div class="col-lg-3 col-md-6 text-md-end">
+                    <div class="border-radius-20 mb-3">
+                        <img src="{% static 'img/about-2.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <div class="mb-3 pe-0 d-block d-md-none ms-less-2">
+                        <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
+                        <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2005</span>
+                    </div>
+                    <h4 class="heading-4 text-accent">Расширение и модернизация</h4>
+                    <p class="body-3 mb-0">С годами мы расширяли производственные площади, добавляли новое оборудование и модернизировали процессы</p>
+                </div>
+                <div class="col-lg-3 col-md-6 pb-5 mb-lg-4 ps-0 d-none d-md-block">
+                    <span class="rounded-circle bg-accent p-2 d-inline-block me-1 ms-less-1"></span>
+                    <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2005</span>
+                </div>
+
+                <div class="col-12 my-4"></div>
+                <div class="col-lg-3 col-md-6 pb-5 mb-4 text-end pe-0 d-none d-md-block">
+                    <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2012</span>
+                    <span class="rounded-circle bg-accent p-2 d-inline-block ms-1 me-less-1"></span>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="border-radius-20 mb-3">
+                        <img src="{% static 'img/about-3.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <div class="mb-3 pe-0 d-block d-md-none ms-less-2">
+                        <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
+                        <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2012</span>
+                    </div>
+                    <h4 class="heading-4 text-accent">Переход к современному производству</h4>
+                    <p class="body-3 mb-0">Аренда просторного помещения в 700 кв.м, оснащенного новейшими технологиями, позволила нам выйти на новый уровень качества.</p>
+                </div>
+
+                <div class="col-12 my-4"></div>
+                <div class="col-lg-3 text-md-end col-md-6">
+                    <div class="border-radius-20 mb-3">
+                        <img src="{% static 'img/about-4.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <div class="mb-3 pe-0 d-block d-md-none ms-less-2">
+                        <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
+                        <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2024</span>
+                    </div>
+                    <h4 class="heading-4 text-accent">Достижения и<br>признание</h4>
+                    <p class="body-3 mb-0">Участие в конкурсах и выставках, а также успешное продвижение продукции на маркетплейсах, таких как UZUM, укрепили наши позиции на рынке и признание клиентов.</p>
+                </div>
+                <div class="col-lg-3 pb-5 mb-4 ps-0 col-md-6 d-none d-md-block">
+                    <span class="rounded-circle bg-accent p-2 d-inline-block me-1 ms-less-1"></span>
+                    <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2024</span>
+                </div>
+                <span class="position-absolute top-0 end-0 text-md-center z-index-1 px-0">
+                    <img src="{% static 'img/stroke-line.png' %}" alt="" >
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="big-accordion">
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2 class="heading-2 mb-0">Ценности</h2>
+            </div>
+            <div class="col-lg-5 col-md-8 mt-4 mt-lg-0">
+                <p class="body-1 mb-0 opacity-75">Руководствуясь принципами качества, инноваций и ответственности, мы создаем продукцию, которая делает жизнь лучше</p>
+            </div>
+            <div class="col-12 mt-5">
+                <div class="accordion" id="accordionExample-1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="display-3 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-1" aria-expanded="true" aria-controls="collapseOne-1">
+                                <div class="d-flex w-100 align-items-start">
+                                    <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">01</span></div>
+                                    <div class="col-lg-6">
+                                        Качество
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseOne-1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample-1">
+                            <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
+                                <div class="col-lg-6">
+                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="display-3 accordion-button collapsed pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo-2" aria-expanded="false" aria-controls="collapseTwo-2">
+                                <div class="d-flex w-100 align-items-start">
+                                    <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">02</span></div>
+                                    <div class="col-lg-6">
+                                        Инновации
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
+                            <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
+                                <div class="col-lg-6">
+                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="display-3 accordion-button collapsed pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree-3" aria-expanded="false" aria-controls="collapseThree-3">
+                                <div class="d-flex w-100 align-items-start">
+                                    <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">03</span></div>
+                                    <div class="col-lg-6">
+                                        Ответственность
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseThree-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
+                            <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
+                                <div class="col-lg-6">
+                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="display-3 accordion-button collapsed pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour-4" aria-expanded="false" aria-controls="collapseFour-4">
+                                <div class="d-flex w-100 align-items-start">
+                                    <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">04</span></div>
+                                    <div class="col-lg-6">
+                                        Индивидуальный подход
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFour-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
+                            <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
+                                <div class="col-lg-6">
+                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
+        <div class="row justify-content-between">
+            <div class="col-lg-4 pe-5">
+                <h2 class="heading-2 mb-3">Что делаем</h2>
+                <p class="body-1">Производим продукцию, которой можно доверять</p>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Рюкзаки
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Сумки
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Куртки
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Карематы и коврики
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Спальные мешки
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Щитки
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header">
+                            <button class="heading-4 accordion-button pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Чехлы
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body body-2 px-0 pt-0 pb-4">
+                                <div class="row align-items-end">
+                                    <div class="col-md order-2 order-md-1">
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-1.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md order-1 order-md-2 mb-4 mb-md-0">
+                                        <h4 class="body-2 text-accent mb-3">Городские, туристические, спортивные и школьные рюкзаки. </h4>
+                                        <p class="body-3 opacity-75 mb-5">Мы предлагаем рюкзаки на любой вкус и потребности: от стильных городских моделей до прочных туристических рюкзаков, идеально подходящих для активного отдыха и путешествий.</p>
+                                        <a href="#">
+                                            <div class="bg-accent-light border-radius-20 text-center py-3">
+                                                <img src="{% static 'img/pro-small-2.png' %}" class="img-fluid" alt="product">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 order-3">
+                                        <button type="button" class="btn btn-accent-light w-100">Посмотреть все</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent w-100 mt-5">Перейти в каталог</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="leaveRequest-section mb-4">
+        <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
+                    <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+                </div>
+                <div class="col-lg-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="name" class="form-control" id="fullname" placeholder="ФИО">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" id="PhoneNumber" placeholder="Номер телефона">
+                        </div>
+                        <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock  %}

@@ -33,37 +33,28 @@
             <h2 class="heading-2">Другие новости</h2>
         </div>
     </div>
-    <div class="row gy-4">
-        <div class="col-xl-4 col-md-6">
-            <a href="news-details.html" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20">
-                    <img src="images/news-1.png" class="img-fluid w-100" alt="news image">
-                </div>
-                <h3 class="heading-3 mt-3">Участие в международной выставке текстиля</h3>
-                <p class="body-3 mb-0 text-black-opacity">15 августа 2024</p>
-            </a>
-        </div>
-        <div class="col-xl-4 col-md-6">
-            <a href="news-details.html" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20">
-                    <img src="images/news-2.png" class="img-fluid w-100" alt="news image">
-                </div>
-                <h3 class="heading-3 mt-3">Новая коллекция зимних курток 2024</h3>
-                <p class="body-3 mb-0 text-black-opacity">10 июля 2024</p>
-            </a>
-        </div>
-        <div class="col-xl-4 col-md-6">
-            <a href="news-details.html" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20">
-                    <img src="images/news-3.png" class="img-fluid w-100" alt="news image">
-                </div>
-                <h3 class="heading-3 mt-3">Новое оборудование для автоматизации производства</h3>
-                <p class="body-3 mb-0 text-black-opacity">5 июня 2024</p>
-            </a>
-        </div>
-
+    <div class="flexslider carousel mb-2">
+        <ul class="slides">
+            {% for other_post in other_posts %}
+                <li>
+                    <a href="{% url 'post-detail' other_post.slug %}" class="text-black text-decoration-none">
+                        <div class="bg-grey border-radius-20">
+                            {% if post.photo %}
+                                <img src="{{ other_post.photo.url }}" class="img-fluid w-100" alt="news image">
+                            {% else %}
+                                <img src="{% static 'img/default.png' %}" class="img-fluid w-100" alt="news image">
+                            {% endif %}
+                        </div>
+                        <h3 class="heading-3 mt-3">{{ other_post.title }}</h3>
+                        <p class="body-3 mb-0 text-black-opacity">{{ other_post.created_at|date:"d F Y" }}</p>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="row">
         <div class="col-12">
-            <button type="submit" class="btn btn-accent w-100 mt-4">Все новости</button>
+            <button type="submit" class="btn btn-accent w-100 mt-5 mt-xl-4">Все новости</button>
         </div>
     </div>
 </section>
