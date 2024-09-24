@@ -23,7 +23,7 @@
                                     <p class="body-1 mb-4">Рюкзаки, сумки, спецодежда и снаряжение, созданные с использованием современных технологий и уникального дизайна</p>
                                 </div>
                                 <div class="d-md-flex gap-3 mb-lg-5">
-                                    <a href="#" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
+                                    <a href="{% url 'product_list' %}" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
                                     <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
                                         <i>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@
                                     <p class="body-1 mb-4">Рюкзаки, сумки, спецодежда и снаряжение, созданные с использованием современных технологий и уникального дизайна</p>
                                 </div>
                                 <div class="d-md-flex gap-3 mb-lg-5">
-                                    <a href="#" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
+                                    <a href="{% url 'product_list' %}" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
                                     <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
                                         <i>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="col-12 mt-4 pt-2">
-            <button type="button" class="btn btn-accent w-100">Подробнее о компании</button>
+            <a href="{% url 'about' %}" class="btn btn-accent w-100">Подробнее о компании</a>
         </div>
     </div>
 </section>
@@ -174,8 +174,8 @@
             </div>
         </div>
     </div>
-    <div class="w-100 mt-4 pt-2">
-        <button type="button" class="btn btn-accent w-100">Посмотреть каталог</button>
+    <div class="col-12 mt-4 pt-2">
+        <a href="{% url 'product_list' %}" class="btn btn-accent w-100">Посмотреть каталог</a>
     </div>
 </section>
 
@@ -225,8 +225,8 @@
         </ul>
     </div>
     <div class="row">
-        <div class="col-12 mt-4 pt-3">
-            <button type="button" class="btn btn-accent-light w-100">Все новости</button>
+        <div class="col-12 mt-4 pt-2">
+            <a href="{% url 'news' %}" class="btn btn-accent-light w-100">Все новости</a>
         </div>
     </div>
 </section>
@@ -435,10 +435,10 @@
             <div class="col-lg-6">
                 <form>
                     <div class="mb-3">
-                        <input type="name" class="form-control" id="fullname" placeholder="ФИО">
+                        <input type="name" class="form-control no-bg-change" id="fullname" placeholder="ФИО">
                     </div>
                     <div class="mb-3">
-                        <input type="number" class="form-control" id="PhoneNumber" placeholder="Номер телефона">
+                        <input type="number" class="form-control no-bg-change" id="PhoneNumber" placeholder="Номер телефона">
                     </div>
                     <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
                 </form>

@@ -11,7 +11,7 @@ class ProductListView(ListView):
     model = Product
     template_name = 'store/products.html'
     context_object_name = 'products'
-    paginate_by = 4  # Display 6 products initially
+    paginate_by = 8 # Display 8 products initially
 
     def get_queryset(self):
         """Return available products only, filtered if necessary."""

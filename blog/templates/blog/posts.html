@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="breadcrumb mt-4">
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">Главная</a>
+    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">Новости</span>
+</nav>
+<section class="history-section pt-4">
+    <div class="row justify-content-between mb-2">
+        <div class="col-lg-12">
+            <h1 class="heading-1">Новости</h1>
+        </div>
+        <div class="d-flex my-4 justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs gap-4 border-0" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button
+                            class="category-filter text-black-opacity fw-semibold text-decoration-none body-3 border-0 bg-transparent active"
+                            id="all-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#all"
+                            type="button"
+                            role="tab"
+                            aria-controls="all"
+                            aria-selected="false"
+                            data-category=""
+                        >
+                        All
+                        </button>
+                    </li>
+                    {% for category in post_categories %}
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="category-filter text-black-opacity fw-semibold text-decoration-none body-3 border-0 bg-transparent"
+                                id="{{ category.name|slugify }}-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#{{ category.name|slugify }}"
+                                type="button"
+                                role="tab"
+                                aria-controls="{{ category.name|slugify }}"
+                                aria-selected="false"
+                                data-category="{{ category.id }}"
+                            >
+                            {{ category.name }}
+                            </button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p class="mb-0 fw-semibold body-3 d-none d-md-block">Бупликаций: {{ posts|length }}</p>
+        </div>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content" id="post-container">
+        <div
+            class="tab-pane active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+        >
+            <div class="row gy-5">
+                <div id="spinner" class="text-center my-5 d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                {% for post in posts %}
+                    <div class="col-xl-4 col-md-6">
+                        <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
+                            <div class="bg-grey border-radius-20">
+                                {% if post.photo %}
+                                    <img src="{{ post.photo.url }}" class="img-fluid w-100" alt="news image">
+                                {% else %}
+                                    <img src="{% static 'img/default.png' %}" class="img-fluid w-100" alt="news image">
+                                {% endif %}
+                            </div>
+                            <h3 class="heading-3 mt-3">{{ post.title }}</h3>
+                            <p class="body-3 mb-0 text-black-opacity">{{ post.created_at|date:"d F Y" }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+                <div id="endOfTheList" class="text-center mt-5 d-none">
+                    <p>Вы достигли конца списка.</p>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-accent w-100 mt-4" id="load-more">Показать еще</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="tab-pane"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+        >
+            No post available in this category.
+        </div>
+        <div
+            class="tab-pane"
+            id="messages"
+            role="tabpanel"
+            aria-labelledby="messages-tab"
+        >
+            No post available in this category.
+        </div>
+    </div>
+</section>
+<section class="leaveRequest-section mb-4">
+    <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
+                <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="name" class="form-control" id="fullname" placeholder="ФИО">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control" id="PhoneNumber" placeholder="Номер телефона">
+                    </div>
+                    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    let offset = {{ posts.count }};
+    const paginateBy = {{ view.paginate_by }};
+    const loadMoreButton = document.getElementById('load-more');
+    const spinner = document.getElementById('spinner');
+    let selectedCategory = null;  // Track the selected category
+    let isSpinnerLoadingActive = false;
+    let endOfTheListMessage = document.getElementById('endOfTheList');
+
+    function showSpinner() {
+        spinner.classList.remove('d-none');
+        loadMoreButton.style.display = 'none';
+    }
+
+    function hideSpinner() {
+        spinner.classList.add('d-none');
+    }
+
+    // Event listener for category filter buttons
+    $('.category-filter').on('click', function () {
+        selectedCategory = $(this).data('category');
+        offset = 0;  // Reset the offset since we're starting a new filter
+        endOfTheListMessage.classList.add("d-none");
+        $('#post-container').empty();  // Clear the post container
+
+        showSpinner();
+        setTimeout(function() {
+            loadPosts();
+        }, 400);
+    });
+
+    // Event listener for "Load more" button
+    loadMoreButton.addEventListener('click', function () {
+        showSpinner();
+        loadPosts();
+    });
+
+    function loadPosts() {
+        const formData = new FormData();
+        formData.append('offset', offset);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+        // Include selected category in the request if available
+        if (selectedCategory) {
+            formData.append('category', selectedCategory);
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'news' %}",
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function () {
+                showSpinner();
+            },
+            success: function (response) {
+                if (response.html.trim()) {
+                    $('#post-container').append(response.html);
+                    offset += paginateBy;
+
+                    if (!response.has_more) {
+                        endOfTheListMessage.classList.remove("d-none");
+                        loadMoreButton.style.display = 'none'; // Hide the button if no more posts
+                    } else {
+                        loadMoreButton.style.display = 'block'; // Show the button if there are more posts
+                    }
+                } else {
+                    $('#post-container').html(`
+                        <div class="row">
+                            <div class="col-12 my-4">
+                                <p class="text-uppercase text-center">
+                                    В этой категории нет постов.
+                                </p>
+                            </div>
+                        </div>
+                    `);
+                    loadMoreButton.style.display = 'none'; // Hide the button if no posts found
+                }
+            },
+            error: function (error) {
+                console.error("An error occurred:", error);
+            },
+            complete: function () {
+                hideSpinner();  // Hide spinner once loading is complete
+                if (response.has_more) {
+                    loadMoreButton.style.display = 'block';  // Show "Load more" button if more posts
+                }
+            }
+        });
+    }
+});
+
+</script>
+{% endblock  %}

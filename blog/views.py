@@ -1,13 +1,51 @@
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, PostCategory
+from .filters import PostFilter
+from django.http import JsonResponse
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'posts.html'  # Specify your template
-    context_object_name = 'posts'  # Custom context variable
-    ordering = ['-created_at']  # Order by most recent
+    template_name = 'blog/posts.html'
+    context_object_name = 'posts'
+    paginate_by = 3  # Display 3 posts initially
+
+    def get_queryset(self):
+        queryset = Post.objects.all()
+
+        if self.request.method == 'GET':
+            self.filterset = PostFilter(self.request.GET, queryset=queryset)
+        else:
+            self.filterset = PostFilter(self.request.POST, queryset=queryset)
+
+        return self.filterset.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = self.filterset
+        context['post_categories'] = PostCategory.objects.all()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        offset = int(request.POST.get('offset', 0))
+        limit = offset + self.paginate_by
+
+        # Get the current filter parameters
+        filterset = PostFilter(request.POST, queryset=self.get_queryset())
+        filtered_posts = filterset.qs[offset:limit]
+
+        html = render_to_string(
+            'blog/post_items.html',
+            {'posts': filtered_posts},
+            request=request
+        )
+
+        return JsonResponse({
+            'html': html,
+            'has_more': filtered_posts.count() == self.paginate_by,
+        })
 
 
 class PostDetailView(DetailView):

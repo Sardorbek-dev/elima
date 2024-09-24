@@ -107,7 +107,7 @@ body{
 }
 .description-2{
   font-size: 13px;
-  font-weight: 500;  
+  font-weight: 500;
 }
 
 .border-radius-20{
@@ -266,7 +266,7 @@ footer{
 .product-card:hover > .overlay{
     display: flex;
 }
-.overlay{    
+.overlay{
     display: none;
     position: absolute;
     right: 0;
@@ -274,7 +274,7 @@ footer{
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.3);
-    z-index: 9;    
+    z-index: 9;
     align-items: center;
     justify-content: center;
 }
@@ -319,7 +319,23 @@ footer{
     border-radius: 25px;
     border: 1px solid var(--Black-opacity-20);
 }
-a.prev-arrow-carousel{
+.search-bar .no-outline:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.leaveRequest-section input:focus {
+    background-color: inherit !important; /* Keeps the background color the same as before focusing */
+    box-shadow: none !important; /* Removes any box shadow if applied */
+}
+
+.tab-content-store {
+    min-height: 600px; /* Adjust the height as needed */
+    overflow: hidden; /* Hide overflow while loading */
+    position: relative; /* Ensure proper positioning */
+}
+
+a.prev-arrow-carousel, button.prev-arrow-carousel{
     right: 75px;
     left: inherit;
 }
@@ -383,10 +399,10 @@ a.prev-arrow-carousel{
 #map{
     filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="g"><feColorMatrix type="matrix" values="0.3 0.3 0.3 0 0 0.3 0.3 0.3 0 0 0.3 0.3 0.3 0 0 0 0 0 1 0"/></filter></svg>#g');
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);    
+    filter: grayscale(100%);
     filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1);
 }
-.big-accordion .accordion-item{    
+.big-accordion .accordion-item{
     border-bottom: 0;
 }
 .big-accordion .accordion-header{
@@ -478,7 +494,7 @@ a.prev-arrow-carousel{
     .display-3{
         font-size: 41px;
         font-weight: 300;
-    }    
+    }
     .title{
         font-size: 28px;
         line-height: 30px;
@@ -499,7 +515,7 @@ a.prev-arrow-carousel{
         font-size: 20px;
         line-height: 22px;
     }
-    
+
     .body-1{
         font-size: 20px;
         line-height: 24px;
@@ -516,7 +532,7 @@ a.prev-arrow-carousel{
         right: 0;
         z-index: 9;
         text-align: center;
-    }    
+    }
     .custom-nav .navbar-collapse .navbar-nav{
         padding: 100px 0;
     }

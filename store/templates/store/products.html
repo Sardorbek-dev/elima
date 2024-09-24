@@ -16,18 +16,33 @@
                         <path fill="black" d="M20 6C12.268 6 6 12.268 6 20s6.268 14 14 14a13.94 13.94 0 0 0 8.976-3.256l10.89 10.89a1.25 1.25 0 0 0 1.768-1.768l-10.89-10.89A13.94 13.94 0 0 0 34 20c0-7.732-6.268-14-14-14M8.5 20c0-6.351 5.149-11.5 11.5-11.5S31.5 13.649 31.5 20S26.351 31.5 20 31.5S8.5 26.351 8.5 20" />
                     </svg>
                 </i>
-                <input type="text" class="form-search border-0 body-3 bg-transparent py-2" placeholder="Поиск">
+                <input type="text" class="form-search border-0 body-3 bg-transparent py-2 no-outline" placeholder="Поиск">
             </div>
         </div>
         <div class="col-lg-12">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs justify-content-between border-0 custom-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link category-filter active"
+                        data-category="All"
+                        id="All"
+                        data-bs-toggle="tab"
+                        data-bs-target="#Все"
+                        type="button"
+                        role="tab"
+                        aria-controls="Все"
+                        aria-selected="true"
+                    >
+                        All
+                    </button>
+                </li>
                 {% for category in categories %}
                 <li class="nav-item" role="presentation">
                     <button
                         class="nav-link category-filter"
                         data-category="{{ category.id }}"
-                        id="Все-tab"
+                        id="{{ category.id }}"
                         data-bs-toggle="tab"
                         data-bs-target="#Все"
                         type="button"
@@ -76,14 +91,13 @@
                 </div>
             </div>
             <!-- Tab panes -->
-            <div class="tab-content">
+            <div class="tab-content tab-content-store">
                 <div
                     class="tab-pane active"
                     id="Все"
                     role="tabpanel"
                     aria-labelledby="Все-tab"
                 >
-                    <div class="">
                         <div class="row mb-4" id="product-container">
                             {% for product in products %}
                             <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
@@ -103,7 +117,11 @@
                             </div>
                             {% endfor %}
                         </div>
-                    </div>
+                        <div id="spinner" class="d-none text-center my-4">
+                            <div class="spinner-border text-accent" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
                     <div class="row">
                         <div class="col-12">
                             <button id="load-more" type="submit" class="btn btn-accent w-100 mt-4 text-uppercase">Показать еще</button>
@@ -112,7 +130,7 @@
                     <div class="row d-none" id="endOfTheList">
                         <div class="col-12 my-4">
                             <p class="text-uppercase text-center">
-                                You have reached the end of the list...
+                                Вы дошли до конца списка.
                             </p>
                         </div>
                     </div>
@@ -187,11 +205,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let offset = {{ products.count }};
     const paginateBy = {{ view.paginate_by }};
     const loadMoreButton = document.getElementById('load-more');
+    const spinner = document.getElementById('spinner');
     let selectedCategory = null;  // Track the selected category
     let selectedOrder = ''; // Track the selected order
     let minPrice = null;
     let maxPrice = null;
+    let isSpinnerLoadingActive = false
     let endOfTheListMessage = document.getElementById('endOfTheList');
+
+    function showSpinner() {
+        spinner.classList.remove('d-none');
+        loadMoreButton.style.display = 'none';
+    }
+
+    function hideSpinner() {
+        spinner.classList.add('d-none');
+    }
 
     // Event listener for category filter buttons
     $('.category-filter').on('click', function () {
@@ -200,7 +229,10 @@ document.addEventListener('DOMContentLoaded', function () {
         endOfTheListMessage.classList.add("d-none");
         $('#product-container').empty();  // Clear the product container
 
-        loadProducts();
+        showSpinner();
+        setTimeout(function() {
+            loadProducts();
+        }, 400)
     });
 
     // Event listener for sorting buttons
@@ -210,7 +242,10 @@ document.addEventListener('DOMContentLoaded', function () {
         endOfTheListMessage.classList.add("d-none");
         $('#product-container').empty();  // Clear the product container
 
-        loadProducts();
+        showSpinner();
+        setTimeout(function() {
+            loadProducts();
+        }, 400)
     });
 
     // Event listener for price filter button
@@ -221,11 +256,15 @@ document.addEventListener('DOMContentLoaded', function () {
         endOfTheListMessage.classList.add("d-none");
         $('#product-container').empty();
 
-        loadProducts();
+        showSpinner();
+        setTimeout(function() {
+            loadProducts();
+        }, 400)
     });
 
     // Event listener for "Load more" button
     loadMoreButton.addEventListener('click', function () {
+        showSpinner();
         loadProducts();
     });
 
@@ -253,24 +292,46 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         $.ajax({
-            type: 'POST',
+                type: 'POST',
             url: "{% url 'product_list' %}",
             data: formData,
             processData: false,
             contentType: false,
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
-                $('#product-container').append(response.html);
-                offset += paginateBy;
+                if(response.html.trim()) {
+                    $('#product-container').append(response.html);
+                    offset += paginateBy;
 
-                if (!response.has_more) {
-                    endOfTheListMessage.classList.remove("d-none");
-                    loadMoreButton.style.display = 'none';
+                    if (!response.has_more) {
+                        endOfTheListMessage.classList.remove("d-none");
+                        loadMoreButton.style.display = 'none'; // Hide the button if no more products
+                    } else {
+                        loadMoreButton.style.display = 'block'; // Show the button if there are more products
+                    }
                 } else {
-                    loadMoreButton.style.display = 'block';
+                    $('#product-container').html(`
+                        <div class="row">
+                            <div class="col-12 my-4">
+                                <p class="text-uppercase text-center">
+                                    В этой категории нет товаров.
+                                </p>
+                            </div>
+                        </div>
+                    `);
+                    loadMoreButton.style.display = 'none'; // Hide the button if no products found
                 }
             },
             error: function (error) {
                 console.error("An error occurred:", error);
+            },
+            complete: function () {
+                hideSpinner();  // Hide spinner once loading is complete
+                if (response.has_more) {
+                    loadMoreButton.style.display = 'block';  // Show "Load more" button if more products
+                }
             }
         });
     }
