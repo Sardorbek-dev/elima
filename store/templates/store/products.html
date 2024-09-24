@@ -25,7 +25,8 @@
                 {% for category in categories %}
                 <li class="nav-item" role="presentation">
                     <button
-                        class="nav-link"
+                        class="nav-link category-filter"
+                        data-category="{{ category.id }}"
                         id="Все-tab"
                         data-bs-toggle="tab"
                         data-bs-target="#Все"
@@ -45,18 +46,34 @@
                     <button
                         class="btn btn-link dropdown-toggle p-0"
                         type="button"
-                        id="triggerId"
+                        id="triggerIdFilters"
                         data-bs-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
                     >
                         Фильтры
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="triggerId">
-                        <button class="dropdown-item" href="#">Action</button>
+                    <div class="dropdown-menu" aria-labelledby="triggerIdFilters">
+                        <div class="dropdown-item" href="#">
+                            <label for="min-price">Минимальная цена:</label>
+                            <input type="number" id="min-price" class="form-control" placeholder="Мин. цена">
+                        </div>
+                        <div class="dropdown-item">
+                            <label for="max-price">Максимальная цена:</label>
+                            <input type="number" id="max-price" class="form-control" placeholder="Макс. цена">
+                        </div>
+                        <button id="apply-price-filter" class="btn btn-accent mt-2">Применить</button>
                     </div>
                 </div>
-                <span class="body-3 fw-semibold">Сортировать</span>
+                <div class="dropdown open">
+                    <button class="btn btn-link dropdown-toggle text-capitalize p-0" type="button" id="triggerIdSorting" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static" aria-expanded="false">
+                        Сортировать
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg-end dropdown-menu-end" aria-labelledby="triggerIdSorting">
+                        <button class="dropdown-item sort-option" data-sort="asc">Price: Low to High</button>
+                        <button class="dropdown-item sort-option" data-sort="desc">Price: High to Low</button>
+                    </div>
+                </div>
             </div>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -66,49 +83,26 @@
                     role="tabpanel"
                     aria-labelledby="Все-tab"
                 >
-                    <div id="product-container">
-                        {% for grouped_product in grouped_products %}
-                            <div class="row">
-                                <div class="col-lg-6 mb-4 order-2 order-lg-1">
-                                    <div class="row row-cols-1 row-cols-md-2">
-                                        {% for product in grouped_product|slice:":4" %}
-                                        <div class="col mb-4">
-                                            <div class="border-radius-20 overflow-hidden product-card">
-                                                <div class="overlay">
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
-                                                            <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
-                                                <!-- Modal -->
-                                                {% include 'store/product_modal.html' with product=product %}
-                                            </div>
-                                            <h5 class="heading-5 mt-3">{{ product.name }}</h5>
-                                        </div>
-                                        {% endfor %}
+                    <div class="">
+                        <div class="row mb-4" id="product-container">
+                            {% for product in products %}
+                            <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
+                                <div class="border-radius-20 overflow-hidden product-card">
+                                    <div class="overlay">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
+                                                <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
+                                            </svg>
+                                        </a>
                                     </div>
+                                    <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
+                                    <!-- Modal -->
+                                    {% include 'store/product_modal.html' with product=product %}
                                 </div>
-                                <div class="col-lg-6 order-1 order-lg-2 mb-4">
-                                    {% if grouped_product|length > 4 %}
-                                        <div class="border-radius-20 overflow-hidden product-card">
-                                            <div class="overlay">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ grouped_product.4.unique_id }}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
-                                                        <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <img src="{{ grouped_product.4.image.url }}" class="img-fluid w-100" alt="{{ grouped_product.4.name }}">
-                                            <!-- Modal -->
-                                            {% include 'store/product_modal.html' with product=grouped_product.4 %}
-                                        </div>
-                                        <h5 class="heading-5 mt-3">{{ grouped_product.4.name }}</h5>
-                                    {% endif %}
-                                </div>
+                                <h5 class="heading-5 mt-3">{{ product.name }}</h5>
                             </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -189,34 +183,99 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let offset = {{ products.count }};
-        const paginateBy = {{ view.paginate_by }};
-        const loadMoreButton = document.getElementById('load-more');
+document.addEventListener('DOMContentLoaded', function () {
+    let offset = {{ products.count }};
+    const paginateBy = {{ view.paginate_by }};
+    const loadMoreButton = document.getElementById('load-more');
+    let selectedCategory = null;  // Track the selected category
+    let selectedOrder = ''; // Track the selected order
+    let minPrice = null;
+    let maxPrice = null;
+    let endOfTheListMessage = document.getElementById('endOfTheList');
 
-        loadMoreButton.addEventListener('click', function () {
-            $.ajax({
-                type: 'POST',
-                url: "{% url 'product_list' %}",
-                data: {
-                    'offset': offset,
-                    'csrfmiddlewaretoken': '{{ csrf_token }}'
-                },
-                success: function (response) {
-                    $('#product-container').append(response.html);
-                    offset += paginateBy;
+    // Event listener for category filter buttons
+    $('.category-filter').on('click', function () {
+        selectedCategory = $(this).data('category');
+        offset = 0;  // Reset the offset since we're starting a new filter
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty();  // Clear the product container
 
-                    if (!response.has_more) {
-                        document.getElementById('endOfTheList').classList.remove("d-none")
-                        loadMoreButton.style.display = 'none';
-                    }
-                },
-                error: function (error) {
-                    console.error("An error occurred:", error);
-                }
-            });
-        });
+        loadProducts();
     });
+
+    // Event listener for sorting buttons
+    $('.sort-option').on('click', function () {
+        selectedOrder = $(this).data('sort');
+        offset = 0;  // Reset the offset when changing sort order
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty();  // Clear the product container
+
+        loadProducts();
+    });
+
+    // Event listener for price filter button
+    $('#apply-price-filter').on('click', function () {
+        minPrice = $('#min-price').val();
+        maxPrice = $('#max-price').val();
+        offset = 0;
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty();
+
+        loadProducts();
+    });
+
+    // Event listener for "Load more" button
+    loadMoreButton.addEventListener('click', function () {
+        loadProducts();
+    });
+
+    function loadProducts() {
+        const formData = new FormData();
+        formData.append('offset', offset);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+        // Include selected category in the request if available
+        if (selectedCategory) {
+            formData.append('category', selectedCategory);
+        }
+
+        // Include selected sorting order if available
+        if (selectedOrder) {
+            formData.append('ordering', selectedOrder);
+        }
+
+        if (minPrice) {
+            formData.append('min_price', minPrice);
+        }
+
+        if (maxPrice) {
+            formData.append('max_price', maxPrice);
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'product_list' %}",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#product-container').append(response.html);
+                offset += paginateBy;
+
+                if (!response.has_more) {
+                    endOfTheListMessage.classList.remove("d-none");
+                    loadMoreButton.style.display = 'none';
+                } else {
+                    loadMoreButton.style.display = 'block';
+                }
+            },
+            error: function (error) {
+                console.error("An error occurred:", error);
+            }
+        });
+    }
+});
+
 </script>
 
 

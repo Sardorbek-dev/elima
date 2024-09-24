@@ -137,37 +137,45 @@
             <p class="body-1 mb-0">Широкий ассортимент продукции для любых задач и условий.</p>
         </div>
     </div>
-    <div class="row align-items-end">
-        <div class="col-lg-6">
-            <a href="#" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20 mb-3 text-center py-5">
-                    <img src="{% static 'img/big-pro-1.png' %}" class="img-fluid" alt="product">
-                </div>
-                <h4 class="heading-4">Рюкзаки</h4>
-                <p class="body-2">Городские, туристические, спортивные<br> и школьные рюкзаки. </p>
-            </a>
+    <div class="multi-carousel" data-mdb-multi-carousel-init data-mdb-interval="3000" data-mdb-items="4">
+        <button data-mdb-button-init class="carousel-control-prev prev-arrow-carousel" type="button" tabindex="0" data-mdb-slide="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
+        </button>
+        <button data-mdb-button-init class="carousel-control-next next-arrow-carousel" type="button" tabindex="0" data-mdb-slide="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
+        </button>
+        <div class="multi-carousel-inner">
+            <div class="multi-carousel-item">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="bg-grey border-radius-20 mb-3 text-center">
+                        <img src="{% static 'img/product-img-regular-3.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <h4 class="heading-4">Рюкзаки</h4>
+                    <p class="body-2">Городские, туристические, спортивные и школьные рюкзаки. </p>
+                </a>
+            </div>
+            <div class="multi-carousel-item">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="bg-grey border-radius-20 mb-3 text-center">
+                        <img src="{% static 'img/product-img-regular-1.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <h4 class="heading-4">Сумки</h4>
+                    <p class="body-2">Туристические, спортивные и школьные рюкзаки. </p>
+                </a>
+            </div>
+            <div class="multi-carousel-item">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="bg-grey border-radius-20 mb-3 text-center">
+                        <img src="{% static 'img/product-img-regular-2.png' %}" class="img-fluid" alt="product">
+                    </div>
+                    <h4 class="heading-4">Куртки</h4>
+                    <p class="body-2">Городские, спортивные и школьные куртки. </p>
+                </a>
+            </div>
         </div>
-        <div class="col-lg">
-            <a href="#" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20 mb-3 text-center">
-                    <img src="{% static 'img/product-img-regular-1.png' %}" class="img-fluid" alt="product">
-                </div>
-                <h4 class="heading-4">Сумки</h4>
-                <p class="body-2">Туристические, спортивные и школьные рюкзаки. </p>
-            </a>
-        </div>
-        <div class="col-lg">
-            <a href="#" class="text-black text-decoration-none">
-                <div class="bg-grey border-radius-20 mb-3 text-center">
-                    <img src="{% static 'img/product-img-regular-2.png' %}" class="img-fluid" alt="product">
-                </div>
-                <h4 class="heading-4">Куртки</h4>
-                <p class="body-2">Городские, спортивные и школьные куртки. </p>
-            </a>
-        </div>
-        <div class="col-12 mt-4 pt-2">
-            <button type="button" class="btn btn-accent w-100">Посмотреть каталог</button>
-        </div>
+    </div>
+    <div class="w-100 mt-4 pt-2">
+        <button type="button" class="btn btn-accent w-100">Посмотреть каталог</button>
     </div>
 </section>
 
