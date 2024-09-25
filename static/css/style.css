@@ -326,13 +326,13 @@ footer{
 
 .leaveRequest-section input:focus {
     background-color: inherit !important; /* Keeps the background color the same as before focusing */
-    box-shadow: none !important; /* Removes any box shadow if applied */
+    box-shadow: none !important;
 }
 
-.tab-content-store {
-    min-height: 600px; /* Adjust the height as needed */
-    overflow: hidden; /* Hide overflow while loading */
-    position: relative; /* Ensure proper positioning */
+.tab-content-store, .tab-content-post{
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
 }
 
 a.prev-arrow-carousel, button.prev-arrow-carousel{

@@ -26,7 +26,7 @@
                     <button
                         class="nav-link category-filter active"
                         data-category="All"
-                        id="All"
+                        id="all-tab-category"
                         data-bs-toggle="tab"
                         data-bs-target="#Все"
                         type="button"
@@ -98,30 +98,37 @@
                     role="tabpanel"
                     aria-labelledby="Все-tab"
                 >
-                        <div class="row mb-4" id="product-container">
-                            {% for product in products %}
-                            <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
-                                <div class="border-radius-20 overflow-hidden product-card">
-                                    <div class="overlay">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
-                                                <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
-                                    <!-- Modal -->
-                                    {% include 'store/product_modal.html' with product=product %}
+                    <div class="row mb-4" id="product-container">
+                        {% for product in products %}
+                        <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
+                            <div class="border-radius-20 overflow-hidden product-card">
+                                <div class="overlay">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
+                                            <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
+                                        </svg>
+                                    </a>
                                 </div>
-                                <h5 class="heading-5 mt-3">{{ product.name }}</h5>
+                                <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
+                                <!-- Modal -->
+                                {% include 'store/product_modal.html' with product=product %}
                             </div>
-                            {% endfor %}
+                            <h5 class="heading-5 mt-3">{{ product.name }}</h5>
                         </div>
-                        <div id="spinner" class="d-none text-center my-4">
-                            <div class="spinner-border text-accent" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="spinner" class="d-none text-center my-4">
+                        <div class="spinner-border text-accent" role="status">
+                            <span class="visually-hidden">Loading...</span>
                         </div>
+                    </div>
+                    <div class="row d-none" id="no-products-to-display">
+                        <div class="col-12 my-4">
+                            <p class="text-uppercase text-center">
+                                В этой категории нет товаров.
+                            </p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-12">
                             <button id="load-more" type="submit" class="btn btn-accent w-100 mt-4 text-uppercase">Показать еще</button>
@@ -212,15 +219,25 @@ document.addEventListener('DOMContentLoaded', function () {
     let maxPrice = null;
     let isSpinnerLoadingActive = false
     let endOfTheListMessage = document.getElementById('endOfTheList');
+    let noProductsToDisplay = document.getElementById('no-products-to-display');
+    let response;
 
     function showSpinner() {
         spinner.classList.remove('d-none');
+        if (!noProductsToDisplay.classList.contains("d-none")) {
+            noProductsToDisplay.classList.add("d-none");
+        };
+
         loadMoreButton.style.display = 'none';
     }
 
     function hideSpinner() {
         spinner.classList.add('d-none');
     }
+
+    $('#all-tab-category').on('click', function () {
+        noProductsToDisplay.classList.add("d-none");
+    });
 
     // Event listener for category filter buttons
     $('.category-filter').on('click', function () {
@@ -292,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         $.ajax({
-                type: 'POST',
+            type: 'POST',
             url: "{% url 'product_list' %}",
             data: formData,
             processData: false,
@@ -300,28 +317,27 @@ document.addEventListener('DOMContentLoaded', function () {
             beforeSend: function () {
                 showSpinner();
             },
-            success: function (response) {
+            success: function (data) {
+                response = data
                 if(response.html.trim()) {
                     $('#product-container').append(response.html);
                     offset += paginateBy;
 
                     if (!response.has_more) {
                         endOfTheListMessage.classList.remove("d-none");
+                        noProductsToDisplay.classList.add("d-none")
                         loadMoreButton.style.display = 'none'; // Hide the button if no more products
                     } else {
                         loadMoreButton.style.display = 'block'; // Show the button if there are more products
                     }
                 } else {
-                    $('#product-container').html(`
-                        <div class="row">
-                            <div class="col-12 my-4">
-                                <p class="text-uppercase text-center">
-                                    В этой категории нет товаров.
-                                </p>
-                            </div>
-                        </div>
-                    `);
-                    loadMoreButton.style.display = 'none'; // Hide the button if no products found
+                     // This block handles the case where no more products are returned
+                    if (offset > 0) {
+                        // If there were already posts displayed, show the "end of the list" message
+                        endOfTheListMessage.classList.remove("d-none");
+                    } else {
+                        noProductsToDisplay.classList.remove("d-none")
+                    }
                 }
             },
             error: function (error) {

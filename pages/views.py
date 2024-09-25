@@ -1,14 +1,26 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from blog.models import Post
+from django.http import JsonResponse
+from .models import ContactRequest
+from .forms import ContactForm
 
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
 
-class ContactCreateView(TemplateView):
+class ContactRequestCreateView(CreateView):
+    model = ContactRequest
+    form_class = ContactForm
     template_name = 'contact.html'
+
+    def form_invalid(self, form):
+        return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+
+    def form_valid(self, form):
+        self.object = form.save()
+        return JsonResponse({'success': True}, status=201)
 
 
 class AboutView(TemplateView):

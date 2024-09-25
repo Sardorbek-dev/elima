@@ -1,15 +1,16 @@
+{% load static %}
 {% for post in posts %}
-<div class="col-xl-4 col-md-6">
-    <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
-        <div class="bg-grey border-radius-20">
-            {% if post.photo %}
-            <img src="{{ post.photo.url }}" class="img-fluid w-100" alt="news image">
-            {% else %}
-            <img src="{% static 'img/default.png' %}" class="img-fluid w-100" alt="news image">
-            {% endif %}
-        </div>
-        <h3 class="heading-3 mt-3">{{ post.title }}</h3>
-        <p class="body-3 mb-0 text-black-opacity">{{ post.created_at|date:"d F Y" }}</p>
-    </a>
-</div>
+    <div class="col-xl-4 col-md-6">
+        <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
+            <div class="bg-grey border-radius-20">
+                {% if post.photo %}
+                    <img src="{{ post.photo.url }}" class="img-fluid w-100" alt="news image">
+                {% else %}
+                    <img src="{% static 'img/default.png' %}" class="img-fluid w-100" alt="news image">
+                {% endif %}
+            </div>
+            <h3 class="heading-3 mt-3">{{ post.title }}</h3>
+            <p class="body-3 mb-0 text-black-opacity">{{ post.created_at|date:"d F Y" }}</p>
+        </a>
+    </div>
 {% endfor %}

@@ -18,7 +18,7 @@
                     <li class="nav-item" role="presentation">
                         <button
                             class="category-filter text-black-opacity fw-semibold text-decoration-none body-3 border-0 bg-transparent active"
-                            id="all-tab"
+                            id="all-tab-posts-category"
                             data-bs-toggle="tab"
                             data-bs-target="#all"
                             type="button"
@@ -53,19 +53,14 @@
         </div>
     </div>
     <!-- Tab panes -->
-    <div class="tab-content" id="post-container">
+    <div class="tab-content tab-content-post">
         <div
             class="tab-pane active"
             id="home"
             role="tabpanel"
             aria-labelledby="home-tab"
         >
-            <div class="row gy-5">
-                <div id="spinner" class="text-center my-5 d-none">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
+            <div class="row" id="post-container">
                 {% for post in posts %}
                     <div class="col-xl-4 col-md-6">
                         <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
@@ -81,29 +76,27 @@
                         </a>
                     </div>
                 {% endfor %}
-                <div id="endOfTheList" class="text-center mt-5 d-none">
-                    <p>Вы достигли конца списка.</p>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-accent w-100 mt-4" id="load-more">Показать еще</button>
+
+            </div>
+            <div id="spinner" class="text-center my-5 d-none">
+                <div class="spinner-border text-accent" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
-        </div>
-        <div
-            class="tab-pane"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-        >
-            No post available in this category.
-        </div>
-        <div
-            class="tab-pane"
-            id="messages"
-            role="tabpanel"
-            aria-labelledby="messages-tab"
-        >
-            No post available in this category.
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-accent w-100 mt-4" id="load-more">Показать еще</button>
+            </div>
+            <div id="endOfTheList" class="text-center mt-5 d-none">
+                <p>Вы дошли до конца списка.</p>
+            </div>
+            <div class="row d-none" id="no-posts-to-display">
+                <div class="col-12 my-4">
+                    <p class="text-uppercase text-center">
+                        В этой категории нет постов.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -136,11 +129,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const loadMoreButton = document.getElementById('load-more');
     const spinner = document.getElementById('spinner');
     let selectedCategory = null;  // Track the selected category
-    let isSpinnerLoadingActive = false;
     let endOfTheListMessage = document.getElementById('endOfTheList');
+    let noPostsToDisplay = document.getElementById('no-posts-to-display');
+    let response;
 
     function showSpinner() {
         spinner.classList.remove('d-none');
+        if (!noPostsToDisplay.classList.contains("d-none")) {
+            noPostsToDisplay.classList.add("d-none");
+        };
         loadMoreButton.style.display = 'none';
     }
 
@@ -186,28 +183,26 @@ document.addEventListener('DOMContentLoaded', function () {
             beforeSend: function () {
                 showSpinner();
             },
-            success: function (response) {
+            success: function (data) {
+                response = data;
                 if (response.html.trim()) {
                     $('#post-container').append(response.html);
                     offset += paginateBy;
 
                     if (!response.has_more) {
-                        endOfTheListMessage.classList.remove("d-none");
+                        endOfTheListMessage.classList.remove("d-none"); // Show "end of the list" message
                         loadMoreButton.style.display = 'none'; // Hide the button if no more posts
                     } else {
                         loadMoreButton.style.display = 'block'; // Show the button if there are more posts
                     }
                 } else {
-                    $('#post-container').html(`
-                        <div class="row">
-                            <div class="col-12 my-4">
-                                <p class="text-uppercase text-center">
-                                    В этой категории нет постов.
-                                </p>
-                            </div>
-                        </div>
-                    `);
-                    loadMoreButton.style.display = 'none'; // Hide the button if no posts found
+                    // This block handles the case where no more posts are returned
+                    if (offset > 0) {
+                        // If there were already posts displayed, show the "end of the list" message
+                        endOfTheListMessage.classList.remove("d-none");
+                    } else {
+                       noPostsToDisplay.classList.remove("d-none")
+                    }
                 }
             },
             error: function (error) {

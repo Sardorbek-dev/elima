@@ -27,7 +27,7 @@
                             </svg>
                         </button>
                         <h5 class="heading-4 mb-2">{{ product.name }}</h5>
-                        <p class="body-3 mb-4 me-md-4">{{ product.description }}</p>
+                        <p class="body-3 mb-4 me-md-4">{{ product.description|truncatechars:310 }}</p>
                         <h5 class="heading-5 mb-2">Характеристики</h5>
                         <div class="row">
                             <div class="col-5">

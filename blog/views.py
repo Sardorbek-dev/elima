@@ -10,7 +10,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/posts.html'
     context_object_name = 'posts'
-    paginate_by = 3  # Display 3 posts initially
+    paginate_by = 6 # Display 6 posts initially
 
     def get_queryset(self):
         queryset = Post.objects.all()
@@ -42,15 +42,18 @@ class PostListView(ListView):
             request=request
         )
 
+        # Check if there are more posts after this batch
+        has_more = filterset.qs.count() > limit
+
         return JsonResponse({
             'html': html,
-            'has_more': filtered_posts.count() == self.paginate_by,
+            'has_more': has_more,
         })
 
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'post_details.html'
+    template_name = 'blog/post_details.html'
     context_object_name = 'post'
 
     def get_context_data(self, **kwargs):

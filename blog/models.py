@@ -18,7 +18,7 @@ class PostCategory(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(unique=True)
     content = models.TextField()
     author = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='img/', blank=True, null=True)

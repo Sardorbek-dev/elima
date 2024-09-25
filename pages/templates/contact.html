@@ -88,26 +88,60 @@
             <h2 class="heading-3 mb-4">Заполните форму,<br>и мы свяжемся с вами в ближайшее<br>время</h2>
         </div>
         <div class="col-lg-6">
-            <form>
-                <div class="mb-4">
-                    <label for="fullname" class="body-3 fw-semibold">Имя</label>
-                    <input type="name" class="form-control" id="fullname" placeholder="Ваше имя">
-                </div>
-                <div class="mb-4">
-                    <label for="clientEmail" class="body-3 fw-semibold">Электронная почта</label>
-                    <input type="email" class="form-control" placeholder="Почта" id="clientEmail" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-4">
-                    <label for="PhoneNumber" class="body-3 fw-semibold">Телефон</label>
-                    <input type="number" class="form-control" id="PhoneNumber" placeholder="+998">
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="body-3 fw-semibold">Сообщение</label>
-                    <textarea class="form-control" id="message" aria-label="With textarea" placeholder="Ваше сообщение" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">отправить</button>
-            </form>
+        <form id="contactForm" method="post">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="name" class="body-3 fw-semibold">Имя</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="body-3 fw-semibold">Электронная почта</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Почта">
+            </div>
+            <div class="mb-4">
+                <label for="phone_number" class="body-3 fw-semibold">Телефон</label>
+                <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="+998">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="body-3 fw-semibold">Сообщение</label>
+                <textarea name="message" class="form-control" id="message" placeholder="Ваше сообщение" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">отправить</button>
+            <div id="form-success" class="alert alert-success mt-4" style="display:none;">Ваш запрос успешно отправлен!</div>
+        </form>
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('#contactForm').on('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous error messages
+            $('.error-message').remove();
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "contact" %}',  // Ensure the URL is correct
+                data: $(this).serialize(),
+                success: function (response) {
+                    if (response.success) {
+                        $('#contactForm')[0].reset();
+                        $('#form-success').show().delay(5000).fadeOut();
+                    }
+                },
+                error: function (xhr) {
+                    const errors = xhr.responseJSON.errors;
+                    for (const key in errors) {
+                        const inputField = $(`#${key}`);
+                        if (inputField.length) {
+                            const errorMessage = `<small class="text-danger error-message">${errors[key][0]}</small>`;
+                            inputField.after(errorMessage);  // Append error message after the input field
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
 {% endblock  %}
