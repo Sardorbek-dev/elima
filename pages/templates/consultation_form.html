@@ -1,0 +1,50 @@
+<form id="consultationForm" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" name="name" class="form-control no-bg-change" id="name" placeholder="ФИО" >
+    </div>
+    <div class="mb-3">
+        <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="Номер телефона" >
+    </div>
+    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+</form>
+<div id="form-consultation-success" class="alert alert-success mt-4" style="display: none;">Ваш запрос успешно отправлен!</div>
+<div id="form-consultation-errors" class="alert alert-danger mt-4" style="display: none;">Произошла ошибка, попробуйте еще раз.</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+     $('#consultationForm').on('submit', function (e) {
+        e.preventDefault();
+
+        // Clear previous error messages
+        $('.error-message').remove();
+
+        $.ajax({
+            type: 'POST',
+            url: '{% url "consultation" %}',
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.success) {
+                    $('#consultationForm')[0].reset();
+                    $('#form-consultation-success').show().delay(4000).fadeOut();
+                }
+            },
+            error: function (xhr) {
+                if (xhr.status === 0) {
+                    // Server not responding or network error
+                    $('#form-consultation-errors').show().delay(4000).fadeOut()
+                } else {
+                    const errors = xhr.responseJSON.errors;
+                    for (const key in errors) {
+                        const inputField = $(`#${key}`);
+                        if (inputField.length) {
+                            const errorMessage = `<small class="text-danger error-message">${errors[key][0]}</small>`;
+                            inputField.after(errorMessage);
+                        }
+                    }
+                }
+            }
+        });
+    });
+});
+</script>

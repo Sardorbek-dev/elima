@@ -5,24 +5,26 @@
 
 <!-- Bootstrap Carousel Section -->
 <section class="slider-section pt-0">
-    <div id="mainCarousel" class="carousel slide border-radius-20 bg-grey py-4 pt-lg-5 pb-lg-0 ps-lg-5 pe-lg-4 px-3 px-md-4" data-bs-ride="carousel">
+    <div id="mainCarousel"
+         class="carousel slide border-radius-20 bg-grey py-4 pt-lg-5 pb-lg-0 ps-lg-5 pe-lg-4 px-3 px-md-4"
+         data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
         <div class="carousel-inner">
             <!-- First Slide -->
-            <div class="carousel-item active">
+            <div class="carousel-item active" >
                 <div class="container">
                     <div class="row justify-content-center align-items-end">
                         <!-- Text Section -->
                         <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
                             <div class="gap-10 d-flex flex-wrap justify-content-center justify-content-lg-start">
-                                <div class="">
+                                <div class="" data-aos="fade-up" data-aos-duration="500">
                                     <h1 class="title mb-4">Швейное производство с 20-летней историей качества</h1>
                                     <p class="body-1 mb-4">Рюкзаки, сумки, спецодежда и снаряжение, созданные с использованием современных технологий и уникального дизайна</p>
                                 </div>
-                                <div class="d-md-flex gap-3 mb-lg-5">
+                                <div class="d-md-flex gap-3 mb-lg-5" data-aos="fade-up" data-aos-duration="500">
                                     <a href="{% url 'product_list' %}" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
                                     <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
                                         <i>
@@ -39,7 +41,7 @@
                             </div>
                         </div>
                         <!-- Image Section -->
-                        <div class="col-lg-6 col-md-8 col-10 text-end order-1 order-lg-2 mb-4 mb-lg-0">
+                        <div class="col-lg-6 col-md-8 col-10 text-end order-1 order-lg-2 mb-4 mb-lg-0" data-aos="fade-up" data-aos-duration="500">
                             <img src="{% static 'img/slider-img.png' %}" alt="Швейное производство" class="img-fluid">
                         </div>
                     </div>
@@ -84,10 +86,10 @@
 
         <!-- Carousel Controls (Arrows) -->
 
-        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="prev" class="prev-arrow-carousel d-none d-lg-block">
+        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="prev" class="prev-arrow-carousel d-none d-lg-block" data-aos="fade-up" data-aos-duration="500">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
         </a>
-        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="next" class="next-arrow-carousel d-none d-lg-block">
+        <a href="#" data-bs-target="#mainCarousel" data-bs-slide="next" class="next-arrow-carousel d-none d-lg-block" data-aos="fade-up" data-aos-duration="500">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
         </a>
 
@@ -95,7 +97,7 @@
 </section>
 
 <section class="history-section">
-    <div class="row mb-lg-5 mb-4">
+    <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="500">
         <div class="col-lg-6">
             <h2 class="heading-2 mb-lg-0 mb-3">Наша история и<br class="d-none d-lg-block">достижения</h2>
         </div>
@@ -104,32 +106,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg">
+        <div class="col-lg" data-aos="fade-up" data-aos-duration="500">
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <span class="display-1 text-accent w-100">20+</span>
                 <h3 class="heading-3 mt-md-5 pt-lg-5">лет опыта и развития</h3>
             </div>
         </div>
-        <div class="col-lg my-4 my-lg-0">
+        <div class="col-lg my-4 my-lg-0" data-aos="fade-up" data-aos-duration="600">
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <span class="display-1 text-accent w-100">55%</span>
                 <h3 class="heading-3 mt-md-5 pt-lg-4 mb-0">выручки от государственных заказов</h3>
             </div>
         </div>
-        <div class="col-lg">
+        <div class="col-lg" data-aos="fade-up" data-aos-duration="700">
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <span class="display-1 text-accent w-100">90%</span>
                 <h3 class="heading-3 mt-md-5 pt-lg-5">удовлетворенности клиентов</h3>
             </div>
         </div>
-        <div class="col-12 mt-4 pt-2">
+        <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="800">
             <a href="{% url 'about' %}" class="btn btn-accent w-100">Подробнее о компании</a>
         </div>
     </div>
 </section>
 
 <section class="product-section">
-    <div class="row mb-5">
+    <div class="row mb-5" data-aos="fade-up" data-aos-duration="500">
         <div class="col-lg-6">
             <h2 class="heading-2 mb-0">Наши товары</h2>
         </div>
@@ -137,7 +139,7 @@
             <p class="body-1 mb-0">Широкий ассортимент продукции для любых задач и условий.</p>
         </div>
     </div>
-    <div class="multi-carousel" data-mdb-multi-carousel-init data-mdb-interval="3000" data-mdb-items="4">
+    <div class="multi-carousel" data-mdb-multi-carousel-init data-mdb-interval="3000" data-mdb-items="4" data-aos="fade-up" data-aos-duration="1000">
         <button data-mdb-button-init class="carousel-control-prev prev-arrow-carousel" type="button" tabindex="0" data-mdb-slide="prev">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
         </button>
@@ -174,13 +176,13 @@
             </div>
         </div>
     </div>
-    <div class="col-12 mt-4 pt-2">
+    <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="500">
         <a href="{% url 'product_list' %}" class="btn btn-accent w-100">Посмотреть каталог</a>
     </div>
 </section>
 
 <section class="newsevent-section">
-    <div class="row mb-4">
+    <div class="row mb-4" data-aos="fade-up" data-aos-duration="500">
         <div class="col-lg-6 col-10">
             <h2 class="heading-2 mb-3 mb-lg-2">Новости и события</h2>
         </div>
@@ -188,7 +190,7 @@
             <p class="body-1 mb-lg-0 mb-3">Будьте в курсе последних новостей и достижений компании 'ELIMA'.</p>
         </div>
     </div>
-    <div class="flexslider carousel mb-2">
+    <div class="flexslider carousel mb-2" data-aos="fade-up" data-aos-duration="700">
         <ul class="slides">
             <li>
                 <div class="bg-grey border-radius-20 p-3">
@@ -224,14 +226,14 @@
             </li>
         </ul>
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-up" data-aos-duration="500">
         <div class="col-12 mt-4 pt-2">
             <a href="{% url 'news' %}" class="btn btn-accent-light w-100">Все новости</a>
         </div>
     </div>
 </section>
 
-<section class="feedback-section">
+<section class="feedback-section" data-aos="fade-up" data-aos-duration="500">
     <div class="row mb-5">
         <div class="col-lg-6">
             <h2 class="heading-2">Отзывы наших клиентов</h2>
@@ -348,7 +350,7 @@
         </div>
     </div>
 </section>
-<section class="faq-section">
+<section class="faq-section" data-aos="fade-up" data-aos-duration="1500">
     <div class="row justify-content-between">
         <div class="col-xl-4 col-lg-5">
             <h2 class="heading-2 mb-4">Частые вопросы</h2>
@@ -425,7 +427,7 @@
         </div>
     </div>
 </section>
-<section class="leaveRequest-section mb-4">
+<section class="leaveRequest-section mb-4" data-aos="fade-up" data-aos-duration="1500">
     <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
         <div class="row justify-content-between">
             <div class="col-lg-5">
@@ -433,15 +435,7 @@
                 <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
             </div>
             <div class="col-lg-6">
-                <form>
-                    <div class="mb-3">
-                        <input type="name" class="form-control no-bg-change" id="fullname" placeholder="ФИО">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" class="form-control no-bg-change" id="PhoneNumber" placeholder="Номер телефона">
-                    </div>
-                    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
-                </form>
+                {% include 'consultation_form.html' %}
             </div>
         </div>
     </div>

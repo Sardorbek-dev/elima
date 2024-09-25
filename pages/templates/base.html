@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link rel="stylesheet" href="{% static '/css/flexslider.css' %}">
+  <link rel="stylesheet" href="{% static '/css/aos/aos.css' %}">
 </head>
 <body>
     <!-- Body main wrapper start -->
@@ -143,10 +144,10 @@
                             <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">О компании</span>
                         </nav>
 
-                        <h1 class="display-1 mb-4 mt-300 text-accent-extra-light">Качество, проверенное временем</h1>
-                        <div class="row mb-lg-5 mb-4">
+                        <h1 class="display-1 mb-4 mt-300 text-accent-extra-light" data-aos="fade-up" data-aos-duration="700">Качество, проверенное временем</h1>
+                        <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="700">
                             <div class="col-md-6 mt-4 mt-md-0">
-                                <p class="body-2 mb-0 text-accent-light">Работаем с 2002 года</p>
+                                <p class="body-2 mb-0 text-accent-light" >Работаем с 2002 года</p>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-6 col-9 mt-4 mt-md-0">
                                 <p class="body-2 mb-0 text-accent-light">Создаем надежные решения для вашего комфорта</p>
@@ -355,17 +356,22 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024"><path fill="#E9EEEC" d="M868 545.5L536.1 163a31.96 31.96 0 0 0-48.3 0L156 545.5a7.97 7.97 0 0 0 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2"/></svg>
             </a>
         </div>
-    </footer>
+    </footer >
     <!-- Main JS -->
     <script src="{% static 'js/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery/custom.jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/multi-carousel.min.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'js/bootstrap/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/aos/aos.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/store.js' %}"></script>
     <script>
-
+        AOS.init({
+            easing: 'ease-in-out', // Easing function
+            once: true, // animation should happen only once
+            mirror: false, // elements should animate out while scrolling past them
+        }); // Initialize AOS
     </script>
 </body>
 </html>
