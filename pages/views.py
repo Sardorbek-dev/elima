@@ -4,6 +4,7 @@ from blog.models import Post
 from django.http import JsonResponse
 
 from contentmanagement.models import MainCarouselItem, ProductsCarouselItem
+from blog.models import Post
 from .models import ContactRequest
 from .forms import ContactForm, ConsultationForm
 
@@ -15,6 +16,7 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['main_carousel_items'] = MainCarouselItem.objects.all().order_by('order')
         context['products_carousel_items'] = ProductsCarouselItem.objects.all().order_by('order')
+        context['posts'] = Post.objects.all()
         return context
 
 
@@ -36,7 +38,6 @@ class AboutView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.all()
         context['is_about_page'] = True
         return context
 

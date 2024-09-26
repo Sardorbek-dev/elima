@@ -61,55 +61,7 @@
 </section>
 
 <section class="newsevent-section">
-    <div class="row mb-4" data-aos="fade-up" data-aos-duration="500">
-        <div class="col-lg-6 col-10">
-            <h2 class="heading-2 mb-3 mb-lg-2">Новости и события</h2>
-        </div>
-        <div class="col-lg-5 col-10">
-            <p class="body-1 mb-lg-0 mb-3">Будьте в курсе последних новостей и достижений компании 'ELIMA'.</p>
-        </div>
-    </div>
-    <div class="flexslider carousel mb-2" data-aos="fade-up" data-aos-duration="700">
-        <ul class="slides">
-            <li>
-                <div class="bg-grey border-radius-20 p-3">
-                    <div class="d-flex justify-content-between mb-5 pb-4">
-                        <img src="{% static 'img/Union-1.png' %}" alt="" class="img-fluid">
-                        <span class="body-3">5 августа 2024</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <h4 class="heading-4">Расширение производственных<br>мощностей</h4>
-                        <a href="#" class="arrow-circle d-none d-md-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
-                                <path fill="rgba(38,38,38,0.2)" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="bg-grey border-radius-20 p-3">
-                    <div class="d-flex justify-content-between mb-5 pb-4">
-                        <img src="{% static 'img/Union-2.png' %}" alt="" class="img-fluid">
-                        <span class="body-3">1 августа 2024</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <h4 class="heading-4">Новые поступления на<br>маркетплейс UZUM</h4>
-                        <a href="#" class="arrow-circle d-none d-md-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
-                                <path fill="rgba(38,38,38,0.2)" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="row" data-aos="fade-up" data-aos-duration="500">
-        <div class="col-12 mt-4 pt-2">
-            <a href="{% url 'news' %}" class="btn btn-accent-light w-100">Все новости</a>
-        </div>
-    </div>
+ {% include 'contentmanagement/posts-carousel.html' %}
 </section>
 
 <section class="feedback-section" data-aos="fade-up" data-aos-duration="500">
