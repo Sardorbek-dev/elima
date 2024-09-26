@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'pages',
     'blog',
     'store',
+    'contentmanagement',
 ]
 
 MIDDLEWARE = [

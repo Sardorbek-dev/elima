@@ -5,7 +5,7 @@
 <nav class="breadcrumb mt-4">
     <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">Главная</a>
     <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'news' %}">новости</a>
-    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">Новое оборудование...</span>
+    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">{{ post.title|truncatechars:15 }}</span>
 </nav>
 <section class="pt-3">
     <div class="row justify-content-center">

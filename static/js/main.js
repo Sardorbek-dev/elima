@@ -23,3 +23,31 @@ document.body.classList.add('expand');
         document.body.classList.remove('expand'); // Finally, remove expand class
     }, 500); // Duration matches the CSS transition (0.5s)
 });
+
+const counters = document.querySelectorAll('.elima-statistics');
+
+counters.forEach(counter => {
+    const animate = () => {
+        const target = +counter.getAttribute('counter-animation');
+        const current = +counter.innerText;
+
+        // Determine the increment based on the target value
+        let increment;
+        if (target < 50) {
+            increment = target / 100; // Slower for small numbers
+        } else if (target < 100) {
+            increment = target / 50;  // Medium speed for moderate numbers
+        } else {
+            increment = target / 20;  // Faster for large numbers
+        }
+
+        if (current < target) {
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(animate, 50); // Add a delay between increments for a slower effect
+        } else {
+            counter.innerText = target;
+        }
+    };
+    animate();
+});
+

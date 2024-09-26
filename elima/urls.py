@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('blog/', include('blog.urls')),
     path('store/', include('store.urls')),
+    path('contentmanagement/', include('contentmanagement.urls')),
 ]
 
 if settings.DEBUG:

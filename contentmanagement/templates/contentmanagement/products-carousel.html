@@ -1,0 +1,34 @@
+<section class="product-section">
+    <div class="row mb-5" data-aos="fade-up" data-aos-duration="500">
+        <div class="col-lg-6">
+            <h2 class="heading-2 mb-0">Наши товары</h2>
+        </div>
+        <div class="col-lg-4">
+            <p class="body-1 mb-0">Широкий ассортимент продукции для любых задач и условий.</p>
+        </div>
+    </div>
+    <div class="multi-carousel" data-mdb-multi-carousel-init data-mdb-interval="3000" data-mdb-items="4" data-aos="fade-up" data-aos-duration="1000">
+        <button data-mdb-button-init class="carousel-control-prev prev-arrow-carousel" type="button" tabindex="0" data-mdb-slide="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
+        </button>
+        <button data-mdb-button-init class="carousel-control-next next-arrow-carousel" type="button" tabindex="0" data-mdb-slide="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
+        </button>
+        <div class="multi-carousel-inner">
+            {% for item in products_carousel_items %}
+            <div class="multi-carousel-item">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="bg-grey border-radius-20 mb-3 text-center">
+                        <img src="{{ item.image.url }}" class="img-fluid" alt="{{ item.title }}">
+                    </div>
+                    <h4 class="heading-4">{{ item.title }}</h4>
+                    <p class="body-2">{{ item.description }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="500">
+        <a href="{% url 'product_list' %}" class="btn btn-accent w-100">Посмотреть каталог</a>
+    </div>
+</section>
