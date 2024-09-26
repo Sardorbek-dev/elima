@@ -347,7 +347,7 @@ footer{
     width: 260px;
 }
 
-.posts-title-home {
+.posts-title-home, .about-showcase-button {
     text-decoration: none;
     color:inherit
 }
