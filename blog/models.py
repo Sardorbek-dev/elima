@@ -23,6 +23,8 @@ class Post(models.Model):
     author = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='img/', blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
+    show_on_homepage = models.BooleanField(default=False)
+    publish = models.BooleanField(default=True)
     category = models.ForeignKey(PostCategory, on_delete=models.CASCADE, related_name='posts', null=True, blank=True)
 
     def save(self, *args, **kwargs):

@@ -329,7 +329,7 @@ footer{
     box-shadow: none !important;
 }
 
-.tab-content-store, .tab-content-post, {
+.tab-content-store, .tab-content-post {
     min-height: 600px;
     overflow: hidden;
     position: relative;

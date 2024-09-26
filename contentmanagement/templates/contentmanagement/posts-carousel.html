@@ -7,6 +7,15 @@
         <p class="body-1 mb-lg-0 mb-3">Будьте в курсе последних новостей и достижений компании 'ELIMA'.</p>
     </div>
 </div>
+{% if posts|length == 0 %}
+    <div class="row" data-aos="fade-up" data-aos-duration="500">
+        <div class="col-12 my-4">
+            <p class="text-uppercase text-center">
+               Нет постов для показа. Обратитесь к системному администратору.
+            </p>
+        </div>
+    </div>
+{% endif %}
 <div class="flexslider carousel mb-2" data-aos="fade-up" data-aos-duration="700">
     <ul class="slides">
         {% for post in posts %}

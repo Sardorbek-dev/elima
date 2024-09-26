@@ -1,0 +1,31 @@
+<div class="row mb-5">
+    <div class="col-lg-6">
+        <h2 class="heading-2">Отзывы наших клиентов</h2>
+    </div>
+    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 col-11">
+        <p class="body-1 mb-0">Что говорят о нас те, кто доверился качеству продукции 'ELIMA'.</p>
+    </div>
+</div>
+<div class="row gy-4 gy-lg-0 mt-lg-4">
+    {% for review in reviews %}
+    <div class="col-lg">
+        <div class="bg-grey border-radius-20 p-4">
+            {% if review.logo %}
+                <img src="{{ review.logo.url }}" alt="{{ review.company_name }}">
+            {% endif %}
+            <p class="body-2 my-4">{{ review.review_text|truncatechars:200 }}</p>
+            <h5 class="heading-5 mb-0">{{ review.customer_name }}</h5>
+            <span class="body-3 mb-2 d-block">{{ review.position }}, {{ review.company_name }}</span>
+            <span class="d-flex">
+                {% for _ in review.rating_range %}
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#006B3C" d="m12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72l3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41l-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18l-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                        </svg>
+                    </i>
+                {% endfor %}
+            </span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
