@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, CreateView, FormView
 from blog.models import Post
 from django.http import JsonResponse
 
-from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct
+from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory
 from blog.models import Post
 from .models import ContactRequest
 from .forms import ContactForm, ConsultationForm
@@ -46,7 +46,7 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_about_page'] = True
-        context['showcase_categories'] = ShowcaseProduct.CATEGORY_CHOICES
+        context['showcase_categories'] = ShowcaseCategory.objects.all()
         context['showcase_products'] = ShowcaseProduct.objects.filter(publish=True)
         return context
 

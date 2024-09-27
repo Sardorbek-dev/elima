@@ -1,17 +1,17 @@
 <div class="accordion" id="accordionExample" data-aos="fade-up" data-aos-duration="1000">
-    {% for category_value, category_name in showcase_categories %}
+    {% for showcase_category in showcase_categories %}
     <div class="accordion-item mb-4">
         <h2 class="accordion-header">
             <button class="heading-4 accordion-button {% if not forloop.first %}collapsed{% endif %} pb-4 text-accent" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="{{ forloop.first }}" aria-controls="collapse{{ forloop.counter }}">
-                {{ category_name }}
+                {{ showcase_category }}
             </button>
         </h2>
         <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordionExample">
             <div class="accordion-body body-2 px-0 pt-0 pb-4">
                 <div class="row align-items-end">
                     {% for product in showcase_products %}
-                        {% if product.category == category_value %}
+                        {% if product.category == showcase_category %}
                         <div class="col-md order-2 order-md-1">
                             <div class="bg-accent-light border-radius-20 text-center py-3">
                                 <img src="{{ product.image_one.url }}" class="img-fluid" alt="{{ product.title }}">

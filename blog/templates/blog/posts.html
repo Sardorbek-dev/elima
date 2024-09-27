@@ -61,6 +61,15 @@
             aria-labelledby="home-tab"
         >
             <div class="row" id="post-container">
+                {% if posts|length == 0 %}
+                    <div class="row" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-12 my-4">
+                            <p class="text-uppercase text-center">
+                               Нет постов для показа. Обратитесь к системному администратору.
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
                 {% for post in posts %}
                     <div class="col-xl-4 col-md-6">
                         <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
@@ -136,6 +145,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function hideSpinner() {
         spinner.classList.add('d-none');
     }
+
+    if (offset === 0) {
+        loadMoreButton.style.display = 'none';
+    }
+
 
     // Event listener for category filter buttons
     $('.category-filter').on('click', function () {

@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from modeltranslation.translator import register, TranslationOptions
 
 
 class Category(models.Model):
