@@ -138,6 +138,15 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 'auto',
+        'remove_dialog_tabs': 'image:advanced;link:advanced',
+    }
+}
+
 # Jazzmin
 JAZZMIN_SETTINGS = {
     "site_title": "Elima Admin Panel",

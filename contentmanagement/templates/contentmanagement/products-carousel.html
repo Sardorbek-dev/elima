@@ -17,7 +17,7 @@
         <div class="multi-carousel-inner">
             {% for item in products_carousel_items %}
             <div class="multi-carousel-item">
-                <a href="#" class="text-black text-decoration-none">
+                <a href="{% url 'product_list' %}" class="text-black text-decoration-none">
                     <div class="bg-grey border-radius-20 mb-3 text-center">
                         <img src="{{ item.image.url }}" class="img-fluid" alt="{{ item.title }}">
                     </div>
