@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
@@ -7,23 +8,23 @@
         <div class="col-lg mb-3 mb-lg-0">
             <div class="bg-accent-light-opacity rounded-pill px-4 py-3 d-flex align-items-end justify-content-center">
                 <span class="display-1 text-accent elima-statistics" counter-animation="22">0</span>
-                <h3 class="body-2 text-accent ms-3">года в бизнеса</h3>
+                <h3 class="body-2 text-accent ms-3">{% trans "of the year in business" %}</h3>
             </div>
         </div>
         <div class="col-lg">
             <div class="bg-accent-light-opacity rounded-pill px-4 py-3 d-flex align-items-end justify-content-center">
                 <span class="display-1 text-accent elima-statistics" counter-animation="1000">0</span>
-                <h3 class="body-2 text-accent ms-3">продукции</h3>
+                <h3 class="body-2 text-accent ms-3">{% trans 'products' %}</h3>
             </div>
         </div>
     </div>
     <section class="product-section">
         <div class="row mb-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
-                <h2 class="heading-2 mb-0">Наш путь</h2>
+                <h2 class="heading-2 mb-0">{% trans 'Our journey' %}</h2>
             </div>
             <div class="col-lg-5 col-md-8 mt-4 mt-lg-0" data-aos="fade-up" data-aos-duration="700">
-                <p class="body-1 mb-0">От одной швейной машины до ведущего производителя на рынке.</p>
+                <p class="body-1 mb-0">{% trans 'From a single sewing machine to a market leading manufacturer.' %}</p>
             </div>
         </div>
         <div class="px-3 px-md-0">
@@ -40,8 +41,8 @@
                         <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
                         <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2002</span>
                     </div>
-                    <h4 class="heading-4 text-accent">Основание и начальные шаги</h4>
-                    <p class="body-3 mb-0">Начало в 2002 году с одной арендованной швейной машиной и небольшой командой энтузиастов. </p>
+                    <h4 class="heading-4 text-accent">{% trans 'The foundation and initial steps' %}</h4>
+                    <p class="body-3 mb-0">{% trans 'Started in 2002 with one rented sewing machine and a small team of enthusiasts.' %}</p>
                 </div>
                 <div class="col-12 my-4"></div>
 
@@ -53,8 +54,8 @@
                         <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
                         <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2005</span>
                     </div>
-                    <h4 class="heading-4 text-accent">Расширение и модернизация</h4>
-                    <p class="body-3 mb-0">С годами мы расширяли производственные площади, добавляли новое оборудование и модернизировали процессы</p>
+                    <h4 class="heading-4 text-accent">{% trans 'Expansion and modernization' %}</h4>
+                    <p class="body-3 mb-0">{% trans 'Over the years, we have expanded our manufacturing space, added new equipment and modernized our processes' %}</p>
                 </div>
                 <div class="col-lg-3 col-md-6 pb-5 mb-lg-4 ps-0 d-none d-md-block" data-aos="fade-up" data-aos-duration="700">
                     <span class="rounded-circle bg-accent p-2 d-inline-block me-1 ms-less-1"></span>
@@ -74,8 +75,8 @@
                         <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
                         <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2012</span>
                     </div>
-                    <h4 class="heading-4 text-accent">Переход к современному производству</h4>
-                    <p class="body-3 mb-0">Аренда просторного помещения в 700 кв.м, оснащенного новейшими технологиями, позволила нам выйти на новый уровень качества.</p>
+                    <h4 class="heading-4 text-accent">{% trans 'Transition to modern manufacturing' %}</h4>
+                    <p class="body-3 mb-0">{% trans 'Renting a spacious 700 m2 space equipped with the latest technology has enabled us to reach a new level of quality.' %}</p>
                 </div>
 
                 <div class="col-12 my-4"></div>
@@ -87,8 +88,8 @@
                         <span class="rounded-circle bg-accent p-2 d-inline-block me-1"></span>
                         <span class="rounded-pill bg-accent text-white px-4 py-2 body-1 d-inline-block">2024</span>
                     </div>
-                    <h4 class="heading-4 text-accent">Достижения и<br>признание</h4>
-                    <p class="body-3 mb-0">Участие в конкурсах и выставках, а также успешное продвижение продукции на маркетплейсах, таких как UZUM, укрепили наши позиции на рынке и признание клиентов.</p>
+                    <h4 class="heading-4 text-accent">{% trans 'Achievements and' %}<br>{% trans 'recognition' %}</h4>
+                    <p class="body-3 mb-0">{% trans 'Participation in competitions and exhibitions, as well as successful promotion of products on marketplaces such as UZUM, strengthened our position in the market and customer recognition.' %}</p>
                 </div>
                 <div class="col-lg-3 pb-5 mb-4 ps-0 col-md-6 d-none d-md-block" data-aos="fade-up" data-aos-duration="700">
                     <span class="rounded-circle bg-accent p-2 d-inline-block me-1 ms-less-1"></span>
@@ -103,10 +104,10 @@
     <section class="big-accordion">
         <div class="row mb-5">
             <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
-                <h2 class="heading-2 mb-0">Ценности</h2>
+                <h2 class="heading-2 mb-0">{% trans 'Values' %}</h2>
             </div>
             <div class="col-lg-5 col-md-8 mt-4 mt-lg-0" data-aos="fade-up" data-aos-duration="700">
-                <p class="body-1 mb-0 opacity-75">Руководствуясь принципами качества, инноваций и ответственности, мы создаем продукцию, которая делает жизнь лучше</p>
+                <p class="body-1 mb-0 opacity-75">{% trans 'Driven by the principles of quality, innovation and responsibility, we create products that make life better' %}</p>
             </div>
             <div class="col-12 mt-5">
                 <div class="accordion" id="accordionExample-1">
@@ -116,7 +117,7 @@
                                 <div class="d-flex w-100 align-items-start">
                                     <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">01</span></div>
                                     <div class="col-lg-6">
-                                        Качество
+                                        {% trans 'Quality' %}
                                     </div>
                                 </div>
                             </button>
@@ -124,7 +125,7 @@
                         <div id="collapseOne-1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample-1">
                             <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
                                 <div class="col-lg-6">
-                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                    {% trans 'We use modern technology and materials to offer you solutions that are up to date with the latest trends' %}
                                 </div>
                             </div>
                         </div>
@@ -135,7 +136,7 @@
                                 <div class="d-flex w-100 align-items-start">
                                     <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">02</span></div>
                                     <div class="col-lg-6">
-                                        Инновации
+                                        {% trans 'Innovation' %}
                                     </div>
                                 </div>
                             </button>
@@ -143,7 +144,7 @@
                         <div id="collapseTwo-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
                             <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
                                 <div class="col-lg-6">
-                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                    {% trans 'We use modern technology and materials to offer you solutions that are up to date with the latest trends' %}
                                 </div>
                             </div>
                         </div>
@@ -155,7 +156,7 @@
                                 <div class="d-flex w-100 align-items-start">
                                     <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">03</span></div>
                                     <div class="col-lg-6">
-                                        Ответственность
+                                        {% trans 'Responsibility' %}
                                     </div>
                                 </div>
                             </button>
@@ -163,7 +164,7 @@
                         <div id="collapseThree-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
                             <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
                                 <div class="col-lg-6">
-                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                   {% trans 'We use modern technology and materials to offer you solutions that are up to date with the latest trends' %}
                                 </div>
                             </div>
                         </div>
@@ -175,7 +176,7 @@
                                 <div class="d-flex w-100 align-items-start">
                                     <div class="col-lg-6 d-flex align-items-start d-none d-lg-flex"><span class="body-1 text-accent">04</span></div>
                                     <div class="col-lg-6">
-                                        Индивидуальный подход
+                                        {% trans 'Customized approach' %}
                                     </div>
                                 </div>
                             </button>
@@ -183,7 +184,7 @@
                         <div id="collapseFour-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample-1">
                             <div class="accordion-body body-3 pt-0 pb-4 d-flex justify-content-end">
                                 <div class="col-lg-6">
-                                    Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям
+                                    {% trans 'We use modern technology and materials to offer you solutions that are up to date with the latest trends' %}
                                 </div>
                             </div>
                         </div>
@@ -195,8 +196,8 @@
      <section class="faq-section" >
          <div class="row justify-content-between">
              <div class="col-lg-4 pe-5" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="heading-2 mb-3">Что делаем</h2>
-                <p class="body-1">Производим продукцию, которой можно доверять</p>
+                <h2 class="heading-2 mb-3">{% trans 'What we do' %}</h2>
+                <p class="body-1">{% trans 'Making products you can trust' %}</p>
             </div>
              <div class="col-lg-6 mt-4 mt-lg-0">
                 {% include 'contentmanagement/showcase-carousel.html' %}
@@ -207,8 +208,8 @@
         <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
             <div class="row justify-content-between">
                 <div class="col-lg-5">
-                    <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
-                    <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+                    <h2 class="heading-2 mb-3 mb-lg-4">{% trans 'Leave a request' %}</h2>
+                    <p class="body-2 mb-4 mb-lg-0 pb-2">{% trans 'Get a consultation or place an order. We are ready to help you with any questions you may have!' %}</p>
                 </div>
                 <div class="col-lg-6">
                     {% include 'consultation_form.html' %}

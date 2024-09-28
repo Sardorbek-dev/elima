@@ -122,7 +122,7 @@ LANGUAGES = [
     ('uz', 'Uzbek'),
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',

@@ -50,19 +50,19 @@
                                                 </div>
                                                 <ul class="navbar-nav">
                                                     <li class="nav-item">
-                                                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">{% trans "Home" %}</a>
+                                                        <a class="nav-link {% if request.path == '/' or request.path == '/en/' or request.path == '/ru/' or request.path == '/uz/' %}active{% endif %}" href="{% url 'home' %}">{% trans "Home" %}</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link {% if request.path == '/store/products/' %}active{% endif %}" href="{% url 'product_list' %}">Каталог</a>
+                                                        <a class="nav-link {% if request.path == '/store/products/' or request.path == '/en/store/products/' or request.path == '/ru/store/products/' or request.path == '/uz/store/products/' %}active{% endif %}" href="{% url 'product_list' %}">{% trans "Catalog" %}</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}">О компании</a>
+                                                        <a class="nav-link {% if request.path == '/about' or request.path == '/en/about' or request.path == '/ru/about' or request.path == '/uz/about' %}active{% endif %}" href="{% url 'about' %}">{% trans "About" %}</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link {% if request.path == '/blog/news/' %}active{% endif %}" href="{% url 'news' %}">Новости</a>
+                                                        <a class="nav-link {% if request.path == '/blog/news/' or request.path == '/en/blog/news/' or request.path == '/ru/blog/news/' or request.path == '/uz/blog/news/' %}active{% endif %}" href="{% url 'news' %}">{% trans "News" %}</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="{% url 'contact' %}">Контакты</a>
+                                                        <a class="nav-link {% if request.path == '/contact' or request.path == '/en/contact' or request.path == '/ru/contact' or request.path == '/uz/contact' %}active{% endif %}" href="{% url 'contact' %}">{% trans "Contact" %}</a>
                                                     </li>
                                                 </ul>
                                                 <div class="social-icon d-block d-lg-none pb-5">
@@ -179,17 +179,17 @@
                             </div>
                         </nav>
                         <nav class="breadcrumb mt-4">
-                            <a class="breadcrumb-item link-1 text-black text-uppercase" href="{% url 'home' %}">Главная</a>
-                            <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">О компании</span>
+                            <a class="breadcrumb-item link-1 text-black text-uppercase" href="{% url 'home' %}">{% trans "Home" %}</a>
+                            <span class="breadcrumb-item link-1 text-accent-light text-uppercase" aria-current="page">{% trans "About" %}</span>
                         </nav>
 
-                        <h1 class="display-1 mb-4 mt-300 text-accent-extra-light" data-aos="fade-up" data-aos-duration="700">Качество, проверенное временем</h1>
+                        <h1 class="display-1 mb-4 mt-300 text-accent-extra-light" data-aos="fade-up" data-aos-duration="700">{% trans "Quality proven over time" %}</h1>
                         <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="700">
                             <div class="col-md-6 mt-4 mt-md-0">
-                                <p class="body-2 mb-0 text-accent-light" >Работаем с 2002 года</p>
+                                <p class="body-2 mb-0 text-accent-light" >{% trans "We have been in business since 2002" %}</p>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-6 col-9 mt-4 mt-md-0">
-                                <p class="body-2 mb-0 text-accent-light">Создаем надежные решения для вашего комфорта</p>
+                                <p class="body-2 mb-0 text-accent-light">{% trans "Creating reliable solutions for your comfort" %}</p>
                             </div>
                         </div>
                     </div>
@@ -228,19 +228,19 @@
                                         </div>
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
-                                                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Главная</a>
+                                                <a class="nav-link {% if request.path == '/' or request.path == '/en/' or request.path == '/ru/' or request.path == '/uz/' %}active{% endif %}" href="{% url 'home' %}">{% trans "Home" %}</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {% if request.path == '/store/products/' %}active{% endif %}" href="{% url 'product_list' %}">Каталог</a>
+                                                <a class="nav-link {% if request.path == '/store/products/' or request.path == '/en/store/products/' or request.path == '/ru/store/products/' or request.path == '/uz/store/products/' %}active{% endif %}" href="{% url 'product_list' %}">{% trans "Catalog" %}</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}">О компании</a>
+                                                <a class="nav-link {% if request.path == '/about' or request.path == '/en/about' or request.path == '/ru/about' or request.path == '/uz/about' %}active{% endif %}" href="{% url 'about' %}">{% trans "About" %}</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {% if request.path == '/blog/news/' %}active{% endif %}" href="{% url 'news' %}">Новости</a>
+                                                <a class="nav-link {% if request.path == '/blog/news/' or request.path == '/en/blog/news/' or request.path == '/ru/blog/news/' or request.path == '/uz/blog/news/' %}active{% endif %}" href="{% url 'news' %}">{% trans "News" %}</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="{% url 'contact' %}">Контакты</a>
+                                                <a class="nav-link {% if request.path == '/contact' or request.path == '/en/contact' or request.path == '/ru/contact' or request.path == '/uz/contact' %}active{% endif %}" href="{% url 'contact' %}">{% trans "Contact" %}</a>
                                             </li>
                                         </ul>
                                         <div class="social-icon d-block d-lg-none pb-5">
@@ -369,21 +369,21 @@
         <div class="container position-relative">
             <div class="row">
                 <div class="col-xl-3 col-lg-4">
-                    <h2 class="heading-2 text-accent-light mb-5 mb-lg-0">Контакты</h2>
+                    <h2 class="heading-2 text-accent-light mb-5 mb-lg-0">{% trans "Contact" %}</h2>
                 </div>
                 <div class="col-xl-3 col-lg-4">
-                    <h2 class="description text-accent-extra-light opacity-50 text-uppercase">Наш адрес</h2>
-                    <p class="heading-3 text-accent-extra-light">г. Ташкент ул. М.<br class="d-block d-md-none d-lg-block"> Богдановича 44</p>
-                    <a class="link-1 text-accent-extra-light text-uppercase" href="#">Открыть в картах</a>
+                    <h2 class="description text-accent-extra-light opacity-50 text-uppercase">{% trans "Our address" %}</h2>
+                    <p class="heading-3 text-accent-extra-light">{% trans "Uzbekistan, Tashkent city, " %}<br class="d-block d-md-none d-lg-block"> {% trans "Karasu str. 4, building 2" %}</p>
+                    <a class="link-1 text-accent-extra-light text-uppercase" href="https://maps.app.goo.gl/eA6Qxr2SjffqJdJG9">{% trans "Open in maps" %}</a>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 mt-4 mt-lg-0">
-                    <h2 class="description text-accent-extra-light opacity-50 text-uppercase">Время работы</h2>
+                    <h2 class="description text-accent-extra-light opacity-50 text-uppercase">{% trans "Working time" %}</h2>
                     <div class="d-flex mb-1 opacity-50 w-75 justify-content-between">
-                        <span class="body-3 text-accent-extra-light">ПН-СБ</span>
+                        <span class="body-3 text-accent-extra-light">{% trans "MON-SAT" %}</span>
                         <span class="body-3 text-accent-extra-light">10:10-19:00</span>
                     </div>
                     <div class="d-flex opacity-50 w-75 justify-content-between">
-                        <span class="body-3 text-accent-extra-light">BC</span>
+                        <span class="body-3 text-accent-extra-light">{% trans "SUNDAY" %}</span>
                         <span class="body-3 text-accent-extra-light">11:10-17:00</span>
                     </div>
                     <div class="my-5">
@@ -417,15 +417,15 @@
                     <div class="col-md">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <p class="body-3 text-accent-extra-light mb-0">© 2024 Elima. All Right Reserved</p>
+                                <p class="body-3 text-accent-extra-light mb-0">© 2024 Elima. {% trans "All Right Reserved" %}</p>
                             </div>
                             <div class="col">
-                                <a class="body-3 text-accent-extra-light" href="#">Политика конфиденциальности</a>
+                                <a class="body-3 text-accent-extra-light" href="#">{% trans "Privacy Policy" %}</a>
                             </div>
                         </div>
                     </div>
                     <div class="col text-md-end mt-md-0 mt-4">
-                        <p class="body-3 text-accent-extra-light mb-0">сделано в SlashDesign</p>
+                        <p class="body-3 text-accent-extra-light mb-0">{% trans "Made in" %} SlashDesign</p>
                     </div>
                 </div>
             </div>

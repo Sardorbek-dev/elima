@@ -28,43 +28,43 @@
                         </button>
                         <h5 class="heading-4 mb-2">{{ product.name }}</h5>
                         <p class="body-3 mb-4 me-md-4">{{ product.description|truncatechars:310 }}</p>
-                        <h5 class="heading-5 mb-2">Характеристики</h5>
+                        <h5 class="heading-5 mb-2">{% trans 'Specifications' %}</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="mb-4">
-                                    <span class="body-3 fw-bold">Размеры</span>
+                                    <span class="body-3 fw-bold">{% trans 'Size' %}</span>
                                     <p class="body-3 mb-0">{{ product.size }}</p>
                                 </div>
                                 <div class="mb-4">
-                                    <span class="body-3 fw-bold">Цена</span>
+                                    <span class="body-3 fw-bold">{% trans 'Price' %}</span>
                                     <p class="body-3 mb-0">{{ product.price }} сум</p>
                                 </div>
                                 <div class="">
-                                    <span class="body-3 fw-bold">Мин. объем</span>
+                                    <span class="body-3 fw-bold">{% trans 'Minimum amount' %}</span>
                                     <p class="body-3">{{ product.min_amount }}</p>
                                 </div>
                             </div>
                             <div class="col-7">
                                 <div class="mb-2">
-                                    <span class="body-3 fw-bold">Материал</span>
+                                    <span class="body-3 fw-bold">{% trans 'Material' %}</span>
                                     <p class="body-3 mb-0">{{ product.material }}</p>
                                 </div>
                                 <div class="mb-2">
-                                    <span class="body-3 fw-bold">Утеплитель</span>
+                                    <span class="body-3 fw-bold">{% trans 'Warming material' %}</span>
                                     <p class="body-3 mb-0">{{ product.warming_material }}</p>
                                 </div>
                                 <div class="mb-2">
-                                    <span class="body-3 fw-bold">Подкладка</span>
+                                    <span class="body-3 fw-bold">{% trans 'Filling' %}</span>
                                     <p class="body-3">{{ product.filling }}</p>
                                 </div>
                                 <div class="">
-                                    <span class="body-3 fw-bold">Капюшон</span>
+                                    <span class="body-3 fw-bold">{% trans 'Hood' %}</span>
                                     <p class="body-3">{{ product.hood }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-accent w-100 mt-4 text-uppercase" data-bs-toggle="modal" data-bs-target="#leaveinrequest-modal">Оставить заявку</button>
+                            <button type="submit" class="btn btn-accent w-100 mt-4 text-uppercase" data-bs-toggle="modal" data-bs-target="#leaveinrequest-modal">% trans 'Leave a request ' %}</button>
                         </div>
                     </div>
                 </div>

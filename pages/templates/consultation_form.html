@@ -1,15 +1,16 @@
+{% load i18n %}
 <form id="consultationForm" method="post">
     {% csrf_token %}
     <div class="mb-3">
-        <input type="text" name="name" class="form-control no-bg-change" id="name" placeholder="ФИО" >
+        <input type="text" name="name" class="form-control no-bg-change" id="name" placeholder="{% trans 'Full Name' %}" >
     </div>
     <div class="mb-3">
-        <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="Номер телефона" >
+        <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="{% trans 'Phone number' %}" >
     </div>
-    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">Отправить</button>
+    <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">{% trans 'Send' %}</button>
 </form>
-<div id="form-consultation-success" class="alert alert-success mt-4" style="display: none;">Ваш запрос успешно отправлен!</div>
-<div id="form-consultation-errors" class="alert alert-danger mt-4" style="display: none;">Произошла ошибка, попробуйте еще раз.</div>
+<div id="form-consultation-success" class="alert alert-success mt-4" style="display: none;">{% trans 'Your request has been successfully sent!' %}</div>
+<div id="form-consultation-errors" class="alert alert-danger mt-4" style="display: none;">{% trans 'An error occurred, please try again.' %}</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

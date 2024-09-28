@@ -1,17 +1,18 @@
 {% load static %}
+{% load i18n %}
 <div class="row mb-4" data-aos="fade-up" data-aos-duration="500">
     <div class="col-lg-6 col-10">
-        <h2 class="heading-2 mb-3 mb-lg-2">Новости и события</h2>
+        <h2 class="heading-2 mb-3 mb-lg-2">{% trans "News and events" %}</h2>
     </div>
     <div class="col-lg-5 col-10">
-        <p class="body-1 mb-lg-0 mb-3">Будьте в курсе последних новостей и достижений компании 'ELIMA'.</p>
+        <p class="body-1 mb-lg-0 mb-3">{% trans "Keep up to date with the latest news and achievements of 'ELIMA'." %}</p>
     </div>
 </div>
 {% if posts|length == 0 %}
     <div class="row" data-aos="fade-up" data-aos-duration="500">
         <div class="col-12 my-4">
             <p class="text-uppercase text-center">
-               Нет постов для показа. Обратитесь к системному администратору.
+               {% trans "There are no posts to display. Contact your system administrator." %}
             </p>
         </div>
     </div>
@@ -50,6 +51,6 @@
 </div>
 <div  data-aos="fade-up" data-aos-duration="500">
     <div class="col-12 mt-4 pt-2">
-        <a href="{% url 'news' %}" class="btn btn-accent-light w-100">Все новости</a>
+        <a href="{% url 'news' %}" class="btn btn-accent-light w-100">{% trans "All news" %}</a>
     </div>
 </div>

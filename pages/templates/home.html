@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
@@ -10,10 +11,10 @@
 <section class="history-section">
     <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="500">
         <div class="col-lg-6">
-            <h2 class="heading-2 mb-lg-0 mb-3">Наша история и<br class="d-none d-lg-block">достижения</h2>
+            <h2 class="heading-2 mb-lg-0 mb-3">{% trans 'Our history and' %}<br class="d-none d-lg-block">{% trans 'achievements' %}</h2>
         </div>
         <div class="col-lg-6 col-xl-5 col-xxl-4">
-            <p class="body-1 mb-0">Более 20 лет в швейном производстве, создавая качественные и инновационные решения.</p>
+            <p class="body-1 mb-0">{% trans 'Over 20 years in apparel manufacturing, creating quality and innovative solutions.' %}</p>
         </div>
     </div>
     <div class="row">
@@ -21,9 +22,9 @@
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <div class="row">
                     <div class="col">
-                        <span class="display-1 text-accent w-100 elima-statistics" counter-animation="20">0</span>
-                        <span class="display-1 text-accent">+</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5">лет опыта и развития</h3>
+                        <span class="display-1-later-version text-accent w-100 elima-statistics" counter-animation="20">0</span>
+                        <span class=" display-1-later-version text-accent">+</span>
+                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5">{% trans 'years of experience and growth' %}</h3>
                     </div>
                 </div>
             </div>
@@ -32,9 +33,9 @@
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <div class="row">
                     <div class="col">
-                        <span class="display-1 text-accent w-100 elima-statistics" counter-animation="55">0</span>
-                        <span class="display-1 text-accent">%</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-4 mb-0 pt-5">выручки от государственных заказов</h3>
+                        <span class=" display-1-later-version text-accent w-100 elima-statistics" counter-animation="55">0</span>
+                        <span class=" display-1-later-version text-accent">%</span>
+                        <h3 class="heading-3 mt-md-5 pt-lg-4 mb-0 pt-5">{% trans 'revenue from government contracts' %}</h3>
                     </div>
                 </div>
             </div>
@@ -43,15 +44,15 @@
             <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
                 <div class="row">
                     <div class="col">
-                        <span class="display-1 text-accent w-100 elima-statistics" counter-animation="90">0</span>
-                        <span class="display-1 text-accent">%</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5" >удовлетворенности клиентов</h3>
+                        <span class=" display-1-later-version text-accent w-100 elima-statistics" counter-animation="90">0</span>
+                        <span class=" display-1-later-version text-accent">%</span>
+                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5" >{% trans 'customer satisfaction' %}</h3>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="800">
-            <a href="{% url 'about' %}" class="btn btn-accent w-100">Подробнее о компании</a>
+            <a href="{% url 'about' %}" class="btn btn-accent w-100">{% trans 'Read more about the company' %}</a>
         </div>
     </div>
 </section>
@@ -74,8 +75,8 @@
     <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
         <div class="row justify-content-between">
             <div class="col-lg-5">
-                <h2 class="heading-2 mb-3 mb-lg-4">Оставьте заявку</h2>
-                <p class="body-2 mb-4 mb-lg-0 pb-2">Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!</p>
+                <h2 class="heading-2 mb-3 mb-lg-4">{% trans 'Leave a request' %}</h2>
+                <p class="body-2 mb-4 mb-lg-0 pb-2">{% trans 'Get a consultation or place an order. We are ready to help you with any questions you may have!' %}</p>
             </div>
             <div class="col-lg-6">
                 {% include 'consultation_form.html' %}

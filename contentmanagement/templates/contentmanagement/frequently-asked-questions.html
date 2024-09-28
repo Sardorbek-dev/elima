@@ -1,7 +1,8 @@
+{% load i18n %}
 <div class="row justify-content-between">
     <div class="col-xl-4 col-lg-5">
-        <h2 class="heading-2 mb-4">Частые вопросы</h2>
-        <p class="body-1 d-none d-lg-block">Не нашли ответ? Напишите нам <br>— мы всегда на связи.</p>
+        <h2 class="heading-2 mb-4">{% trans "Frequently asked questions" %}</h2>
+        <p class="body-1 d-none d-lg-block">{% trans "Couldn't find the answer? Contact us" %} <br>— {% trans "we're always in touch." %} </p>
         <i class="bg-accent-light rounded-circle icon-45 d-none d-lg-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <g fill="#006B3C" fill-rule="evenodd">
@@ -28,7 +29,7 @@
                 </div>
             {% endfor %}
         </div>
-        <p class="body-1 d-block d-lg-none">Не нашли ответ? Напишите нам — мы всегда на связи.</p>
+        <p class="body-1 d-block d-lg-none">{% trans "Couldn't find the answer? Contact us" %} — {% trans "we're always in touch." %} </p>
         <i class="bg-accent-light rounded-circle icon-45 d-block d-lg-none">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <g fill="#006B3C" fill-rule="evenodd">

@@ -1,44 +1,45 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
 <nav class="breadcrumb mt-4">
-    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">Главная</a>
-    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">Контакты</span>
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">{% trans 'Home' %}</a>
+    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">{% trans 'Contact' %}</span>
 </nav>
 
 <section class="map-section pt-4" data-aos="fade-up" data-aos-duration="500">
-    <h1 class="heading-1 mb-5">Контакты</h1>
-    <iframe src="https://snazzymaps.com/embed/642180" width="100%" height="430px" style="border:none;"></iframe>
+    <h1 class="heading-1 mb-5">{% trans 'Contacts' %}</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1498.8326226484066!2d69.34035353544283!3d41.29438948933572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef59c01c02fad%3A0xc1b18d477323ad2!2sQorasuv%20Street%204%2C%20100204%2C%20Tashkent%2C%20Usbekistan!5e0!3m2!1sde!2sde!4v1727530199164!5m2!1sde!2sde" width="100%" height="430px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 <section class="history-section" data-aos="fade-up" data-aos-duration="500">
     <div class="row justify-content-between mb-4">
         <div class="col-lg-12">
-            <h2 class="heading-2 mb-0">Наш офис</h2>
+            <h2 class="heading-2 mb-0">{% trans 'Our office' %}</h2>
         </div>
     </div>
     <div class="row gy-4">
         <div class="col-lg-3 col-md-6">
             <div class="bg-grey border-radius-20 px-4 py-3 gap-5 d-flex flex-wrap h-100">
-                <span class="description-2 text-uppercase w-100">Адрес</span>
-                <p class="body-2 mb-0 mt-2">г. Ташкент, ул. Примерная, д. 123, офис 45</p>
+                <span class="description-2 text-uppercase w-100">{% trans 'Address' %}</span>
+                <p class="body-2 mb-0 mt-2">{% trans 'Uzbekistan, Tashkent city, Karasu str. 4, building 2' %}</p>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="bg-grey border-radius-20 px-4 py-3 gap-4 d-flex flex-wrap h-100">
-                <span class="description-2 text-uppercase w-100">График работы</span>
+                <span class="description-2 text-uppercase w-100">{% trans 'Work schedule' %}</span>
                 <div class="d-flex flex-wrap">
                     <div class="d-flex mb-1 w-100 justify-content-between">
-                        <span class="body-2">Пн-Пт</span>
+                        <span class="body-2">{% trans 'Mon-Fri' %}</span>
                         <span class="body-2">9:00 - 18:00</span>
                     </div>
                     <div class="d-flex mb-1 w-100 justify-content-between">
-                        <span class="body-2">Сб</span>
+                        <span class="body-2">{% trans 'Saturday' %}</span>
                         <span class="body-2">10:00 - 14:00</span>
                     </div>
                     <div class="d-flex mb-1 w-100 justify-content-between">
-                        <span class="body-2">Вс</span>
-                        <span class="body-2">выходной</span>
+                        <span class="body-2">{% trans 'Sunday' %}</span>
+                        <span class="body-2">{% trans 'Day off' %}</span>
                     </div>
                 </div>
             </div>
@@ -46,18 +47,18 @@
         <div class="col-lg-3 col-md-6">
             <div class="bg-grey border-radius-20 px-4 py-3 gap-5 d-flex flex-wrap h-100">
                 <div class="w-100">
-                    <span class="description-2 text-uppercase d-block">Телефон</span>
+                    <span class="description-2 text-uppercase d-block">{% trans 'Phone' %}</span>
                     <a href="tel:info@elima.uz" class="body-2 mb-0 text-accent text-decoration-none">+998 (71) 123-45-67</a>
                 </div>
                 <div>
-                    <span class="description-2 text-uppercase d-block">Электронная почта</span>
+                    <span class="description-2 text-uppercase d-block">{% trans 'E-mail' %}</span>
                     <a href="mailto:info@elima.uz" class="body-2 mb-0 text-accent text-decoration-none">info@elima.uz</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="bg-grey border-radius-20 px-4 py-3 gap-5 d-flex flex-wrap h-100">
-                <span class="description-2 text-uppercase d-block">Мы в соцсетях</span>
+                <span class="description-2 text-uppercase d-block">{% trans 'We\'re on social media' %}</span>
                 <div class="d-flex flex-wrap w-100 mt-3">
                     <a href="#" title="" class="bg-accent-light icon-45 rounded-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
@@ -85,29 +86,29 @@
 <section class="leaveRequest-section" data-aos="fade-up" data-aos-duration="1200">
     <div class="row justify-content-between">
         <div class="col-lg-6">
-            <h2 class="heading-3 mb-4">Заполните форму,<br>и мы свяжемся с вами в ближайшее<br>время</h2>
+            <h2 class="heading-3 mb-4">{% trans 'Fill out the form' %},<br>{% trans 'and we\'ll get back to you as soon as possible' %}</h2>
         </div>
         <div class="col-lg-6">
         <form id="contactForm" method="post">
             {% csrf_token %}
             <div class="mb-4">
-                <label for="name" class="body-3 fw-semibold">Имя</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя">
+                <label for="name" class="body-3 fw-semibold">{% trans 'Name' %}</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="{% trans 'Your name' %}">
             </div>
             <div class="mb-4">
-                <label for="email" class="body-3 fw-semibold">Электронная почта</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Почта">
+                <label for="email" class="body-3 fw-semibold">{% trans 'E-mail' %}</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="{% trans 'E-mail' %}">
             </div>
             <div class="mb-4">
-                <label for="phone_number" class="body-3 fw-semibold">Телефон</label>
+                <label for="phone_number" class="body-3 fw-semibold">{% trans 'Phone' %}</label>
                 <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="+998">
             </div>
             <div class="mb-4">
-                <label for="message" class="body-3 fw-semibold">Сообщение</label>
-                <textarea name="message" class="form-control" id="message" placeholder="Ваше сообщение" rows="3"></textarea>
+                <label for="message" class="body-3 fw-semibold">{% trans 'Message' %}</label>
+                <textarea name="message" class="form-control" id="message" placeholder="{% trans 'Message' %}" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">отправить</button>
-            <div id="form-success" class="alert alert-success mt-4" style="display:none;">Ваш запрос успешно отправлен!</div>
+            <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">{% trans 'Send' %}</button>
+            <div id="form-success" class="alert alert-success mt-4" style="display:none;">{% trans 'Your request has been successfully sent!' %}</div>
         </form>
         </div>
     </div>

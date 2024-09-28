@@ -1,3 +1,4 @@
+{% load i18n %}
 <div id="mainCarousel"
      class="carousel slide border-radius-20 bg-grey py-4 pt-lg-5 pb-lg-0 ps-lg-5 pe-lg-4 px-3 px-md-4"
      data-bs-ride="carousel">
@@ -19,7 +20,7 @@
                                     <p class="body-1 mb-4">{{ item.description|truncatechars:200 }}</p>
                                 </div>
                                 <div class="d-md-flex gap-3 mb-lg-5" data-aos="fade-up" data-aos-duration="500">
-                                    <a href="{% url 'product_list' %}" class="btn btn-accent px-4 mb-3 mb-md-0">Каталог продукции</a>
+                                    <a href="{% url 'product_list' %}" class="btn btn-accent px-4 mb-3 mb-md-0">{% trans "Product catalog" %}</a>
                                     <a href="#" class="d-flex align-items-center btn-dark justify-content-center">
                                         <i>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
@@ -29,7 +30,7 @@
                                                 </g>
                                             </svg>
                                         </i>
-                                    <span class="ms-2 text-uppercase">Напишите нам</span>
+                                    <span class="ms-2 text-uppercase">{% trans "Send a message" %}</span>
                                     </a>
                                 </div>
                             </div>

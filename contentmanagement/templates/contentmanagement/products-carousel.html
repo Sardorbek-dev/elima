@@ -1,10 +1,11 @@
+{% load i18n %}
 <section class="product-section products-carousel-tab">
     <div class="row mb-5" data-aos="fade-up" data-aos-duration="500">
         <div class="col-lg-6">
-            <h2 class="heading-2 mb-0">Наши товары</h2>
+            <h2 class="heading-2 mb-0">{% trans "Our Products" %}</h2>
         </div>
         <div class="col-lg-4">
-            <p class="body-1 mb-0">Широкий ассортимент продукции для любых задач и условий.</p>
+            <p class="body-1 mb-0">{% trans "A wide range of products for all conditions." %}</p>
         </div>
     </div>
     <div class="multi-carousel" data-mdb-multi-carousel-init data-mdb-interval="3000" data-mdb-items="4" data-aos="fade-up" data-aos-duration="1000">
@@ -29,6 +30,6 @@
         </div>
     </div>
     <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="500">
-        <a href="{% url 'product_list' %}" class="btn btn-accent w-100">Посмотреть каталог</a>
+        <a href="{% url 'product_list' %}" class="btn btn-accent w-100">{% trans "More products" %}</a>
     </div>
 </section>
