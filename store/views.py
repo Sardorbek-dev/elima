@@ -21,6 +21,7 @@ class ProductListView(ListView):
         if self.request.method == 'GET':
             self.filterset = ProductFilter(self.request.GET, queryset=queryset)
         else:  # Handles POST for AJAX
+            print('self.request.POST:', self.request.POST, queryset)
             self.filterset = ProductFilter(self.request.POST, queryset=queryset)
 
         return self.filterset.qs

@@ -32,14 +32,21 @@ class ProductFilter(django_filters.FilterSet):
         widget=forms.Select(attrs={'class': 'form-control'})
     )
 
+    size = django_filters.CharFilter(
+        label='Size',
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        method='filter_by_size',
+    )
+
+    def filter_by_size(self, queryset, name, value):
+        if value:
+            return queryset.filter(size__icontains=value)  # Check if the selected size is part of the size string
+        return queryset
+
     def filter_by_price(self, queryset, name, value):
         # Retrieve min_price and max_price from the request data
         min_price = self.data.get('min_price')
         max_price = self.data.get('max_price')
-
-        # Debugging output
-        print("Min price:", min_price)
-        print("Max price:", max_price)
 
         if min_price:
             queryset = queryset.filter(price__gte=min_price)
@@ -56,4 +63,4 @@ class ProductFilter(django_filters.FilterSet):
 
     class Meta:
         model = Product
-        fields = ['name', 'price', 'category']
+        fields = ['name', 'price', 'category', 'size']

@@ -1,3 +1,4 @@
+{% load i18n %}
 <div
     class="modal fade"
     id="modalId{{ product.unique_id }}"
@@ -29,7 +30,7 @@
                         <h5 class="heading-4 mb-2">{{ product.name }}</h5>
                         <p class="body-3 mb-4 me-md-4">{{ product.description|truncatechars:310 }}</p>
                         <h5 class="heading-5 mb-2">{% trans 'Specifications' %}</h5>
-                        <div class="row">
+                        <div class="row product-modal-info">
                             <div class="col-5">
                                 <div class="mb-4">
                                     <span class="body-3 fw-bold">{% trans 'Size' %}</span>
@@ -64,7 +65,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-accent w-100 mt-4 text-uppercase" data-bs-toggle="modal" data-bs-target="#leaveinrequest-modal">% trans 'Leave a request ' %}</button>
+                            <button type="submit" class="btn btn-accent w-100 mt-4 text-uppercase" data-bs-toggle="modal" data-bs-target="#leaveinrequest-modal">{% trans 'Leave a request ' %}</button>
                         </div>
                     </div>
                 </div>

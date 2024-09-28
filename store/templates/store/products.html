@@ -17,7 +17,7 @@
                         <path fill="black" d="M20 6C12.268 6 6 12.268 6 20s6.268 14 14 14a13.94 13.94 0 0 0 8.976-3.256l10.89 10.89a1.25 1.25 0 0 0 1.768-1.768l-10.89-10.89A13.94 13.94 0 0 0 34 20c0-7.732-6.268-14-14-14M8.5 20c0-6.351 5.149-11.5 11.5-11.5S31.5 13.649 31.5 20S26.351 31.5 20 31.5S8.5 26.351 8.5 20" />
                     </svg>
                 </i>
-                <input type="text" class="form-search border-0 body-3 bg-transparent py-2 no-outline" placeholder="{% trans 'Search' %}">
+                <input type="text" id="search-input-products" class="form-search border-0 body-3 bg-transparent py-2 no-outline" placeholder="{% trans 'Search' %}">
             </div>
         </div>
         <div class="col-lg-12">
@@ -69,17 +69,35 @@
                     >
                         {% trans "Filter" %}
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="triggerIdFilters">
-                        <div class="dropdown-item" href="#">
-                            <label for="min-price">{% trans "Minimum price:" %}</label>
-                            <input type="number" id="min-price" class="form-control" placeholder="{% trans 'Minimum price:' %}">
+                     <div class="dropdown-menu p-3" aria-labelledby="filterDropdownMenu" style="min-width: 300px;">
+                        <!-- Filter by Price -->
+                        <div class="mb-3">
+                            <div class="input-group custom-style-filter-group-input">
+                              <span class="input-group-text">{% trans "Price" %}</span>
+                              <input type="number" id="min-price" class="form-control custom-style-filter-input" placeholder="{% trans 'Min.' %}">
+                              <input type="number" id="max-price" class="form-control custom-style-filter-input" placeholder="{% trans 'Max.' %}">
+                            </div>
                         </div>
-                        <div class="dropdown-item">
-                            <label for="max-price">{% trans "Maximum price:" %}</label>
-                            <input type="number" id="max-price" class="form-control" placeholder="{% trans 'Maximum price:' %}">
+
+                        <!-- Filter by Size -->
+                        <div class="mb-3">
+                            <label for="sizeFilter" class="form-label"><i class="bi bi-arrows-expand"></i> {% trans "Size" %}</label>
+                            <select class="form-select" id="sizeFilter">
+                                <option value="">{% trans "Select size" %}</option>
+                                <option value="XS">{% trans "Extra small (XS)" %}</option>
+                                <option value="S">{% trans "Small (S)" %}</option>
+                                <option value="M">{% trans "Medium (M)" %}</option>
+                                <option value="L">{% trans "Large (L)" %}</option>
+                                <option value="XL">{% trans "Extra large (XL)" %}</option>
+                                <option value="XXL">{% trans "Super large (XXL)" %}</option>
+                            </select>
                         </div>
-                        <button id="apply-price-filter" class="btn btn-accent mt-2">{% trans "Apply" %}</button>
+                        <!-- Apply Filter Button -->
+                        <div class="d-grid">
+                            <button class="btn btn-accent mt-2" id="apply-price-filter" >{% trans "Apply" %}</button>
+                        </div>
                     </div>
+
                 </div>
                 <div class="dropdown open">
                     <button class="btn btn-link dropdown-toggle text-capitalize p-0" type="button" id="triggerIdSorting" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static" aria-expanded="false">
@@ -141,7 +159,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button id="load-more" type="submit" class="btn btn-accent w-100 mt-4 text-uppercase"></button>
+                            <button id="load-more" type="submit" class="btn btn-accent w-100 mt-4 text-uppercase">{% trans "Load more" %}</button>
                         </div>
                     </div>
                     <div class="row d-none" id="endOfTheList">
@@ -217,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const spinner = document.getElementById('spinner');
     let selectedCategory = null;  // Track the selected category
     let selectedOrder = ''; // Track the selected order
+    let selectedSize = ''; // Track the selected size
     let minPrice = null;
     let maxPrice = null;
     let isSpinnerLoadingActive = false
@@ -285,6 +304,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 400)
     });
 
+    // Event listener for size filter
+    $('#sizeFilter').on('change', function () {
+        selectedSize = $(this).val(); // Get the selected size value
+        offset = 0; // Reset the offset since we're starting a new filter
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty(); // Clear the product container
+
+        showSpinner();
+        setTimeout(function() {
+            loadProducts(); // Load products with the new filter
+        }, 400);
+    });
+
+    // Event listener for search input
+    $('#search-input').on('keyup', function () {
+        const searchQuery = $(this).val();
+        offset = 0; // Reset the offset since we're starting a new filter
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty(); // Clear the product container
+
+        showSpinner();
+        setTimeout(function() {
+            loadProducts(searchQuery); // Load products with the search query
+        }, 400);
+    });
+
     // Event listener for "Load more" button
     loadMoreButton.addEventListener('click', function () {
         showSpinner();
@@ -306,6 +351,17 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('ordering', selectedOrder);
         }
 
+        // Include selected size if available
+        if (selectedSize) {
+            formData.append('size', selectedSize);
+        }
+
+        // Include search query if available
+        if (searchQuery) {
+            formData.append('search', searchQuery);
+        }
+
+        // Include min and max price if available
         if (minPrice) {
             formData.append('min_price', minPrice);
         }
