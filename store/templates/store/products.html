@@ -94,18 +94,28 @@
                         </div>
                         <!-- Apply Filter Button -->
                         <div class="d-grid">
-                            <button class="btn btn-accent mt-2" id="apply-price-filter" >{% trans "Apply" %}</button>
+                            <button class="btn btn-accent mt-2" id="apply-all-filters" >{% trans "Apply" %}</button>
                         </div>
                     </div>
 
                 </div>
                 <div class="dropdown open">
                     <button class="btn btn-link dropdown-toggle text-capitalize p-0" type="button" id="triggerIdSorting" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static" aria-expanded="false">
-                        {% trans "Sorting" %}
+                        {% trans "Sort by price" %}
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg-end dropdown-menu-end" aria-labelledby="triggerIdSorting">
-                        <button class="dropdown-item sort-option" data-sort="asc">{% trans "Price: Low to High" %}</button>
-                        <button class="dropdown-item sort-option" data-sort="desc">{% trans "Price: High to Low" %}</button>
+                        <button class="dropdown-item sort-option" data-sort="asc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-up-alt" viewBox="0 0 16 16">
+                              <path d="M3.5 13.5a.5.5 0 0 1-1 0V4.707L1.354 5.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.5.5 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 4.707zm4-9.5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5"/>
+                            </svg>
+                            {% trans "Ascending" %}
+                        </button>
+                        <button class="dropdown-item sort-option" data-sort="desc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
+                              <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/>
+                            </svg>
+                            {% trans "Descending" %}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -131,7 +141,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
                             <div class="border-radius-20 overflow-hidden product-card">
                                 <div class="overlay">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
+                                    <a href="#" data-bs-toggle="modal" id="leaveProductRequestModal" data-bs-target="#modalId{{ product.unique_id }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
                                             <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
                                         </svg>
@@ -187,6 +197,7 @@
         </div>
     </div>
 </section>
+
 <!-- Modal -->
 <div
     class="modal fade"
@@ -211,15 +222,15 @@
                         </svg>
                     </button>
                     <h5 class="heading-4 mb-2">{% trans 'Leave a request' %}</h5>
-                    <p class="body-3 mb-4 me-5">{% trans 'We are available to answer your questions, provide product information and help you make the right choice' %}</p>
+                    <p class="body-3 mb-4 me-5">{% trans 'We are available to answer your questions, provide product information and help you make the right choice.' %}</p>
                     <form>
                         <div class="mb-3">
-                            <input type="name" class="form-control" id="requestFullname" placeholder="Имя">
+                            <input type="name" class="form-control" name="full_name_request" id="full_name_request" placeholder="{% trans 'Full Name' %}">
                         </div>
                         <div class="mb-4 pb-2">
-                            <input type="number" class="form-control" id="requestPhoneNumber" placeholder="Телефон">
+                            <input type="tel" class="form-control" name="phone_number_request" id="phone_number_request" placeholder="{% trans 'Phone number' %}">
                         </div>
-                        <button type="button" class="btn btn-accent w-100">{% trans 'Send' %}</button>
+                        <button type="submit" id="send-product-request" class="btn btn-accent w-100">{% trans 'Send' %}</button>
                     </form>
                 </div>
             </div>
@@ -227,8 +238,26 @@
     </div>
 </div>
 
+<!-- Leave Request for Product Success Alert -->
+<div id="leave-request-for-product-success-alert" style="display: none;" class="alert alert-success mt-4 alert-dismissible custom-alert-success" >
+    {% trans 'Your request has been successfully sent!' %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<!-- Leave Request for Product Failure Alert -->
+<div id="leave-request-for-product-error-alert" style="display: none;" class="alert alert-danger mt-4 alert-dismissible custom-alert-error" >
+    {% trans 'An error occurred, please try again.' %}
+    <button type="button" class="btn-close p-0  " data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
+    const regex_messages = {
+        phoneNumberError: "{% trans 'Please enter a valid phone number in international format (e.g., +998912345678)' %}",
+    };
+
     let offset = {{ products.count }};
     const paginateBy = {{ view.paginate_by }};
     const loadMoreButton = document.getElementById('load-more');
@@ -236,12 +265,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let selectedCategory = null;  // Track the selected category
     let selectedOrder = ''; // Track the selected order
     let selectedSize = ''; // Track the selected size
+    let searchQuery = '' // Track the search query
     let minPrice = null;
     let maxPrice = null;
     let isSpinnerLoadingActive = false
     let endOfTheListMessage = document.getElementById('endOfTheList');
     let noProductsToDisplay = document.getElementById('no-products-to-display');
     let response;
+    let selectedProductId = null;
+
 
     if (offset === 0) {
         loadMoreButton.style.display = 'none';
@@ -262,6 +294,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#all-tab-category').on('click', function () {
         noProductsToDisplay.classList.add("d-none");
+    });
+
+    // Event listener for search input
+    $('#search-input-products').on('keyup', function () {
+        searchQuery = $(this).val().trim(); // Capture the search query value
+        offset = 0; // Reset the offset since we're starting a new search
+        endOfTheListMessage.classList.add("d-none");
+        $('#product-container').empty(); // Clear the product container
+
+        showSpinner();
+        setTimeout(function() {
+            loadProducts(); // Load products with the search query
+        }, 400);
     });
 
     // Event listener for category filter buttons
@@ -291,30 +336,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Event listener for price filter button
-    $('#apply-price-filter').on('click', function () {
+    $('#apply-all-filters').on('click', function () {
+        // Filter by price and size
         minPrice = $('#min-price').val();
         maxPrice = $('#max-price').val();
+        selectedSize = $('#sizeFilter').val();
+
         offset = 0;
         endOfTheListMessage.classList.add("d-none");
         $('#product-container').empty();
+
 
         showSpinner();
         setTimeout(function() {
             loadProducts();
         }, 400)
-    });
-
-    // Event listener for size filter
-    $('#sizeFilter').on('change', function () {
-        selectedSize = $(this).val(); // Get the selected size value
-        offset = 0; // Reset the offset since we're starting a new filter
-        endOfTheListMessage.classList.add("d-none");
-        $('#product-container').empty(); // Clear the product container
-
-        showSpinner();
-        setTimeout(function() {
-            loadProducts(); // Load products with the new filter
-        }, 400);
     });
 
     // Event listener for search input
@@ -413,6 +449,66 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // When the 'Leave a request' button is clicked, capture the product ID
+    $(document).on('click', '#product-modal-open-request', function () {
+        selectedProductId = $(this).data('product-id'); // Get the product ID from data attribute
+    });
+
+    // Leave request for product
+    $('#leaveinrequest-modal button[type="submit"]').on('click', function(e) {
+        e.preventDefault();
+
+        const requestFullname = $('#full_name_request').val().trim();
+        const requestPhoneNumber = $('#phone_number_request').val().trim();
+
+         // Client-side validation for phone number format
+        const phonePattern = /^\+\d{1,12}$/; // Pattern for phone number starting with +998 followed by 9 digits
+        if (!phonePattern.test(requestPhoneNumber)) {
+            const inputPhoneNumberRequest = $(`#phone_number_request`)
+            if (inputPhoneNumberRequest.length) {
+                // Only add error message if it doesn't already exist
+                if (inputPhoneNumberRequest.next('.error-message').length === 0) {
+                    const errorMessage = `<small class="text-danger error-message">${regex_messages.phoneNumberError}</small>`;
+                    inputPhoneNumberRequest.after(errorMessage);
+                }
+            }
+            return; // Exit the function if validation fails
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '{% url "product_request" %}',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'product_id': selectedProductId,
+                'full_name_request': requestFullname,
+                'phone_number_request': requestPhoneNumber,
+            },
+            success: function(response) {
+                $('#leave-request-for-product-success-alert').show().delay(4000).fadeOut()
+                $('#leaveinrequest-modal').modal('hide');
+            },
+            error: function(xhr) {
+                if (xhr.status === 0) {
+                    // Server not responding or network error
+                    $('#leave-request-for-product-error-alert').show().delay(4000).fadeOut()
+                } else {
+                    const errors = xhr.responseJSON.errors;
+                    for (const key in errors) {
+                        const inputField = $(`#${key}`);
+                        if (inputField.length) {
+                            // Only add error message if it doesn't already exist
+                            if (inputField.next('.error-message').length === 0) {
+                                const errorMessage = `<small class="text-danger error-message">${errors[key][0]}</small>`;
+                                inputField.after(errorMessage);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
 });
 
 </script>

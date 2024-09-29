@@ -2,10 +2,10 @@
 <form id="consultationForm" method="post">
     {% csrf_token %}
     <div class="mb-3">
-        <input type="text" name="name" class="form-control no-bg-change" id="name" placeholder="{% trans 'Full Name' %}" >
+        <input type="text" name="name" class="form-control no-bg-change" id="name" placeholder="{% trans 'Full Name' %}">
     </div>
     <div class="mb-3">
-        <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="{% trans 'Phone number' %}" >
+        <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="{% trans 'Phone number' %}">
     </div>
     <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">{% trans 'Send' %}</button>
 </form>

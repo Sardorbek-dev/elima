@@ -1,6 +1,5 @@
 import uuid
 from django.db import models
-from modeltranslation.translator import register, TranslationOptions
 
 
 class Category(models.Model):
@@ -27,3 +26,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductRequest(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='requests')
+    full_name_request = models.CharField(max_length=255)
+    phone_number_request = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Request by {self.full_name_request} for {self.phone_number_request}"

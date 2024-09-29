@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
 from django.http import JsonResponse
 
 from .filters import ProductFilter
-from .models import Product, Category
+from .forms import ProductRequestForm
+from .models import Product, Category, ProductRequest
 
 
 class ProductListView(ListView):
@@ -21,7 +23,6 @@ class ProductListView(ListView):
         if self.request.method == 'GET':
             self.filterset = ProductFilter(self.request.GET, queryset=queryset)
         else:  # Handles POST for AJAX
-            print('self.request.POST:', self.request.POST, queryset)
             self.filterset = ProductFilter(self.request.POST, queryset=queryset)
 
         return self.filterset.qs
@@ -69,3 +70,20 @@ class ProductDetailView(DetailView):
             'hood': product.hood,
             'image_url': product.image.url if product.image else '',
         })
+
+
+class ProductRequestCreateView(CreateView):
+    model = ProductRequest
+    form_class = ProductRequestForm
+
+    def form_valid(self, form):
+        product_id = self.request.POST.get('product_id')
+        product = get_object_or_404(Product, id=product_id)
+        form.instance.product = product
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return JsonResponse({"errors": form.errors}, status=400)
+
+    def get_success_url(self):
+        return reverse_lazy('product_list')

@@ -395,11 +395,29 @@ a.prev-arrow-carousel, button.prev-arrow-carousel{
     border: none;
     box-shadow: none;
 }
-.about-banner{
-    background: url(../img/Hero.jpg) no-repeat center top;
-    background-size: cover;
+.about-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    overflow: hidden;
 }
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure video is behind other content */
+    object-fit: cover;
+}
+
+
 .mt-300{margin-top: 300px;}
+.mt-280{margin-top: 280px;}
 .z-index-1{
     z-index: -1;
 }
@@ -517,6 +535,40 @@ input[type="number"] {
 .product-modal-info {
     height: 230px;
 }
+
+.custom-alert-success {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    z-index: 1050;
+    width: 350px;
+    background-color: #006b3ccc;
+    color: white;
+    border: 0;
+
+}
+
+.custom-alert-error {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    z-index: 1050;
+    width: 350px;
+    background-color: #a93535c2;
+    color: white;
+    border: 0;
+}
+
+.alert-dismissible .btn-close:focus {
+    outline: none !important
+}
+
+.alert-dismissible .btn-close {
+    box-shadow: none;
+    margin-top: 8px;
+    padding: 0px 5px !important;
+}
+
 
 @media (min-width: 1400px) {
     .container{max-width: 1400px;}
@@ -648,4 +700,15 @@ input[type="number"] {
     .multi-carousel .multi-carousel-inner .multi-carousel-item:first-child{width: 90% !important;}
     .multi-carousel .multi-carousel-inner .multi-carousel-item{width: 100% !important;}
     .multi-carousel-item:first-child p{width: 90%;}
+
+    .custom-alert-success {
+        top: 30px;
+        right: 30px;
+
+    }
+
+    .custom-alert-error {
+        top: 30px;
+        right: 30px;
+    }
 }
