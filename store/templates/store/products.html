@@ -353,19 +353,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 400)
     });
 
-    // Event listener for search input
-    $('#search-input').on('keyup', function () {
-        const searchQuery = $(this).val();
-        offset = 0; // Reset the offset since we're starting a new filter
-        endOfTheListMessage.classList.add("d-none");
-        $('#product-container').empty(); // Clear the product container
-
-        showSpinner();
-        setTimeout(function() {
-            loadProducts(searchQuery); // Load products with the search query
-        }, 400);
-    });
-
     // Event listener for "Load more" button
     loadMoreButton.addEventListener('click', function () {
         showSpinner();
@@ -394,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Include search query if available
         if (searchQuery) {
-            formData.append('search', searchQuery);
+            formData.append('name', searchQuery);
         }
 
         // Include min and max price if available

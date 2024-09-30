@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, FormView
-from blog.models import Post
 from django.http import JsonResponse
 
 from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory
@@ -61,3 +59,7 @@ class ConsultationRequestView(FormView):
 
     def form_invalid(self, form):
         return JsonResponse({'errors': form.errors}, status=400)
+
+
+class Custom404View(TemplateView):
+    template_name = 'page_not_found.html'

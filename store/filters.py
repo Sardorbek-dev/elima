@@ -5,7 +5,7 @@ from store.models import Product, Category
 
 class ProductFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(
-        label='Product Name',
+        field_name='name',
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search by name'}),
         lookup_expr='icontains'
     )
