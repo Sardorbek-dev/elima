@@ -446,14 +446,17 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#leaveinrequest-modal button[type="submit"]').on('click', function(e) {
         e.preventDefault();
 
+          // Clear previous error messages
+         $('.error-message').remove();
+
         const requestFullname = $('#full_name_request').val().trim();
         const requestPhoneNumber = $('#phone_number_request').val().trim();
 
          // Client-side validation for phone number format
-        const phonePattern = /^\+\d{1,12}$/; // Pattern for phone number starting with +998 followed by 9 digits
+        const phonePattern = /^\+\d{12}$/; // Pattern for phone number starting with +998 followed by 9 digits
         if (!phonePattern.test(requestPhoneNumber)) {
             const inputPhoneNumberRequest = $(`#phone_number_request`)
-            if (inputPhoneNumberRequest.length) {
+            if (inputPhoneNumberRequest.length > 0) {
                 // Only add error message if it doesn't already exist
                 if (inputPhoneNumberRequest.next('.error-message').length === 0) {
                     const errorMessage = `<small class="text-danger error-message">${regex_messages.phoneNumberError}</small>`;
@@ -475,6 +478,10 @@ document.addEventListener('DOMContentLoaded', function () {
             success: function(response) {
                 $('#leave-request-for-product-success-alert').show().delay(4000).fadeOut()
                 $('#leaveinrequest-modal').modal('hide');
+
+                // Clear the form fields
+                $('#full_name_request').val('');
+                $('#phone_number_request').val('');
             },
             error: function(xhr) {
                 if (xhr.status === 0) {
