@@ -49,7 +49,7 @@ msgid "Uzbekistan, Tashkent city, "
 msgstr "Toshkent shahri, "
 
 msgid "Karasu str. 4, building 2"
-msgstr "Qorasuv ko'chasi 4-uy, 2-bino"
+msgstr "Mirzo Ulug'bek tumani, Qorasuv ko'chasi 4-uy, 2-bino"
 
 msgid "Working time"
 msgstr "Ish vaqti"
@@ -171,6 +171,9 @@ msgstr "Maks."
 msgid "Apply"
 msgstr "Qo'llash"
 
+msgid "All"
+msgstr "Barchasi"
+
 msgid "Search"
 msgstr "Qidirish"
 
@@ -196,7 +199,7 @@ msgid "Load more"
 msgstr "Yana ko'rsatish"
 
 msgid "You've reached the end of the list."
-msgstr "Siz ro'yxatning oxiriga yetib keldingiz."
+msgstr "Ro'yxatning oxiriga yetib keldingiz."
 
 msgid "We are available to answer your questions, provide product information and help you make the right choice."
 msgstr "Biz sizning savollaringizga javob berishga, mahsulotlar haqida ma'lumot berishga va to'g'ri tanlov qilishda yordam berishga tayyormiz."

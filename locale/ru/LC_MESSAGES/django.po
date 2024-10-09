@@ -48,10 +48,10 @@ msgid "Our address"
 msgstr "Наш адрес"
 
 msgid "Uzbekistan, Tashkent city, "
-msgstr "г. Ташкент ул. М."
+msgstr "г. Ташкент, Мирзо-Улугбекский р-н"
 
 msgid "Karasu str. 4, building 2"
-msgstr "ул. Карасу 4, дом 2"
+msgstr "ул. Карасу-4, дом 2"
 
 msgid "Working time"
 msgstr "Время работы"
@@ -265,6 +265,9 @@ msgstr "Выберите размер"
 
 msgid "Price"
 msgstr "Цена"
+
+msgid "All"
+msgstr "Все"
 
 msgid "Minimum amount"
 msgstr "Мин. объем"
