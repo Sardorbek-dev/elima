@@ -101,7 +101,7 @@
             </div>
             <div class="mb-4">
                 <label for="phone_number" class="body-3 fw-semibold">{% trans 'Phone' %}</label>
-                <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="+998">
+                <input type="tel" class="form-control phone-number-control-country" name="phone_number" id="phone_number" required>
             </div>
             <div class="mb-4">
                 <label for="message" class="body-3 fw-semibold">{% trans 'Message' %}</label>
@@ -115,6 +115,32 @@
 </section>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const countryPhoneNumberInput = document.querySelector('.iti--allow-dropdown')
+        countryPhoneNumberInput.classList.add('phone-number-control-country')
+
+        // Initialize the intl-tel-input plugin
+        const phone_number_input = document.querySelector("#phone_number");
+        const iti = window.intlTelInput(phone_number_input, {
+            initialCountry: "auto",  // Automatically set country code based on user's location
+            geoIpLookup: function(callback) {
+                fetch('https://ipinfo.io/37.110.210.174?token=f1480be89c6af5', {headers: {'Accept': 'application/json'}})
+                    .then((resp) => resp.json())
+                    .then((resp) => {
+                        const countryCode = (resp && resp.country) ? resp.country : "us";
+                        callback(countryCode);
+                    });
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.js?1727952657388", // Enable validation/formatting
+        });
+
+        // Handle form submission
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const fullPhoneNumber = iti.getNumber(); // Get the full number (e.g., +1 702-123-4567)
+            // Set the input value to the full phone number before submitting the form
+            input.value = fullPhoneNumber;
+        });
+
         $('#contactForm').on('submit', function (e) {
             e.preventDefault();
 

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elima</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" />
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link rel="stylesheet" href="{% static '/css/flexslider.css' %}">
   <link rel="stylesheet" href="{% static '/css/aos/aos.css' %}">
@@ -18,7 +19,7 @@
             {% if is_about_page %}
                 <!-- About Page Navbar -->
                 <section class="pt-1 pb-4 about-banner">
-                    <video autoplay muted loop id="bg-video">
+                    <video autoplay muted loop id="bg-video-about">
                         <source src="{% static 'videos/2176933_17407E76D5AFA99243056AE1CA244395_video_dashinit.mp4' %}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -444,6 +445,7 @@
     <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/multi-carousel.min.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'js/bootstrap/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/intl-tel.js' %}"></script>
     <script src="{% static 'js/aos/aos.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/store.js' %}"></script>

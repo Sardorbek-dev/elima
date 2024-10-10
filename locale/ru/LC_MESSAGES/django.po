@@ -272,6 +272,9 @@ msgstr "Все"
 msgid "Minimum amount"
 msgstr "Мин. объем"
 
+msgid "Enter a phone number"
+msgstr "Введите номер телефона"
+
 msgid "Material"
 msgstr "Материал"
 

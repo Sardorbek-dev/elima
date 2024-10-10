@@ -50,4 +50,3 @@ counters.forEach(counter => {
     };
     animate();
 });
-

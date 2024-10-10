@@ -189,6 +189,9 @@ msgstr "O'sish"
 msgid "Descending"
 msgstr "Kamayish"
 
+msgid "Enter a phone number"
+msgstr "Telefon raqamini kiriting"
+
 msgid "There are no products to display. Contact your system administrator."
 msgstr "Ko'rsatish uchun mahsulotlar mavjud emas. Iltimos, tizim administratoriga murojaat qiling."
 
