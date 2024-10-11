@@ -550,6 +550,10 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
+.iti--allow-dropdown {
+    width: 100%;
+}
+
 /* For Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
@@ -598,10 +602,6 @@ input[type="number"] {
     box-shadow: none;
     margin-top: 8px;
     padding: 0px 5px !important;
-}
-
-.phone-number-control-country{
-    width: 100%;
 }
 
 @media (min-width: 1400px) {

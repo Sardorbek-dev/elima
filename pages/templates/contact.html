@@ -101,7 +101,7 @@
             </div>
             <div class="mb-4">
                 <label for="phone_number" class="body-3 fw-semibold">{% trans 'Phone' %}</label>
-                <input type="tel" class="form-control phone-number-control-country" name="phone_number" id="phone_number" required>
+                <input type="tel" class="form-control" name="phone_number" id="phone_number" required>
             </div>
             <div class="mb-4">
                 <label for="message" class="body-3 fw-semibold">{% trans 'Message' %}</label>
@@ -115,60 +115,54 @@
 </section>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const countryPhoneNumberInput = document.querySelector('.iti--allow-dropdown')
-        countryPhoneNumberInput.classList.add('phone-number-control-country')
-
         // Initialize the intl-tel-input plugin
-        const phone_number_input = document.querySelector("#phone_number");
-        const iti = window.intlTelInput(phone_number_input, {
+        const $phone_number_input = $("#phone_number");
+        const iti = window.intlTelInput($phone_number_input[0], { // Use $phone_number_input[0] to access the DOM element
             initialCountry: "auto",  // Automatically set country code based on user's location
             geoIpLookup: function(callback) {
-                fetch('https://ipinfo.io/37.110.210.174?token=f1480be89c6af5', {headers: {'Accept': 'application/json'}})
-                    .then((resp) => resp.json())
-                    .then((resp) => {
-                        const countryCode = (resp && resp.country) ? resp.country : "us";
-                        callback(countryCode);
-                    });
+                $.get('https://ipinfo.io/37.110.210.174?token=f1480be89c6af5', function(resp) {
+                    const countryCode = (resp && resp.country) ? resp.country : "us";
+                    callback(countryCode);
+                }, "json");
             },
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.js?1727952657388", // Enable validation/formatting
         });
 
         // Handle form submission
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const fullPhoneNumber = iti.getNumber(); // Get the full number (e.g., +1 702-123-4567)
-            // Set the input value to the full phone number before submitting the form
-            input.value = fullPhoneNumber;
-        });
-
         $('#contactForm').on('submit', function (e) {
             e.preventDefault();
+
+            // Get the full number (e.g., +998 99 123 45 67)
+            const fullPhoneNumber = iti.getNumber(); 
+            // Set the input value to the full phone number before submitting the form
+            $phone_number_input.val(fullPhoneNumber);
 
             // Clear previous error messages
             $('.error-message').remove();
 
+            // Make the AJAX request
             $.ajax({
                 type: 'POST',
-                url: '{% url "contact" %}',  // Ensure the URL is correct
+                url: '{% url "contact" %}',
                 data: $(this).serialize(),
                 success: function (response) {
                     if (response.success) {
-                        $('#contactForm')[0].reset();
-                        $('#form-success').show().delay(5000).fadeOut();
+                        $('#contactForm')[0].reset();  // Reset the form
+                        $('#form-success').show().delay(5000).fadeOut();  // Show success message and hide after 5 seconds
                     }
                 },
                 error: function (xhr) {
                     const errors = xhr.responseJSON.errors;
                     for (const key in errors) {
-                        const inputField = $(`#${key}`);
-                        if (inputField.length) {
+                        const $inputField = $(`#${key}`);
+                        if ($inputField.length) {
                             const errorMessage = `<small class="text-danger error-message">${errors[key][0]}</small>`;
-                            inputField.after(errorMessage);  // Append error message after the input field
+                            $inputField.after(errorMessage);  // Append error message after the input field
                         }
                     }
                 }
             });
         });
-    });
+    })
 </script>
 {% endblock  %}
