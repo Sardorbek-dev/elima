@@ -89,7 +89,8 @@
             <h2 class="heading-3 mb-4">{% trans 'Fill out the form' %},<br>{% trans 'and we\'ll get back to you as soon as possible' %}</h2>
         </div>
         <div class="col-lg-6">
-        <form id="contactForm" method="post">
+            <script data-b24-form="inline/6/gjml08" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://elima.space/upload/crm/form/loader_6_gjml08.js');</script>
+        <!-- <form id="contactForm" method="post">
             {% csrf_token %}
             <div class="mb-4">
                 <label for="name" class="body-3 fw-semibold">{% trans 'Name' %}</label>
@@ -109,11 +110,11 @@
             </div>
             <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">{% trans 'Send' %}</button>
             <div id="form-success" class="alert alert-success mt-4" style="display:none;">{% trans 'Your request has been successfully sent!' %}</div>
-        </form>
+        </form> -->
         </div>
     </div>
 </section>
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Initialize the intl-tel-input plugin
         const $phone_number_input = $("#phone_number");
@@ -164,5 +165,5 @@
             });
         });
     })
-</script>
+</script> -->
 {% endblock  %}
