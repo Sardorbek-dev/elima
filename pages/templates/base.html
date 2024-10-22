@@ -458,7 +458,7 @@
         window.onload = function() {
             var loader = document.getElementById('elima-loader');
             loader.classList.add('elima-loader-anim'); // Add fade-out class
-            // setTimeout(() => loader.style.display = 'none', 500); // Hide after animation
+            setTimeout(() => loader.style.display = 'none', 500); // Hide after animation
         };
         AOS.init({
             easing: 'ease-in-out', // Easing function
