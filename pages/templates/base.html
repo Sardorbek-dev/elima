@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="{% static '/css/aos/aos.css' %}">
 </head>
 <body>
+    <!-- <div id="elima-loader" class="elima-loader">
+        <div class="elima-spinner"></div>
+    </div>  -->
+    <div id="elima-loader">
+        <div class="elima-loader" id="loader-7"></div>
+    </div>
     <!-- Body main wrapper start -->
         <!-- HEADER AREA START -->
         {% block navbar %}
@@ -363,10 +369,9 @@
                 </nav>
             {% endif %}
         {% endblock navbar %}
-        <!-- HEADER AREA END -->
-
+        <!-- HEADER AREA END -->      
         {% block content %}
-
+   
         {% endblock %}
 
     </div>
@@ -450,6 +455,11 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/store.js' %}"></script>
     <script>
+        window.onload = function() {
+            var loader = document.getElementById('elima-loader');
+            loader.classList.add('elima-loader-anim'); // Add fade-out class
+            // setTimeout(() => loader.style.display = 'none', 500); // Hide after animation
+        };
         AOS.init({
             easing: 'ease-in-out', // Easing function
             once: true, // animation should happen only once
