@@ -6,6 +6,8 @@ from django.views.generic import ListView, DetailView, CreateView, View
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.core.files.base import ContentFile
+
 import logging
 import requests
 import uuid
@@ -38,6 +40,9 @@ class ProductListView(ListView):
         context = super().get_context_data(**kwargs)
         context['filter'] = self.filterset
         context['categories'] = Category.objects.all()
+        categories = Category.objects.all()
+        for category in categories:
+            print(f"Category ID: {category.id}, Name: {category.name}")
         return context
 
     def post(self, request, *args, **kwargs):
@@ -99,55 +104,77 @@ class ProductRequestCreateView(CreateView):
 class BitrixProductWebhookView(View):
     def post(self, request, *args, **kwargs):
         try:
-            logger.info(request.body)
             data = json.loads(request.body)
-            product_data = data.get('fields', {})
+            product_data = data.get('onCrmProductAdd', {})
+            bitrix_product_id = product_data.get('ID')
+            properties = product_data.get('PROPERTIES', {})
+            additional_data = product_data.get('ADDITIONAL_DATA', {})
 
-            # Required fields
-            name = product_data.get('NAME')
-            description = product_data.get('DESCRIPTION', '')
-            price = product_data.get('PRICE', 0)
-            category_id = product_data.get('SECTION_ID', '')  # Adjust based on actual Bitrix24 payload
+            # Utility function to safely get nested dictionary values
+            def safe_get(dictionary, *keys):
+                for key in keys:
+                    if isinstance(dictionary, dict):
+                        dictionary = dictionary.get(key, '')
+                    else:
+                        return ''  # Return empty string if the expected structure is not found
+                return dictionary
 
-            # Additional fields (including multi-language support)
-            size = product_data.get('SIZE', '')
-            material = product_data.get('MATERIAL', '')
-            warming_material = product_data.get('WARMING_MATERIAL', '')
-            filling = product_data.get('FILLING', '')
-            hood = product_data.get('HOOD', '')
-            min_amount = product_data.get('MIN_AMOUNT', 1)
-            availability = product_data.get('AVAILABILITY', True)
-            image_url = product_data.get('IMAGE', None)
+            # Directly fetching fields from the main `product_data`
+            name = safe_get(product_data, 'NAME')
+            description = safe_get(properties, 'DESCRIPTION', 'VALUE', 'TEXT')
+            price = float(safe_get(properties, 'PRODUCT_PRICE_UZS', 'VALUE') or 0)
+            min_amount = int(safe_get(properties, 'MIN_AMOUNT', 'VALUE') or 1)
 
-            # Multi-language fields (assuming Bitrix24 payload supports these fields)
-            name_en = product_data.get('NAME_EN', None)
-            name_ru = product_data.get('NAME_RU', None)
-            name_uz = product_data.get('NAME_UZ', None)
-            description_en = product_data.get('DESCRIPTION_EN', None)
-            description_ru = product_data.get('DESCRIPTION_RU', None)
-            description_uz = product_data.get('DESCRIPTION_UZ', None)
-            size_en = product_data.get('SIZE_EN', None)
-            size_ru = product_data.get('SIZE_RU', None)
-            size_uz = product_data.get('SIZE_UZ', None)
-            material_en = product_data.get('MATERIAL_EN', None)
-            material_ru = product_data.get('MATERIAL_RU', None)
-            material_uz = product_data.get('MATERIAL_UZ', None)
-            warming_material_en = product_data.get('WARMING_MATERIAL_EN', None)
-            warming_material_ru = product_data.get('WARMING_MATERIAL_RU', None)
-            warming_material_uz = product_data.get('WARMING_MATERIAL_UZ', None)
-            filling_en = product_data.get('FILLING_EN', None)
-            filling_ru = product_data.get('FILLING_RU', None)
-            filling_uz = product_data.get('FILLING_UZ', None)
-            hood_en = product_data.get('HOOD_EN', None)
-            hood_ru = product_data.get('HOOD_RU', None)
-            hood_uz = product_data.get('HOOD_UZ', None)
+            # Retrieve Category objects based on provided values
+            def get_category_by_id_or_name(value):
+                """Fetch a Category instance by ID or name."""
+                if value.isdigit():
+                    try:
+                        return Category.objects.get(id=value)
+                    except Category.DoesNotExist:
+                        logger.warning(f"Category with ID '{value}' does not exist.")
+                        return None
+                else:
+                    try:
+                        return Category.objects.get(name=value)
+                    except Category.DoesNotExist:
+                        logger.warning(f"Category with name '{value}' does not exist.")
+                        return None
 
-            # Get or create the category
-            category = get_object_or_404(Category, id=category_id)
+            # Extract category information in multiple languages
+            category = get_category_by_id_or_name(safe_get(properties, 'CATEGORY', 'VALUE')) or Category.objects.first()
+
+            # Multi-language and other fields
+            name_en = safe_get(properties, 'NAME_EN', 'VALUE')
+            name_ru = safe_get(properties, 'NAME_RU', 'VALUE')
+            name_uz = safe_get(properties, 'NAME_UZ', 'VALUE')
+            description_en = safe_get(properties, 'DESCRIPTION_EN', 'VALUE', 'TEXT')
+            description_ru = safe_get(properties, 'DESCRIPTION_RU', 'VALUE', 'TEXT')
+            description_uz = safe_get(properties, 'DESCRIPTION_UZ', 'VALUE', 'TEXT')
+            size = safe_get(properties, 'SIZE', 'VALUE')
+            size_en = safe_get(properties, 'SIZE_EN', 'VALUE')
+            size_ru = safe_get(properties, 'SIZE_RU', 'VALUE')
+            size_uz = safe_get(properties, 'SIZE_UZ', 'VALUE')
+            material = safe_get(properties, 'MATERIAL', 'VALUE')
+            material_en = safe_get(properties, 'MATERIAL_EN', 'VALUE')
+            material_ru = safe_get(properties, 'MATERIAL_RU', 'VALUE')
+            material_uz = safe_get(properties, 'MATERIAL_UZ', 'VALUE')
+            warming_material = safe_get(properties, 'WARMING_MATERIAL', 'VALUE')
+            warming_material_en = safe_get(properties, 'WARMING_MATERIAL_EN', 'VALUE')
+            warming_material_ru = safe_get(properties, 'WARMING_MATERIAL_RU', 'VALUE')
+            warming_material_uz = safe_get(properties, 'WARMING_MATERIAL_UZ', 'VALUE')
+            filling = safe_get(properties, 'FILLING', 'VALUE')
+            filling_en = safe_get(properties, 'FILLING_EN', 'VALUE')
+            filling_ru = safe_get(properties, 'FILLING_RU', 'VALUE')
+            filling_uz = safe_get(properties, 'FILLING_UZ', 'VALUE')
+            hood = safe_get(properties, 'HOOD', 'VALUE')
+            hood_en = safe_get(properties, 'HOOD_EN', 'VALUE')
+            hood_ru = safe_get(properties, 'HOOD_RU', 'VALUE')
+            hood_uz = safe_get(properties, 'HOOD_UZ', 'VALUE')
 
             # Create or update the product in your Django app
             product, created = Product.objects.update_or_create(
-                unique_id=product_data.get('ID', uuid.uuid4()),  # Using Bitrix24 ID as unique identifier
+                unique_id = bitrix_product_id,  # Using Bitrix ID as unique identifier
                 defaults={
                     'name': name,
                     'description': description,
@@ -158,7 +185,7 @@ class BitrixProductWebhookView(View):
                     'filling': filling,
                     'hood': hood,
                     'min_amount': min_amount,
-                    'availability': availability,
+                    'availability': safe_get(properties, 'AVAILABILITY', 'VALUE') == 'Y',
                     'category': category,
 
                     # Multi-language fields
@@ -186,17 +213,72 @@ class BitrixProductWebhookView(View):
                 }
             )
 
-            # If the image URL is provided, download and save it
-            if image_url:
-                image_response = requests.get(image_url)
+
+           # Image retrieval and saving
+            more_photo_data = safe_get(additional_data, 'PROPERTIES', 'MORE_PHOTO', 'VALUE')
+            print('more_photo_data', more_photo_data)
+            logger.info(f"Extracted MORE_PHOTO data: {more_photo_data}")
+
+            # Handle both list and dict structures in more_photo_data
+            if isinstance(more_photo_data, list) and more_photo_data:
+                first_image = more_photo_data[0]
+                image_src = safe_get(first_image, 'SRC')
+            elif isinstance(more_photo_data, dict):
+                image_src = safe_get(more_photo_data, 'SRC')
+            else:
+                image_src = None
+
+            logger.info(f"Image SRC found: {image_src}")
+
+            if image_src:
+                image_url = f"https://elima.space{image_src}"
+                print('Attempting to retrieve image from URL', image_url)
+                logger.info(f"Attempting to retrieve image from URL: {image_url}")
+
+                # Step 1: Start a session
+                session = requests.Session()
+
+                # Step 2: Log in to Bitrix
+                login_url = "https://elima.space/bitrix/admin"  # Adjust to your actual login URL
+                payload = {
+                    'AUTH_FORM': 'Y',
+                    'TYPE': 'AUTH',
+                    'USER_LOGIN': 'danilapopov2d@gmail.com',  # Adjust to actual username field
+                    'USER_PASSWORD': 'SYhLYY7Dzw7E2vx??',  # Adjust to actual password field
+                }
+
+                # Define headers (adjust as needed for Bitrix)
+                image_headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+                    'Referer': 'https://elima.space/bitrix/admin',  # Adjust if needed to point to a relevant page
+                    'Accept': 'image/webp,*/*',
+                }
+
+                # Authenticate and get the session cookie
+                login_response = session.post(login_url, data=payload, headers=image_headers)
+                if login_response.status_code == 200:
+                    print('Successfully logged in to Bitrix.')
+                    logger.info("Successfully logged in to Bitrix.")
+                else:
+                    logger.error(f"Failed to log in to Bitrix. Status code: {login_response.status_code}")
+                    return JsonResponse({'status': 'error', 'message': 'Authentication failed'}, status=500)
+
+                # Fetch the image with session cookie
+                image_response = session.get(image_url)
                 if image_response.status_code == 200:
+                    logger.info("Image retrieved successfully. Saving image...")
                     product.image.save(
-                        f'{product.name}_image.jpg',
+                        f"{product.name}_image.jpg",
                         ContentFile(image_response.content),
                         save=True
                     )
+                else:
+                    logger.error(f"Failed to retrieve image. Status code: {image_response.status_code}")
+            else:
+                logger.warning("No valid SRC found in the MORE_PHOTO data.")
 
             return JsonResponse({'status': 'success', 'message': 'Product added successfully'}, status=201)
 
         except Exception as e:
-            return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
+            logger.error(f"Error processing Bitrix webhook: {e}")
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
