@@ -11,6 +11,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    bitrix_product_id = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
     size = models.CharField(max_length=50)

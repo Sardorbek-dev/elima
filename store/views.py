@@ -105,10 +105,10 @@ class BitrixProductWebhookView(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body)
-            product_data = data.get('onCrmProductAdd', {})
-            bitrix_product_id = product_data.get('ID')
+            product_data = data.get('onCrmProductUpdate', {})
             properties = product_data.get('PROPERTIES', {})
             additional_data = product_data.get('ADDITIONAL_DATA', {})
+            bitrix_product_id = product_data.get('ID')
 
             # Utility function to safely get nested dictionary values
             def safe_get(dictionary, *keys):
@@ -142,7 +142,7 @@ class BitrixProductWebhookView(View):
                         return None
 
             # Extract category information in multiple languages
-            category = get_category_by_id_or_name(safe_get(properties, 'CATEGORY', 'VALUE')) or Category.objects.first()
+            category = get_category_by_id_or_name(safe_get(properties, 'PRODUCT_CATEGORY', 'VALUE')) or Category.objects.first()
 
             # Multi-language and other fields
             name_en = safe_get(properties, 'NAME_EN', 'VALUE')
@@ -174,7 +174,7 @@ class BitrixProductWebhookView(View):
 
             # Create or update the product in your Django app
             product, created = Product.objects.update_or_create(
-                unique_id = bitrix_product_id,  # Using Bitrix ID as unique identifier
+                bitrix_product_id = bitrix_product_id,  # Using Bitrix ID as unique identifier
                 defaults={
                     'name': name,
                     'description': description,
