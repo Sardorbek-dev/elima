@@ -392,3 +392,81 @@ msgstr "Siz qidirayotgan sahifa mavjud emas."
 
 msgid "Return to home"
 msgstr "Bosh sahifaga qaytish"
+
+msgid "Main Carousel Item"
+msgstr "Asosiy Karusel Elementi"
+
+msgid "Main Carousel Items"
+msgstr "Asosiy Karusel Elementlari"
+
+msgid "Products Carousel Item"
+msgstr "Mahsulotlar Karuseli Elementi"
+
+msgid "Products Carousel Items"
+msgstr "Mahsulotlar Karuseli Elementlari"
+
+msgid "Customer Review"
+msgstr "Mijoz Sharhi"
+
+msgid "Customer Reviews"
+msgstr "Mijozlar Sharhlari"
+
+msgid "FAQ"
+msgstr "Savol-Javob"
+
+msgid "FAQs"
+msgstr "Savollar va Javoblar"
+
+msgid "Showcase Category"
+msgstr "Ko‘rgazma Kategoriyasi"
+
+msgid "Showcase Categories"
+msgstr "Ko‘rgazma Kategoriyalari"
+
+msgid "Showcase Product"
+msgstr "Ko‘rgazma Mahsuloti"
+
+msgid "Showcase Products"
+msgstr "Ko‘rgazma Mahsulotlari"
+
+msgid "Post Category"
+msgstr "Post Kategoriyasi"
+
+msgid "Post Categories"
+msgstr "Post Kategoriyalari"
+
+msgid "Post"
+msgstr "Post"
+
+msgid "Posts"
+msgstr "Postlar"
+
+msgid "Contact Request"
+msgstr "Aloqa So‘rovi"
+
+msgid "Contact Requests"
+msgstr "Aloqa So‘rovlari"
+
+msgid "Consultation Request"
+msgstr "Konsultatsiya So‘rovi"
+
+msgid "Consultation Requests"
+msgstr "Konsultatsiya So‘rovlari"
+
+msgid "Category"
+msgstr "Kategoriya"
+
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+msgid "Product"
+msgstr "Mahsulot"
+
+msgid "Products"
+msgstr "Mahsulotlar"
+
+msgid "Product Request"
+msgstr "Mahsulot So‘rovi"
+
+msgid "Product Requests"
+msgstr "Mahsulot So‘rovlari"

@@ -394,3 +394,82 @@ msgstr "Страница, которую вы ищете, не существу�
 
 msgid "Return to home"
 msgstr "Вернуться домой"
+
+
+msgid "Main Carousel Item"
+msgstr "Элемент Главного Каруселя"
+
+msgid "Main Carousel Items"
+msgstr "Элементы Главного Каруселя"
+
+msgid "Products Carousel Item"
+msgstr "Элемент Каруселя Продуктов"
+
+msgid "Products Carousel Items"
+msgstr "Элементы Каруселя Продуктов"
+
+msgid "Customer Review"
+msgstr "Отзыв Клиента"
+
+msgid "Customer Reviews"
+msgstr "Отзывы Клиентов"
+
+msgid "FAQ"
+msgstr "Вопрос-Ответ"
+
+msgid "FAQs"
+msgstr "Вопросы и Ответы"
+
+msgid "Showcase Category"
+msgstr "Категория Витрины"
+
+msgid "Showcase Categories"
+msgstr "Категории Витрины"
+
+msgid "Showcase Product"
+msgstr "Продукт Витрины"
+
+msgid "Showcase Products"
+msgstr "Продукты Витрины"
+
+msgid "Post Category"
+msgstr "Категория Поста"
+
+msgid "Post Categories"
+msgstr "Категории Постов"
+
+msgid "Post"
+msgstr "Пост"
+
+msgid "Posts"
+msgstr "Посты"
+
+msgid "Contact Request"
+msgstr "Запрос на Контакт"
+
+msgid "Contact Requests"
+msgstr "Запросы на Контакт"
+
+msgid "Consultation Request"
+msgstr "Запрос на Консультацию"
+
+msgid "Consultation Requests"
+msgstr "Запросы на Консультацию"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Product "
+msgstr "Продукт"
+
+msgid "Products "
+msgstr "Продукты"
+
+msgid "Product Request"
+msgstr "Запрос на Продукт"
+
+msgid "Product Requests"
+msgstr "Запросы на Продукты"

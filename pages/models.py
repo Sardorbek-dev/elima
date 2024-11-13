@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class ContactRequest(models.Model):
@@ -7,6 +8,10 @@ class ContactRequest(models.Model):
     phone_number = models.CharField(max_length=20)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Contact Request")
+        verbose_name_plural = _("Contact Requests")
 
     def __str__(self):
         return self.name
@@ -17,6 +22,9 @@ class ConsultationRequest(models.Model):
     phone_number = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = _("Consultation Request")
+        verbose_name_plural = _("Consultation Requests")
+
     def __str__(self):
         return f"{self.name} - {self.phone_number}"
-

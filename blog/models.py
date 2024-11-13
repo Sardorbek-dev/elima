@@ -2,11 +2,16 @@ from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 
 class PostCategory(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
+
+    class Meta:
+        verbose_name = _("Post Category")
+        verbose_name_plural = _("Post Categories")
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -27,6 +32,10 @@ class Post(models.Model):
     show_on_homepage = models.BooleanField(default=False)
     publish = models.BooleanField(default=True)
     category = models.ForeignKey(PostCategory, on_delete=models.CASCADE, related_name='posts', null=True, blank=True)
+
+    class Meta:
+        verbose_name = _("Post")
+        verbose_name_plural = _("Posts")
 
     def save(self, *args, **kwargs):
         if not self.slug:
