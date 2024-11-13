@@ -530,8 +530,8 @@ a.prev-arrow-carousel, button.prev-arrow-carousel{
 .multi-carousel .multi-carousel-inner .multi-carousel-item:first-child img{padding-top: 60px; padding-bottom: 40px;max-height: 500px;}
 .multi-carousel .multi-carousel-inner .multi-carousel-item img{max-height:250px;object-fit:cover;}
 .multi-carousel .multi-carousel-inner .multi-carousel-item .bg-grey{padding: 25px 0;}
-.multi-carousel .multi-carousel-inner .multi-carousel-item:nth-child(2) .bg-grey{padding: 60px 0 30px;transition:all 1.3s ease-out;}
-.multi-carousel .multi-carousel-inner .multi-carousel-item:first-child .bg-grey{transition:all .7s ease-out;}
+.multi-carousel .multi-carousel-inner .multi-carousel-item:nth-child(2) .bg-grey{padding: 60px 0 30px;}
+.multi-carousel .multi-carousel-inner .multi-carousel-item:first-child .bg-grey{}
 .multi-carousel.vertical{height:350px}
 @media(max-width: 768px){.multi-carousel.vertical{height:150px}}
 .multi-carousel.vertical .multi-carousel-inner{height:100%}
