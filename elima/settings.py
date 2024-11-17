@@ -25,7 +25,25 @@ SECRET_KEY = '%hgmet4-2x)@=gl-f=(bl+jr1dmjt1%trz4_8tstq8gmkmot@2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [    
+    'uzelima.com', 
+    'www.uzelima.com', 
+    'https://uzelima.com', 
+    'http://uzelima.com', 
+    'https://www.uzelima.com',
+    'http://www.uzelima.com',
+    '127.0.0.1:8000/ru/',
+    '127.0.0.1:8000/en/',
+    '127.0.0.1:8000/uz/',
+    '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://uzelima.com',
+    'http://uzelima.com',
+    'https://www.uzelima.com',
+    'http://www.uzelima.com'
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
