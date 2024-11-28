@@ -148,7 +148,7 @@ class BitrixProductWebhookView(View):
                     return None
 
             # Extract category information in multiple languages
-            category = get_category_by_id_or_name(safe_get(properties, 'PRODUCT_CATEGORY', 'VALUE')) or Category.objects.first()
+            category = get_category_by_id_or_name(safe_get(properties, 'PRODUCTCATEGORY', 'VALUE')) or Category.objects.first()
 
             # Multi-language and other fields
             name_en = safe_get(properties, 'NAME_EN', 'VALUE')
