@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView, CreateView, FormView
 from django.http import JsonResponse
 
-from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory
+from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory, History
 from blog.models import Post
 from .models import ContactRequest
 from .forms import ContactForm, ConsultationForm
@@ -17,6 +17,7 @@ class HomePageView(TemplateView):
         context['posts'] = Post.objects.filter(show_on_homepage=True)
         context['reviews'] = CustomerReview.objects.filter(publish=True)
         context['faqs'] = FAQ.objects.filter(is_active=True)
+        context['historys'] = History.objects.filter()
 
         # Add rating range for each review
         for review in context['reviews']:

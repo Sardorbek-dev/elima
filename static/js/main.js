@@ -50,3 +50,32 @@ counters.forEach(counter => {
     };
     animate();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item-hover');
+    const accordions = document.querySelectorAll('.accordion-collapse');
+
+    // Add hover functionality to each accordion item
+    accordionItems.forEach((item) => {
+        item.addEventListener('mouseover', () => {
+            // Close all other accordion items and remove the background-color-hovered class
+            accordionItems.forEach((otherItem) => {
+                const collapse = otherItem.querySelector('.accordion-collapse');
+                if (collapse && collapse !== item.querySelector('.accordion-collapse')) {
+                    collapse.classList.remove('show');
+                }
+                otherItem.classList.remove('background-color-hovered');
+            });
+
+            // Open the hovered accordion item
+            const collapseTarget = item.querySelector('.accordion-collapse');
+            if (collapseTarget) {
+                collapseTarget.classList.add('show');
+            }
+
+            // Add the background-color-hovered class to the hovered accordion item
+            item.classList.add('background-color-hovered');
+        });
+    });
+});
+

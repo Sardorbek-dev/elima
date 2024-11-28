@@ -23,3 +23,6 @@ class FAQView(TemplateView):
 
 class ShowcaseProductView(TemplateView):
     template_name = 'contentmanagement/showcase-carousel.html'
+
+class HistoryView(TemplateView):
+    template_name = 'contentmanagement/history.html'

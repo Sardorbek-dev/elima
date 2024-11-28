@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseCategory, ShowcaseProduct
+from .models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseCategory, ShowcaseProduct, History
 
 
 class MainCarouselItemAdmin(admin.ModelAdmin):
@@ -30,6 +30,9 @@ class ShowcaseCategoryAdmin(admin.ModelAdmin):
 class ShowcaseProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'publish')
 
+class HistoryAdmin(admin.ModelAdmin):
+    list_display = ("text", "statistic")
+
 
 admin.site.register(MainCarouselItem, MainCarouselItemAdmin)
 admin.site.register(ProductsCarouselItem, ProductsCarouselItemAdmin)
@@ -37,5 +40,6 @@ admin.site.register(CustomerReview, CustomerReviewAdmin)
 admin.site.register(FAQ, FAQAdmin)
 admin.site.register(ShowcaseCategory, ShowcaseCategoryAdmin)
 admin.site.register(ShowcaseProduct, ShowcaseProductAdmin)
+admin.site.register(History, HistoryAdmin)
 
 

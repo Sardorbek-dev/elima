@@ -207,7 +207,7 @@ msgid "of the year in business"
 msgstr "года в бизнеса"
 
 msgid "Products"
-msgstr "продукции"
+msgstr "Товары"
 
 msgid "Values"
 msgstr "Ценности"
@@ -397,28 +397,28 @@ msgstr "Вернуться домой"
 
 
 msgid "Main Carousel Item"
-msgstr "Элемент Главного Каруселя"
+msgstr "Слайдер"
 
 msgid "Main Carousel Items"
-msgstr "Элементы Главного Каруселя"
+msgstr "Слайдер"
 
 msgid "Products Carousel Item"
-msgstr "Элемент Каруселя Продуктов"
+msgstr "Наши товары"
 
 msgid "Products Carousel Items"
-msgstr "Элементы Каруселя Продуктов"
+msgstr "Наши товары"
 
 msgid "Customer Review"
-msgstr "Отзыв Клиента"
+msgstr "Отзывы"
 
 msgid "Customer Reviews"
-msgstr "Отзывы Клиентов"
+msgstr "Отзывы"
 
 msgid "FAQ"
-msgstr "Вопрос-Ответ"
+msgstr "Часто задаваемые вопросы"
 
 msgid "FAQs"
-msgstr "Вопросы и Ответы"
+msgstr "Часто задаваемые вопросы"
 
 msgid "Showcase Category"
 msgstr "Категория Витрины"
@@ -433,43 +433,46 @@ msgid "Showcase Products"
 msgstr "Продукты Витрины"
 
 msgid "Post Category"
-msgstr "Категория Поста"
+msgstr "Разделы новостей"
 
 msgid "Post Categories"
-msgstr "Категории Постов"
+msgstr "Разделы новостей"
 
 msgid "Post"
-msgstr "Пост"
+msgstr "Список новостей"
 
 msgid "Posts"
-msgstr "Посты"
+msgstr "Список новостей"
 
 msgid "Contact Request"
-msgstr "Запрос на Контакт"
+msgstr "Контактные данные"
 
 msgid "Contact Requests"
-msgstr "Запросы на Контакт"
+msgstr "Контактные данные"
 
 msgid "Consultation Request"
-msgstr "Запрос на Консультацию"
+msgstr "Заявкa на консультацию"
 
 msgid "Consultation Requests"
-msgstr "Запросы на Консультацию"
+msgstr "Заявки на консультацию"
 
 msgid "Category"
-msgstr "Категория"
+msgstr "Категории товаров"
 
 msgid "Categories"
-msgstr "Категории"
+msgstr "Категории товаров"
 
 msgid "Product "
-msgstr "Продукт"
+msgstr "Товары"
 
 msgid "Products "
-msgstr "Продукты"
+msgstr "Товары"
 
 msgid "Product Request"
-msgstr "Запрос на Продукт"
+msgstr "Заявкa на продукцию"
 
 msgid "Product Requests"
-msgstr "Запросы на Продукты"
+msgstr "Заявки на продукцию"
+
+msgid "Our history and achievements"
+msgstr "Наши история и достижения"

@@ -10,52 +10,7 @@
 </section>
 
 <section class="history-section">
-    <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="500">
-        <div class="col-lg-6">
-            <h2 class="heading-2 mb-lg-0 mb-3">{% trans 'Our history and' %}<br class="d-none d-lg-block">{% trans 'achievements' %}</h2>
-        </div>
-        <div class="col-lg-6 col-xl-5 col-xxl-4">
-            <p class="body-1 mb-0">{% trans 'Over 20 years in apparel manufacturing, creating quality and innovative solutions.' %}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg my-4 my-lg-0" data-aos="fade-up" data-aos-duration="500">
-            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
-                <div class="row">
-                    <div class="col">
-                        <span class="display-1-later-version text-accent w-100 elima-statistics" counter-animation="20">0</span>
-                        <span class=" display-1-later-version text-accent">+</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5">{% trans 'years of experience and growth' %}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg my-4 my-lg-0" data-aos="fade-up" data-aos-duration="500">
-            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
-                <div class="row">
-                    <div class="col">
-                        <span class=" display-1-later-version text-accent w-100 elima-statistics" counter-animation="55">0</span>
-                        <span class=" display-1-later-version text-accent">%</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-4 mb-0 pt-5">{% trans 'revenue from government contracts' %}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg" data-aos="fade-up" data-aos-duration="500">
-            <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
-                <div class="row">
-                    <div class="col">
-                        <span class=" display-1-later-version text-accent w-100 elima-statistics" counter-animation="90">0</span>
-                        <span class=" display-1-later-version text-accent">%</span>
-                        <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5" >{% trans 'customer satisfaction' %}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="800">
-            <a href="{% url 'about' %}" class="btn btn-accent w-100">{% trans 'Read more about the company' %}</a>
-        </div>
-    </div>
+    {% include 'contentmanagement/history.html' %}
 </section>
 
 <section class="product-section">

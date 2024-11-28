@@ -182,7 +182,11 @@ CKEDITOR_CONFIGS = {
 
 # Jazzmin
 JAZZMIN_SETTINGS = {
-    "site_title": "Elima Admin Panel",
-    "site_brand": "Elima Admin Panel",
-    "welcome_sign": "Elima Admin Panel",
+    "site_title": "Elima",
+    "site_brand": "Панель управления",
+    "welcome_sign": "Elima",
+    "site_logo": "img/company_logo_.png",
+    "site_header": "Elima Dashboard",
+    "show_ui_builder": True,
+    "order_with_respect_to": ["pages", "contentmanagement", "store", "blog", "auth"],
 }

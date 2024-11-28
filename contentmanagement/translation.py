@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory
+from .models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory, History
 
 
 class MainCarouselItemTranslationOptions(TranslationOptions):
@@ -25,6 +25,8 @@ class ShowcaseCategoryTranslationOptions(TranslationOptions):
 class ShowcaseProductTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
+class HistoryTranslationOptions(TranslationOptions):
+    fields = ('text',)
 
 translator.register(MainCarouselItem, MainCarouselItemTranslationOptions)
 translator.register(ProductsCarouselItem, ProductsCarouselItemTranslationOptions)
@@ -32,3 +34,4 @@ translator.register(CustomerReview, CustomerReviewTranslationOptions)
 translator.register(FAQ, FAQTranslationOptions)
 translator.register(ShowcaseCategory, ShowcaseCategoryTranslationOptions)
 translator.register(ShowcaseProduct, ShowcaseProductTranslationOptions)
+translator.register(History, HistoryTranslationOptions)

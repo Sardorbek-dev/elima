@@ -85,3 +85,14 @@ class ShowcaseProduct(models.Model):
 
     def __str__(self):
         return self.title
+    
+class History(models.Model):
+    text = models.CharField(max_length=255, verbose_name=_("Text"))
+    statistic = models.IntegerField(default=0, verbose_name=_("Statistic")) 
+
+    class Meta:
+        verbose_name = _("Our history and achievements")
+        verbose_name_plural = _("Our history and achievements")
+
+    def __str__(self):
+        return f"{self.text}"

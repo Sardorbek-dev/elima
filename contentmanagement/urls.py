@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MainCarouselView, ProductsCarouselView, PostsCarouselView, CustomerReviewsCarouselView, FAQView, ShowcaseProductView
+from .views import MainCarouselView, ProductsCarouselView, PostsCarouselView, CustomerReviewsCarouselView, FAQView, ShowcaseProductView, HistoryView
 
 urlpatterns = [
     path('carousel/', MainCarouselView.as_view(), name='main_carousel'),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('customer-reviews-carousel/', CustomerReviewsCarouselView.as_view(), name='customer_reviews_carousel'),
     path('faqs/', FAQView.as_view(), name='faqs'),
     path('showcase/', ShowcaseProductView.as_view(), name='showcase'),
+    path('history/', HistoryView.as_view(), name='history'),
 ]

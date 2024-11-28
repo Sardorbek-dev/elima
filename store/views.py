@@ -1,4 +1,5 @@
 import json
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
@@ -127,19 +128,24 @@ class BitrixProductWebhookView(View):
 
             # Retrieve Category objects based on provided values
             def get_category_by_id_or_name(value):
-                """Fetch a Category instance by ID or name."""
-                if value.isdigit():
+                """
+                Fetch a Category instance by ID or multi-language name.
+                """
+                if value.isdigit():  # If the value is a digit, try to find it by ID
                     try:
                         return Category.objects.get(id=value)
                     except Category.DoesNotExist:
                         logger.warning(f"Category with ID '{value}' does not exist.")
                         return None
-                else:
-                    try:
-                        return Category.objects.get(name=value)
-                    except Category.DoesNotExist:
-                        logger.warning(f"Category with name '{value}' does not exist.")
-                        return None
+
+                # If not a digit, try to find it by multi-language name
+                try:
+                    return Category.objects.get(
+                        Q(name=value) | Q(name_en=value) | Q(name_ru=value) | Q(name_uz=value)
+                    )
+                except Category.DoesNotExist:
+                    logger.warning(f"Category with name '{value}' does not exist in any language.")
+                    return None
 
             # Extract category information in multiple languages
             category = get_category_by_id_or_name(safe_get(properties, 'PRODUCT_CATEGORY', 'VALUE')) or Category.objects.first()

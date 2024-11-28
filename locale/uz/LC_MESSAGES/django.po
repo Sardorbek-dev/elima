@@ -462,11 +462,11 @@ msgstr "Kategoriyalar"
 msgid "Product"
 msgstr "Mahsulot"
 
-msgid "Products"
-msgstr "Mahsulotlar"
-
 msgid "Product Request"
 msgstr "Mahsulot So‘rovi"
 
 msgid "Product Requests"
 msgstr "Mahsulot So‘rovlari"
+
+msgid "Our history and achievements"
+msgstr "Tarix va yutuqlarimiz"

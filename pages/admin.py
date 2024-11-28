@@ -16,4 +16,3 @@ class ConsultationRequestAdmin(admin.ModelAdmin):
 
 admin.site.register(ContactRequest, ContactRequestAdmin)
 admin.site.register(ConsultationRequest, ConsultationRequestAdmin)
-

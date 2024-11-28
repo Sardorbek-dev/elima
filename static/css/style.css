@@ -446,21 +446,35 @@ a.prev-arrow-carousel, button.prev-arrow-carousel{
     filter: grayscale(100%);
     filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1);
 }
+
 .big-accordion .accordion-item{
     border-bottom: 0;
+    transition: background-color 0.7s ease, color 0.7s ease;
+    border-radius: 20px; 
 }
 .big-accordion .accordion-header{
     border-top: 1px solid var(--Black-opacity-20);
     border-radius: 20px 20px 0 0;
+    transition: background-color 0.7s ease; 
 }
 .big-accordion .accordion-button{
     padding: 25px 20px 0 !important;
     border-radius: 20px 20px 0 0 !important;
-    background-color: var(--White);
-    /* margin-top: -20px; */
+    transition: background-color 0.7s ease, color 0.7s ease;
+    color: var(--Black);
 }
+
+.big-accordion .accordion-body {
+    background-color: var(--Accent);
+    transition: background-color 0.7s ease, color 0.7s ease;
+}
+
 .big-accordion .accordion-button:not(.collapsed), .big-accordion .accordion-collapse{
     background-color: var(--Accent);
+    color: var(--Black);
+}
+
+.big-accordion .accordion-collapse{
     color: var(--White);
 }
 .big-accordion .accordion-button::after{display: none !important;}
@@ -489,6 +503,22 @@ a.prev-arrow-carousel, button.prev-arrow-carousel{
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
+}
+
+.big-accordion .accordion-collapse.show {
+    background-color: var(--Accent);
+    color: var(--White);
+    transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.background-color-hovered {
+    background-color: var(--Accent)!important;
+    color: var(--White);
+}
+
+.big-accordion .accordion-button:hover {
+    background-color: var(--Accent);
+    color: var(--White); 
 }
 
 .about-banner{
@@ -840,4 +870,8 @@ input[type="number"] {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+.heading-text-history {
+    font-size: 25px;
 }
