@@ -72,7 +72,7 @@
                     </div>
                 {% endif %}
                 {% for post in posts %}
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-xl-4 col-md-6 mb-4">
                         <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
                             <div class="bg-grey border-radius-20">
                                 {% if post.photo %}

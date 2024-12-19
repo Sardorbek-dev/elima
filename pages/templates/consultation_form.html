@@ -7,6 +7,9 @@
     <div class="mb-3">
         <input type="number" name="phone_number" class="form-control no-bg-change" id="phone_number" placeholder="{% trans 'Phone number' %}">
     </div>
+    <div class="mb-3">
+        <textarea name="reason" class="form-control no-bg-change" id="reason" placeholder="{% trans 'Brief description of the reason for the consultation' %}" rows="4"></textarea>
+    </div>
     <button type="submit" class="btn btn-accent w-100 mt-lg-5 mt-4">{% trans 'Send' %}</button>
 </form>
 <div id="form-consultation-success" class="alert alert-success mt-4" style="display: none;">{% trans 'Your request has been successfully sent!' %}</div>

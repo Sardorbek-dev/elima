@@ -1,0 +1,14 @@
+# Ignore static files
+/staticfiles/
+
+# Ignore Django migrations
+*/migrations/
+
+# Ignore environment variables
+.env
+
+# Ignore pycache files
+__pycache__/
+
+# Ignore virtual environment
+venv/

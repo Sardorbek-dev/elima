@@ -476,3 +476,6 @@ msgstr "Заявки на продукцию"
 
 msgid "Our history and achievements"
 msgstr "Наши история и достижения"
+
+msgid "Brief description of the reason for the consultation"
+msgstr "Краткое описание причины консультации"
