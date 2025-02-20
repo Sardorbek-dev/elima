@@ -74,7 +74,7 @@
                 {% for post in posts %}
                     <div class="col-xl-4 col-md-6 mb-4">
                         <a href="{% url 'post-detail' post.slug %}" class="text-black text-decoration-none">
-                            <div class="bg-grey border-radius-20">
+                            <div class="bg-grey border-radius-20 post-image-box">
                                 {% if post.photo %}
                                     <img src="{{ post.photo.url }}" class="img-fluid w-100" alt="news image">
                                 {% else %}

@@ -879,3 +879,42 @@ input[type="number"] {
 .no-bg-change:focus {
     background-color: transparent;
 }
+
+.post-image-box {
+    width: 430px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.post-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post-details-image-box {
+    width: 100vh;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.post-details-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-card-img-style {
+    width: 34vh;
+    height: 45vh;
+    overflow: hidden !important;
+}
+
+.product-card-img-style img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

@@ -13,7 +13,7 @@ class PostListView(ListView):
     paginate_by = 6 # Display 6 posts initially
 
     def get_queryset(self):
-        queryset = Post.objects.filter(publish=True)
+        queryset = Post.objects.filter(publish=True).order_by('-created_at')
 
         if self.request.method == 'GET':
             self.filterset = PostFilter(self.request.GET, queryset=queryset)
