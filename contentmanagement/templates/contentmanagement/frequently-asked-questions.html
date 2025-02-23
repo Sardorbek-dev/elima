@@ -19,11 +19,11 @@
             {% for faq in faqs %}
                 <div class="accordion-item mb-4">
                     <h2 class="accordion-header">
-                        <button class="heading-3 accordion-button pb-4 {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.counter }}">
+                        <button class="heading-3 accordion-button pb-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
                             {{ faq.question }}
                         </button>
                     </h2>
-                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordionExample">
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body body-2 px-0 pt-0 pb-4">
                             {{ faq.answer }}
                         </div>

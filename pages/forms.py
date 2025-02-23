@@ -17,9 +17,10 @@ class ContactForm(forms.ModelForm):
 class ConsultationForm(forms.ModelForm):
     class Meta:
         model = ConsultationRequest
-        fields = ['name', 'phone_number', 'reason']
+        fields = ['name', 'email', 'phone_number', 'reason']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ФИО'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Номер телефона'}),
             'reason': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Краткое описание причины консультации'})
         }

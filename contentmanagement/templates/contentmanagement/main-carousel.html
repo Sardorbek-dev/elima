@@ -2,11 +2,11 @@
 <div id="mainCarousel"
      class="carousel slide border-radius-20 bg-grey py-4 pt-lg-5 pb-lg-0 ps-lg-5 pe-lg-4 px-3 px-md-4"
      data-bs-ride="carousel">
-    <div class="carousel-indicators">
+    <!-- <div class="carousel-indicators">
         {% for item in main_carousel_items %}
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
         {% endfor %}
-    </div>
+    </div> -->
     <div class="carousel-inner">
         {% for item in main_carousel_items %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -47,11 +47,11 @@
 
     <!-- Carousel Controls (Arrows) -->
 
-    <a href="#" data-bs-target="#mainCarousel" data-bs-slide="prev" class="prev-arrow-carousel d-none d-lg-block" data-aos="fade-up" data-aos-duration="500">
+    <!-- <a href="#" data-bs-target="#mainCarousel" data-bs-slide="prev" class="prev-arrow-carousel d-none d-lg-block" data-aos="fade-up" data-aos-duration="500">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="m10.108 12l4.246 4.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16l-4.388-4.389q-.131-.13-.184-.267q-.053-.136-.053-.298t.053-.298t.184-.267l4.388-4.389q.14-.14.344-.15t.364.15t.16.354t-.16.354z"/></svg>
     </a>
     <a href="#" data-bs-target="#mainCarousel" data-bs-slide="next" class="next-arrow-carousel d-none d-lg-block" data-aos="fade-up" data-aos-duration="500">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#006B3C" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
-    </a>
+    </a> -->
 
 </div>

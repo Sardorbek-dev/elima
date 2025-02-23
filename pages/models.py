@@ -19,6 +19,7 @@ class ContactRequest(models.Model):
 
 class ConsultationRequest(models.Model):
     name = models.CharField(max_length=255)
+    email = models.EmailField(null=True, blank=True)
     phone_number = models.CharField(max_length=20)
     reason = models.CharField(max_length=400, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

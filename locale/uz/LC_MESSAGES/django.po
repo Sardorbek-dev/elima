@@ -48,8 +48,8 @@ msgstr "Bizning manzilimiz"
 msgid "Uzbekistan, Tashkent city, "
 msgstr "Toshkent shahri, "
 
-msgid "Karasu str. 4, building 2"
-msgstr "Mirzo Ulug'bek tumani, Qorasuv ko'chasi 4-uy, 2-bino"
+msgid "Ahmad Yugnakiy Street, 111"
+msgstr "Mirzo Ulug'bek tumani, Ahmad Yugnakiy ko'chasi, 111"
 
 msgid "Working time"
 msgstr "Ish vaqti"
@@ -222,8 +222,17 @@ msgstr "Sifat, innovatsiya va mas'uliyat tamoyillari asosida, biz hayotni yaxshi
 msgid "Quality"
 msgstr "Sifat"
 
-msgid "We use modern technology and materials to offer you solutions that are up to date with the latest trends"
-msgstr "Biz sizga zamonaviy texnologiyalar va materiallardan foydalanib, so'nggi tendentsiyalarga mos yechimlar taklif etamiz."
+msgid "Quality – is the impeccable precision in cutting, strong seams, durable materials, and reliable hardware that ensure the functionality and comfort of our products under any operating conditions"
+msgstr "Sifat – bu kesishning mukammal aniqligi, mustahkam tikishlar, uzoq umrli materiallar va ishonchli armatura bo‘lib, ular mahsulotlarimizning har qanday ekspluatatsiya sharoitida funksionalligi va qulayligini ta’minlaydi"
+
+msgid "Innovation – is the continuous integration of modern technologies, enhancement of designs, and use of advanced materials to improve the convenience, durability, and efficiency of our products"
+msgstr "Innovatsiya – bu zamonaviy texnologiyalarni doimiy joriy etish, dizaynlarni takomillashtirish va ilg‘or materiallardan foydalanish orqali mahsulotlarimizning qulayligi, mustahkamligi va samaradorligini oshirishdir"
+
+msgid "Responsibility – is the strict control at every stage of production, adherence to delivery deadlines, and the guarantee that our products meet the declared specifications, thereby strengthening customer trust"
+msgstr "Mas’uliyat – bu ishlab chiqarishning barcha bosqichlarida qat’iy nazorat, yetkazib berish muddatlariga rioya qilish va mahsulotlarimizning e’lon qilingan xususiyatlarga mosligini kafolatlash orqali mijozlar ishonchini mustahkamlashdir"
+
+msgid "Individual Approach – is the flexibility in designing and manufacturing products, tailoring solutions to meet the specific needs of our clients, and providing personalized service for every customer"
+msgstr "Shaxsiy yondashuv – bu mahsulotlarni ishlab chiqish va ishlab chiqarishda moslashuvchanlik, mijozlarning aniq talablariga mos yechimlarni ishlab chiqish va har bir mijozga shaxsiy xizmat ko‘rsatishdir"
 
 msgid "Innovation"
 msgstr "Innovatsiyalar"

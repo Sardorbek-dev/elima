@@ -907,8 +907,8 @@ input[type="number"] {
 }
 
 .product-card-img-style {
-    width: 34vh;
-    height: 45vh;
+    width: 320px;
+    height: 400px;
     overflow: hidden !important;
 }
 

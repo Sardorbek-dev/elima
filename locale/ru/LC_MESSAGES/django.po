@@ -50,8 +50,8 @@ msgstr "Наш адрес"
 msgid "Uzbekistan, Tashkent city, "
 msgstr "г. Ташкент, Мирзо-Улугбекский р-н"
 
-msgid "Karasu str. 4, building 2"
-msgstr "ул. Карасу-4, дом 2"
+msgid "Ahmad Yugnakiy Street, 111"
+msgstr "Улица Ахмада Югнакий, 111"
 
 msgid "Working time"
 msgstr "Время работы"
@@ -218,8 +218,17 @@ msgstr "Руководствуясь принципами качества, ин
 msgid "Quality"
 msgstr "Качество"
 
-msgid "We use modern technology and materials to offer you solutions that are up to date with the latest trends"
-msgstr "Мы используем современные технологии и материалы, чтобы предлагать вам решения, которые соответствуют самым тенденциям"
+msgid "Quality – is the impeccable precision in cutting, strong seams, durable materials, and reliable hardware that ensure the functionality and comfort of our products under any operating conditions"
+msgstr "Качество – это безупречная точность кроя, прочные швы, долговечные материалы и надежная фурнитура, которые обеспечивают функциональность и комфорт продукции в любых условиях эксплуатации"
+
+msgid "Innovation – is the continuous integration of modern technologies, enhancement of designs, and use of advanced materials to improve the convenience, durability, and efficiency of our products"
+msgstr "Инновация – это постоянное внедрение современных технологий, улучшение конструкций и применение передовых материалов для повышения удобства, прочности и эффективности наших изделий"
+
+msgid "Responsibility – is the strict control at every stage of production, adherence to delivery deadlines, and the guarantee that our products meet the declared specifications, thereby strengthening customer trust"
+msgstr "Ответственность – это строгий контроль на всех этапах производства, соблюдение сроков поставок и гарантия соответствия продукции заявленным характеристикам, что укрепляет доверие клиентов"
+
+msgid "Individual Approach – is the flexibility in designing and manufacturing products, tailoring solutions to meet the specific needs of our clients, and providing personalized service for every customer"
+msgstr "Индивидуальный подход – это гибкость в разработке и изготовлении продукции, адаптация решений под конкретные задачи заказчиков и персонализированный сервис для каждого клиента"
 
 msgid "Innovation"
 msgstr "Инновации"
