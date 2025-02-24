@@ -894,8 +894,8 @@ input[type="number"] {
 }
 
 .post-details-image-box {
-    width: 100vh;
-    height: 60vh;
+    width: 900px;
+    height: 500px;
     overflow: hidden;
 }
 
