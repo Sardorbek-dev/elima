@@ -200,8 +200,8 @@ body{
     fill: var(--Accent);
 }
 .icon-45{
-    width: 45px;
-    height: 45px;
+    width: 43px;
+    height: 43px;
     display: block;
     text-align: center;
     line-height: 41px;
@@ -632,6 +632,26 @@ input[type="number"] {
     box-shadow: none;
     margin-top: 8px;
     padding: 0px 5px !important;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-bottom: 10px; 
+}
+
+.brand-logo-special {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain; 
+    margin: auto; 
+}
+
+.logo-container-special {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
 @media (min-width: 1400px) {

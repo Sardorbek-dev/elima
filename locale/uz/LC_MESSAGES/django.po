@@ -482,3 +482,9 @@ msgstr "Tarix va yutuqlarimiz"
 
 msgid "Brief description of the reason for the consultation"
 msgstr "Konsultatsiya sababining qisqacha tavsifi"
+
+msgid "Our Partners"
+msgstr "Hamkorlarimiz"
+
+msgid "Trusted partners supporting innovation and quality at ELIMA"
+msgstr "ELIMA innovatsiya va sifatini qo‘llab-quvvatlovchi ishonchli hamkorlar"

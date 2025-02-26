@@ -488,3 +488,9 @@ msgstr "Наши история и достижения"
 
 msgid "Brief description of the reason for the consultation"
 msgstr "Краткое описание причины консультации"
+
+msgid "Our Partners"
+msgstr "Наши партнёры"
+
+msgid "Trusted partners supporting innovation and quality at ELIMA"
+msgstr "Надёжные партнёры, поддерживающие инновации и качество ELIMA"
