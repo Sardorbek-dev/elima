@@ -654,6 +654,17 @@ input[type="number"] {
     padding: 15px;
 }
 
+.owl-carousel {
+    min-height: 180px; 
+  }
+
+.owl-carousel .owl-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: center; 
+    height: 180px; 
+}
+
 @media (min-width: 1400px) {
     .container{max-width: 1400px;}
     .gap-10{

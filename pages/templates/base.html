@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}" />
     <link rel="stylesheet" href="{% static '/css/flexslider.css' %}" />
     <link rel="stylesheet" href="{% static '/css/aos/aos.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/owl/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/owl/css/owl.theme.default.min.css' %}" />
   </head>
   <body>
     <!-- <div id="elima-loader" class="elima-loader">
@@ -1069,17 +1071,33 @@
     <script src="{% static 'js/aos/aos.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/store.js' %}"></script>
+    <script src="{% static 'css/owl/owl.carousel.min.js' %}"></script>
     <script>
       window.onload = function () {
         var loader = document.getElementById("elima-loader");
         loader.classList.add("elima-loader-anim"); // Add fade-out class
         setTimeout(() => (loader.style.display = "none"), 500); // Hide after animation
       };
+      
       AOS.init({
         easing: "ease-in-out", // Easing function
         once: true, // animation should happen only once
         mirror: false, // elements should animate out while scrolling past them
       }); // Initialize AOS
+
+      $(document).ready(function(){
+          $(".owl-carousel").owlCarousel({
+            loop: true,          
+            margin: 0,
+            touchDrag: true,           
+            items: 4,
+            lazyLoad: true,
+            dots: false,
+            autoplay: true,   
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,      
+          });
+      });
     </script>
   </body>
 </html>

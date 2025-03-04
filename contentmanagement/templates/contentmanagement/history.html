@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load static %}
+
 <div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="500">
   <div class="col-lg-6">
     <h2 class="heading-2 mb-lg-0 mb-3">
@@ -32,6 +34,6 @@
     </div>
   {% endfor %}
   <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="800">
-        <a href="{% url 'about' %}" class="btn btn-accent w-100">{% trans 'Read more about the company' %}</a>
+        <a href="{% static 'docs/presentation_elima.pdf' %}" class="btn btn-accent w-100" download="about-elima.pdf">{% trans 'Read more about the company' %}</a>
    </div>
 </div>
