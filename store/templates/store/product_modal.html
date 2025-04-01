@@ -38,7 +38,13 @@
                                 </div>
                                 <div class="mb-4">
                                     <span class="body-3 fw-bold">{% trans 'Price' %}</span>
-                                    <p class="body-3 mb-0">{{ product.price }} сум</p>
+                                    <p class="body-3 mb-0">
+                                        {% if product.price == 1 %}
+                                            {% trans "on request" %}
+                                        {% else %}
+                                            {{ product.price }} {% trans "сум" %}
+                                        {% endif %}
+                                    </p>
                                 </div>
                                 <div class="">
                                     <span class="body-3 fw-bold">{% trans 'Minimum amount' %}</span>

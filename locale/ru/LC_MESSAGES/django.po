@@ -494,3 +494,6 @@ msgstr "Наши партнёры"
 
 msgid "Trusted partners supporting innovation and quality at ELIMA"
 msgstr "Надёжные партнёры, поддерживающие инновации и качество ELIMA"
+
+msgid "on request"
+msgstr "По запросу"

@@ -488,3 +488,6 @@ msgstr "Hamkorlarimiz"
 
 msgid "Trusted partners supporting innovation and quality at ELIMA"
 msgstr "ELIMA innovatsiya va sifatini qo‘llab-quvvatlovchi ishonchli hamkorlar"
+
+msgid "on request"
+msgstr "so'rovga asosan"
