@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from unidecode import unidecode
-
+from django.core.validators import FileExtensionValidator
 
 class PostCategory(models.Model):
     name = models.CharField(max_length=255)
@@ -28,7 +28,12 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     content = RichTextField(config_name='default')
     author = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='img/')
+    photo = models.ImageField(upload_to='img/', blank=True, null=True)
+    video = models.FileField(
+        upload_to='videos/',
+        blank=True, null=True,
+        validators=[FileExtensionValidator(['mp4', 'mov', 'avi'])]
+    )
     created_at = models.DateTimeField(default=timezone.now)
     show_on_homepage = models.BooleanField(default=False)
     publish = models.BooleanField(default=True)

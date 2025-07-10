@@ -34,12 +34,24 @@
         />
         {% else %}
         <img
-          src="{% static 'images/default-image.png' %}"
+          src="{% static 'img/default.png' %}"
           class="img-fluid w-100"
           alt="default image"
         />
         {% endif %}
       </div>
+        {% if post.video %}
+          <div class="post-details-image-box">  
+            <video
+              class="img-fluid mt-4"
+              controls
+              preload="metadata"
+              >
+              <source src="{{ post.video.url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endif %}
       <div class="mx-lg-5 px-lg-5 mt-4 pt-2">
         <div class="mb-5">
           <p class="body-2">{{ post.content|safe }}</p>
@@ -59,23 +71,20 @@
     <ul class="slides">
       {% for other_post in other_posts %}
       <li>
-        <a
-          href="{% url 'post-detail' other_post.slug %}"
-          class="text-black text-decoration-none"
-        >
+        <a href="{% url 'post-detail' other_post.slug %}" class="text-black text-decoration-none">
           <div class="bg-grey border-radius-20 post-image-box">
-            {% if post.photo %}
-            <img
-              src="{{ other_post.photo.url }}"
-              class="img-fluid w-100"
-              alt="news image"
-            />
+            {% if other_post.photo %}
+              <img
+                src="{{ other_post.photo.url }}"
+                class="img-fluid w-100"
+                alt="{{ other_post.title }}"
+              />
             {% else %}
-            <img
-              src="{% static 'img/default.png' %}"
-              class="img-fluid w-100"
-              alt="news image"
-            />
+              <img
+                src="{% static 'img/default.png' %}"
+                class="img-fluid w-100"
+                alt="default image"
+              />
             {% endif %}
           </div>
           <h3 class="heading-3 mt-3">{{ other_post.title }}</h3>
