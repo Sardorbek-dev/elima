@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'ckeditor',
     'ckeditor_uploader',
     'django_filters',
@@ -69,7 +70,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -106,11 +107,24 @@ WSGI_APPLICATION = 'elima.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'default_db',
+        'USER': 'gen_user',
+        'PASSWORD': 'Rp%BSr-FmC34e/',
+        'HOST': 'aa508f4113c1faadf53e0605.twc1.net',
+        'PORT': '3306',
+
+        # Optional extras:
+        'CONN_MAX_AGE': 600,        # persistent connections
+        'OPTIONS': {
+            # If Timeweb provides an SSL CA cert:
+            'ssl': {
+                'ca': '/home/app/.cloud-certs/root.crt',
+            },
+            'ssl_mode': 'VERIFY_IDENTITY',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -159,12 +173,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# In your Timeweb env vars set:
+#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
+#   AWS_STORAGE_BUCKET_NAME, AWS_S3_ENDPOINT_URL, AWS_S3_REGION_NAME
+
+AWS_ACCESS_KEY_ID        = '5GSOITR7DPH24PKBJ26M'
+AWS_SECRET_ACCESS_KEY    = 'dJmhJQmO5vD8nuqRuUhMxCCf3zPhHBL3RvcHqcI9'
+AWS_STORAGE_BUCKET_NAME  = '46c13bbf-2ceafdc8-49d7-49df-aeb8-45a960c556aa'
+AWS_S3_ENDPOINT_URL      = 'https://s3.twcstorage.ru'       # https://s3.twcstorage.ru
+AWS_S3_REGION_NAME       = 'ru-1'    # ru-1
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_ADDRESSING_STYLE  = 'path'
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# tell django-storages to use our custom S3 endpoint
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/static/'
+
+# local fallback (e.g. for DEBUG)
 
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+# MEDIA FILES (served by Django + WhiteNoise or your webserver)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
