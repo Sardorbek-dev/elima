@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,8 +48,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# Application definition
-
+# ─── APPLICATIONS ───────────────────────────────────────────────────────────────
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -57,11 +57,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third-party
     'storages',
     'ckeditor',
     'ckeditor_uploader',
     'django_filters',
     'modeltranslation',
+
+    # your apps
     'pages',
     'blog',
     'store',
@@ -70,7 +74,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # fallback static serving
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,7 +89,7 @@ ROOT_URLCONF = 'elima.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],  # add project-level template dirs here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,117 +105,84 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'elima.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# ─── DATABASE (MySQL with SSL) ─────────────────────────────────────────────────
+# Make sure you have `mysqlclient` installed.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'default_db',
-        'USER': 'gen_user',
-        'PASSWORD': 'Rp%BSr-FmC34e/',
-        'HOST': 'aa508f4113c1faadf53e0605.twc1.net',
-        'PORT': '3306',
-
-        # Optional extras:
-        'CONN_MAX_AGE': 600,        # persistent connections
+        'NAME':     os.environ['TW_DB_NAME'],     # default_db
+        'USER':     os.environ['TW_DB_USER'],     # gen_user
+        'PASSWORD': os.environ['TW_DB_PASSWORD'], # Rp%BSr-FmC34e/
+        'HOST':     os.environ['TW_DB_HOST'],     # aa508f4113c1faadf53e0605.twc1.net
+        'PORT':     os.environ.get('TW_DB_PORT', '3306'),
+        'CONN_MAX_AGE': 600,
         'OPTIONS': {
-            # If Timeweb provides an SSL CA cert:
             'ssl': {
-                'ca': '/home/app/.cloud-certs/root.crt',
+                'ca': os.environ['TW_DB_SSL_CA_PATH'],  # e.g. /home/app/.cloud-certs/root.crt
+                'verify_cert': True,
             },
-            'ssl_mode': 'VERIFY_IDENTITY',
+            # for MySQL 8+ strict hostname check
+            'ssl_mode': os.environ.get('TW_DB_SSL_MODE', 'VERIFY_IDENTITY'),
         },
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
-
+# ─── PASSWORD VALIDATION ───────────────────────────────────────────────────────
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
+# ─── INTERNATIONALIZATION ──────────────────────────────────────────────────────
 LANGUAGES = [
     ('en', 'English'),
     ('ru', 'Russian'),
     ('uz', 'Uzbek'),
 ]
-
 LANGUAGE_CODE = 'ru'
-
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
-
+LOCALE_PATHS = [BASE_DIR / 'locale']
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-# In your Timeweb env vars set:
-#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
-#   AWS_STORAGE_BUCKET_NAME, AWS_S3_ENDPOINT_URL, AWS_S3_REGION_NAME
-
-AWS_ACCESS_KEY_ID        = '5GSOITR7DPH24PKBJ26M'
-AWS_SECRET_ACCESS_KEY    = 'dJmhJQmO5vD8nuqRuUhMxCCf3zPhHBL3RvcHqcI9'
-AWS_STORAGE_BUCKET_NAME  = '46c13bbf-2ceafdc8-49d7-49df-aeb8-45a960c556aa'
-AWS_S3_ENDPOINT_URL      = 'https://s3.twcstorage.ru'       # https://s3.twcstorage.ru
-AWS_S3_REGION_NAME       = 'ru-1'    # ru-1
+# ─── STATIC FILES (via S3) ─────────────────────────────────────────────────────
+# Install: pip install django-storages boto3
+AWS_ACCESS_KEY_ID        = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY    = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME  = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_S3_ENDPOINT_URL      = os.environ['AWS_S3_ENDPOINT_URL']     # https://s3.twcstorage.ru
+AWS_S3_REGION_NAME       = os.environ.get('AWS_S3_REGION_NAME')  # ru-1
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_ADDRESSING_STYLE  = 'path'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-# tell django-storages to use our custom S3 endpoint
+# Use S3 for static files
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/static/'
 
-# local fallback (e.g. for DEBUG)
+# Local dirs (for collectstatic in dev/fallback)
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-
-# MEDIA FILES (served by Django + WhiteNoise or your webserver)
+# ─── MEDIA FILES (local) ──────────────────────────────────────────────────────
 MEDIA_URL = '/media/'
-MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+MEDIA_ROOT = BASE_DIR / 'media'
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+# ─── CKEDITOR ─────────────────────────────────────────────────────────────────
+CKEDITOR_UPLOAD_PATH      = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
-
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'height': 300,
         'width': 'auto',
         'remove_dialog_tabs': 'image:advanced;link:advanced',
-    }
+    },
 }
 
-# Jazzmin
+# ─── JAZZMIN ───────────────────────────────────────────────────────────────────
 JAZZMIN_SETTINGS = {
     "site_title": "Elima",
     "site_brand": "Панель управления",
@@ -221,3 +192,6 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": True,
     "order_with_respect_to": ["pages", "contentmanagement", "store", "blog", "auth"],
 }
+
+# ─── DEFAULT PK FIELD ─────────────────────────────────────────────────────────
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
