@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+import certifi
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +119,7 @@ DATABASES = {
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'ssl': {
-                'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
+                'ca': certifi.where(), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
                 'verify_cert': True, 
             }
         },
