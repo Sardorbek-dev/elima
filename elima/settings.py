@@ -118,7 +118,8 @@ DATABASES = {
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'ssl': {
-                'ca': os.environ['TW_DB_SSL_CA_PATH'], 
+                'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
+                'verify_cert': True, 
             }
         },
     }
