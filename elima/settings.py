@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import sys
 from pathlib import Path
+import sqlite3
+import sqlitecloud
+sys.modules['sqlite3'] = sqlitecloud
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -106,22 +110,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'elima.wsgi.application'
 
 # ─── DATABASE (MySQL with SSL) ─────────────────────────────────────────────────
-# Make sure you have `mysqlclient` installed.
+_original_sqlite_connect = sqlite3.connect
+def _patched_sqlite_connect(path, *args, **kwargs):
+    if isinstance(path, str) and path.startswith("sqlitecloud://"):
+        # all arguments get forwarded to sqlitecloud.connect
+        return sqlitecloud.connect(path)
+    return _original_sqlite_connect(path, *args, **kwargs)
+sqlite3.connect = _patched_sqlite_connect
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':     os.environ['TW_DB_NAME'],     
-        'USER':     os.environ['TW_DB_USER'],     
-        'PASSWORD': os.environ['TW_DB_PASSWORD'], 
-        'HOST':     os.environ['TW_DB_HOST'],     
-        'PORT':     os.environ.get('TW_DB_PORT', '3306'),
-        'CONN_MAX_AGE': 600,
-        'OPTIONS': {
-            'ssl': {
-                "ca": os.path.expanduser("~/.cloud-certs/root.crt"), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
-                'verify_cert': True, 
-            }
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        # NAME is *your* cloud‐URL, exactly what sqlitecloud.connect() expects:
+        "NAME": "sqlitecloud://cyhyhbguhz.g5.sqlite.cloud:8860/db.sqlite3?apikey=GbePoSDZCg6oSGIfbSxcMpmWUEwRjSYMm6g8aTo2T9Q",
+        # you can still pass standard sqlite OPTIONS if you like:
+        "OPTIONS": {
+            "timeout": 20,
         },
+        # SQLite doesn’t use USER/PASS/HOST/PORT
     }
 }
 
