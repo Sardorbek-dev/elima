@@ -10,12 +10,28 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import os
-import sys
-from pathlib import Path
 import sqlite3
-import sqlitecloud
-sys.modules['sqlite3'] = sqlitecloud
+try:
+    import sqlitecloud
+
+    _orig_sqlite_connect = sqlite3.connect
+
+    def cloud_connect(*args, **kwargs):
+        # Django will call connect(database=NAME, timeout=…, detect_types=…, ...)
+        # grab the URL from the kwarg 'database' or from args[0]
+        url = kwargs.pop('database', args[0] if args else None)
+        # ignore all the other kwargs—sqlitecloud.connect only wants the URL
+        return sqlitecloud.connect(url)
+
+    sqlite3.connect = cloud_connect
+
+except ImportError:
+    # if sqlitecloud isn’t installed, fall back to the built-in sqlite3.connect
+    pass
+# ───────────────────────────────────────────────────────────────────────────────────────
+
+import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -110,14 +126,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'elima.wsgi.application'
 
 # ─── DATABASE (MySQL with SSL) ─────────────────────────────────────────────────
-_original_sqlite_connect = sqlite3.connect
-def _patched_sqlite_connect(path, *args, **kwargs):
-    if isinstance(path, str) and path.startswith("sqlitecloud://"):
-        # all arguments get forwarded to sqlitecloud.connect
-        return sqlitecloud.connect(path)
-    return _original_sqlite_connect(path, *args, **kwargs)
-sqlite3.connect = _patched_sqlite_connect
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
