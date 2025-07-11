@@ -110,19 +110,16 @@ WSGI_APPLICATION = 'elima.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':     os.environ['TW_DB_NAME'],     # default_db
-        'USER':     os.environ['TW_DB_USER'],     # gen_user
-        'PASSWORD': os.environ['TW_DB_PASSWORD'], # Rp%BSr-FmC34e/
-        'HOST':     os.environ['TW_DB_HOST'],     # aa508f4113c1faadf53e0605.twc1.net
+        'NAME':     os.environ['TW_DB_NAME'],     
+        'USER':     os.environ['TW_DB_USER'],     
+        'PASSWORD': os.environ['TW_DB_PASSWORD'], 
+        'HOST':     os.environ['TW_DB_HOST'],     
         'PORT':     os.environ.get('TW_DB_PORT', '3306'),
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'ssl': {
-                'ca': os.environ['TW_DB_SSL_CA_PATH'],  # e.g. /home/app/.cloud-certs/root.crt
-                'verify_cert': True,
-            },
-            # for MySQL 8+ strict hostname check
-            'ssl_mode': os.environ.get('TW_DB_SSL_MODE', 'VERIFY_IDENTITY'),
+                'ca': os.environ['TW_DB_SSL_CA_PATH'], 
+            }
         },
     }
 }
@@ -153,8 +150,8 @@ USE_TZ = True
 AWS_ACCESS_KEY_ID        = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY    = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME  = os.environ['AWS_STORAGE_BUCKET_NAME']
-AWS_S3_ENDPOINT_URL      = os.environ['AWS_S3_ENDPOINT_URL']     # https://s3.twcstorage.ru
-AWS_S3_REGION_NAME       = os.environ.get('AWS_S3_REGION_NAME')  # ru-1
+AWS_S3_ENDPOINT_URL      = os.environ['AWS_S3_ENDPOINT_URL']     
+AWS_S3_REGION_NAME       = os.environ.get('AWS_S3_REGION_NAME')
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_ADDRESSING_STYLE  = 'path'
 
