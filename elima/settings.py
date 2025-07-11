@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-import certifi
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-CA_CERT_PATH = os.path.join(BASE_DIR, "certs", "root.crt")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -119,10 +118,8 @@ DATABASES = {
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'ssl': {
-                "ca": CA_CERT_PATH,
-                "verify_cert": True,
-                #'ca': certifi.where(), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
-                #'verify_cert': False, 
+                "ca": os.path.expanduser("~/.cloud-certs/root.crt"), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
+                'verify_cert': True, 
             }
         },
     }
