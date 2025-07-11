@@ -119,8 +119,8 @@ DATABASES = {
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'ssl': {
-                'ca': certifi.where(), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
-                'verify_cert': True, 
+                #'ca': certifi.where(), #'ca': os.environ.get('TW_DB_SSL_CA_PATH', str(BASE_DIR / 'root.crt')),
+                'verify_cert': False, 
             }
         },
     }
