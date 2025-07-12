@@ -36,7 +36,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1:8000/ru/',
     '127.0.0.1:8000/en/',
     '127.0.0.1:8000/uz/',
-    '127.0.0.1'
+    '127.0.0.1',
+    'sardorbek-dev-elima-7b68.twc1.net',
+    '81.200.153.64'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
