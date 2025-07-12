@@ -144,13 +144,6 @@ AWS_S3_REGION_NAME       = os.environ.get('AWS_S3_REGION_NAME')
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_ADDRESSING_STYLE  = 'path'
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-    'ACL': 'public-read',
-}
-
-AWS_QUERYSTRING_AUTH = False
-
 # Use S3 for static files
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/static/'
@@ -164,7 +157,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # ─── CKEDITOR ─────────────────────────────────────────────────────────────────
-CKEDITOR_BASEPATH = STATIC_URL + "ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = f"{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH      = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_CONFIGS = {
