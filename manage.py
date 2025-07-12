@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+import elima.sqlitecloud_patch
 import os
 import sys
 

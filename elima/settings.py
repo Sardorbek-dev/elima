@@ -9,27 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-import sqlite3
-try:
-    import sqlitecloud
-
-    _orig_sqlite_connect = sqlite3.connect
-
-    def cloud_connect(*args, **kwargs):
-        # Django will call connect(database=NAME, timeout=…, detect_types=…, ...)
-        # grab the URL from the kwarg 'database' or from args[0]
-        url = kwargs.pop('database', args[0] if args else None)
-        # ignore all the other kwargs—sqlitecloud.connect only wants the URL
-        return sqlitecloud.connect(url)
-
-    sqlite3.connect = cloud_connect
-
-except ImportError:
-    # if sqlitecloud isn’t installed, fall back to the built-in sqlite3.connect
-    pass
-# ───────────────────────────────────────────────────────────────────────────────────────
-
 import os
 from pathlib import Path
 
