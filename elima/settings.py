@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -106,15 +107,9 @@ WSGI_APPLICATION = 'elima.wsgi.application'
 
 # ─── DATABASE (MySQL with SSL) ─────────────────────────────────────────────────
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        # NAME is *your* cloud‐URL, exactly what sqlitecloud.connect() expects:
-        "NAME": "sqlitecloud://cyhyhbguhz.g5.sqlite.cloud:8860/db.sqlite3?apikey=GbePoSDZCg6oSGIfbSxcMpmWUEwRjSYMm6g8aTo2T9Q",
-        # you can still pass standard sqlite OPTIONS if you like:
-        "OPTIONS": {
-            "timeout": 20,
-        },
-        # SQLite doesn’t use USER/PASS/HOST/PORT
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
