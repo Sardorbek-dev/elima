@@ -7,7 +7,7 @@ class CategoryTranslationOptions(TranslationOptions):
 
 
 class ProductTranslationOptions(TranslationOptions):
-    fields = ('name', 'description', 'size', 'material', 'warming_material', 'filling', 'hood',)
+    fields = ('name', 'short_content', 'description', 'size', 'material', 'warming_material', 'filling', 'hood',)
 
 
 translator.register(Category, CategoryTranslationOptions)

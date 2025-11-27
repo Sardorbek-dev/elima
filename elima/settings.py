@@ -13,9 +13,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -53,6 +55,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # ─── APPLICATIONS ───────────────────────────────────────────────────────────────
 INSTALLED_APPS = [
     'jazzmin',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,7 +68,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django_filters',
-    'modeltranslation',
+
 
     # your apps
     'pages',
@@ -97,6 +100,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'context_processors.export_vars',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
@@ -180,6 +184,8 @@ JAZZMIN_SETTINGS = {
     "site_header": "Elima Dashboard",
     "show_ui_builder": True,
     "order_with_respect_to": ["pages", "contentmanagement", "store", "blog", "auth"],
+    # <<< добавляем вот это
+    "custom_css": "admin/css/custom.css",
 }
 
 # ─── DEFAULT PK FIELD ─────────────────────────────────────────────────────────

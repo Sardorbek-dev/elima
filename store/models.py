@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -18,7 +18,20 @@ class Product(models.Model):
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     bitrix_product_id = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    short_content = models.TextField(
+        verbose_name=_("Short content"),
+        blank=True,
+        null=True,
+        help_text=_("Краткое описание для карточки товара")
+    )
+
+    description = RichTextUploadingField(
+        verbose_name=_("Description"),
+        blank=True,
+        null=True,
+        help_text=_("Полное описание с картинками и форматированием")
+    )
+
     size = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     min_amount = models.PositiveIntegerField()

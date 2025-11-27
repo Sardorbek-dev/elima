@@ -38,7 +38,7 @@ body{
 }
 
 .title{
-  font-size: 48px;
+  font-size: 47px;
   font-weight: 500;
   line-height: 50px;
 }
@@ -666,7 +666,7 @@ input[type="number"] {
 }
 
 @media (min-width: 1400px) {
-    .container{max-width: 1400px;}
+    .container{max-width: 1440px;}
     .gap-10{
         gap: 10rem !important;
     }

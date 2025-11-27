@@ -28,46 +28,10 @@
                             </svg>
                         </button>
                         <h5 class="heading-4 mb-2">{{ product.name }}</h5>
-                        <p class="body-3 mb-4 me-md-4">{{ product.description|linebreaks  }}</p>
-                        <h5 class="heading-5 mb-2">{% trans 'Specifications' %}</h5>
+                        <p class="body-3 mb-4 me-md-4">{{ product.short_content|linebreaks  }}</p>
                         <div class="row product-modal-info">
-                            <div class="col-5">
-                                <div class="mb-4">
-                                    <span class="body-3 fw-bold">{% trans 'Size' %}</span>
-                                    <p class="body-3 mb-0">{{ product.size }}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <span class="body-3 fw-bold">{% trans 'Price' %}</span>
-                                    <p class="body-3 mb-0">
-                                        {% if product.price == 1 %}
-                                            {% trans "on request" %}
-                                        {% else %}
-                                            {{ product.price }} {% trans "сум" %}
-                                        {% endif %}
-                                    </p>
-                                </div>
-                                <div class="">
-                                    <span class="body-3 fw-bold">{% trans 'Minimum amount' %}</span>
-                                    <p class="body-3">{{ product.min_amount }}</p>
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <div class="mb-2">
-                                    <span class="body-3 fw-bold">{% trans 'Material' %}</span>
-                                    <p class="body-3 mb-0">{{ product.material }}</p>
-                                </div>
-                                <div class="mb-2">
-                                    <span class="body-3 fw-bold">{% trans 'Warming material' %}</span>
-                                    <p class="body-3 mb-0">{{ product.warming_material }}</p>
-                                </div>
-                                <div class="mb-2">
-                                    <span class="body-3 fw-bold">{% trans 'Filling' %}</span>
-                                    <p class="body-3">{{ product.filling }}</p>
-                                </div>
-                                <div class="">
-                                    <span class="body-3 fw-bold">{% trans 'Hood' %}</span>
-                                    <p class="body-3">{{ product.hood }}</p>
-                                </div>
+                            <div class="col-12">
+                                {{ product.description|safe }}
                             </div>
                         </div>
                         <div class="col-12">

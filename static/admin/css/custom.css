@@ -1,0 +1,25 @@
+/* Страница изменения объекта в админке */
+body.change-form .content .row {
+    /* вместо двух колонок делаем обычный блочный поток */
+    display: block;
+}
+
+/* обе колонки (форма и блок с кнопками) растягиваем на всю ширину
+   и складываем друг под другом */
+body.change-form .content .row > [class*="col-"] {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+/* немного отступа сверху, чтобы кнопки не прилипали к форме */
+body.change-form .form-save-global {
+    margin-top: 20px;
+}
+
+/* выровнять кнопки вправо (как обычно в Django) */
+body.change-form .submit-row {
+    text-align: right;
+}
+.django-ckeditor-widget {
+    width: 100%!important;
+}

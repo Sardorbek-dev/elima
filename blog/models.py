@@ -29,11 +29,11 @@ class Post(models.Model):
     content = RichTextField(config_name='default')
     author = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='img/', blank=True, null=True)
-    video = models.FileField(
-        upload_to='videos/',
-        blank=True, null=True,
-        validators=[FileExtensionValidator(['mp4', 'mov', 'avi'])]
-    )
+    # video = models.FileField(
+    #     upload_to='videos/',
+    #     blank=True, null=True,
+    #     validators=[FileExtensionValidator(['mp4', 'mov', 'avi'])]
+    # )
     created_at = models.DateTimeField(default=timezone.now)
     show_on_homepage = models.BooleanField(default=False)
     publish = models.BooleanField(default=True)
