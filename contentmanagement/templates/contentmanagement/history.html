@@ -1,10 +1,10 @@
 {% load i18n %}
 {% load static %}
 
-<div class="row mb-lg-5 mb-4" data-aos="fade-up" data-aos-duration="500">
+<div class="row mb-4" data-aos="fade-up" data-aos-duration="500">
   <div class="col-lg-6">
     <h2 class="heading-2 mb-lg-0 mb-3">
-      {% trans 'Our history and' %}<br class="d-none d-lg-block" />{% trans 'achievements' %}
+      {% trans 'Advantages of working with us' %}
     </h2>
   </div>
   <div class="col-lg-6 col-xl-5 col-xxl-4">
@@ -13,27 +13,16 @@
     </p>
   </div>
 </div>
-<div class="row">
+<div class="row g-4 mb-5" data-aos="fade-up">
   {% for history in historys %}
-    <div class="col-lg my-4 my-lg-0" data-aos="fade-up" data-aos-duration="500">
-        <div class="bg-grey border-radius-20 px-4 py-4 d-flex flex-wrap gap-5">
-            <div class="row">
-                <div class="col">
-                    <span class="display-1-later-version text-accent w-100 elima-statistics" counter-animation="{{ history.statistic }}">0</span>
-                    <span class=" display-1-later-version text-accent">
-                        {% if forloop.first %}
-                            <span class="display-1-later-version text-accent">+</span>
-                        {% else %}
-                            <span class="display-1-later-version text-accent">%</span>
-                        {% endif %}
-                    </span>
-                    <h3 class="heading-3 mt-md-5 pt-lg-5 pt-5 heading-text-history">{{ history.text }}</h3>
-                </div>
-            </div>
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500">
+        <div class="stat-card bg-grey border-radius-20 p-4">
+            <div class="display-1-later-version text-accent mb-3">{{ history.statistic }}</div>
+            <h3 class="heading-4 ">{{ history.text }}</h3>
         </div>
     </div>
   {% endfor %}
-  <div class="col-12 mt-4 pt-2" data-aos="fade-up" data-aos-duration="800">
-        <a href="{% static 'docs/presentation_elima.pdf' %}" class="btn btn-accent w-100" download="about-elima.pdf">{% trans 'Read more about the company' %}</a>
+  <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="800">
+        <a href="{% static 'docs/presentation_elima.pdf' %}" class="btn btn-accent px-5" download="about-elima.pdf">{% trans 'Download the presentation' %}</a>
    </div>
 </div>

@@ -6,7 +6,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from modeltranslation.admin import TranslationAdmin
 from modeltranslation.forms import TranslationModelForm
 
-from .models import Category, Product, ProductRequest
+from .models import Category, Product, ProductRequest, Services, Cases
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
@@ -18,6 +19,14 @@ class ProductRequestAdmin(admin.ModelAdmin):
     list_filter = ('product', 'created_at')
     search_fields = ('full_name_request', 'phone_number_request')
 
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
+
+class CasesAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
+
 
 
 
@@ -27,14 +36,15 @@ class ProductAdmin(TranslationAdmin):
         RichTextUploadingField: {'widget': CKEditorUploadingWidget},
     }
 
-    list_display = ('name', 'category', 'price', 'availability')
+    list_display = ('name', 'category', 'availability')
     list_filter = ('category', 'availability')
     search_fields = ('name',)
 
-    # TranslationAdmin сам развернёт это в name_ru/name_en/... и т.п.
-    fields = ('name', 'short_content', 'description', 'availability' )
+    fields = ('name', 'short_content', 'description', 'category', 'image', 'availability' )
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductRequest, ProductRequestAdmin)
+admin.site.register(Services, ServicesAdmin)
+admin.site.register(Cases, CasesAdmin)
 

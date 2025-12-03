@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 10:57+0200\n"
+"POT-Creation-Date: 2025-11-30 20:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,481 +19,936 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: .\pages\templates\base.html:53 .\pages\templates\base.html:231
-msgid "Home"
-msgstr "Главная"
 
-msgid "Catalog"
-msgstr "Каталог"
+#: blog/apps.py:7
+msgid "Новости"
+msgstr ""
 
-msgid "About"
-msgstr "О компании"
-
-msgid "News"
-msgstr "Новости"
-
-msgid "Contact"
-msgstr "Контакты"
-
-msgid "Quality proven over time"
-msgstr "Качество, проверенное временем"
-
-msgid "Creating reliable solutions for your comfort"
-msgstr "Создаем надежные решения для вашего комфорта"
-
-msgid "We have been in business since 2002"
-msgstr "Работаем с 2002 года"
-
-msgid "Our address"
-msgstr "Наш адрес"
-
-msgid "Uzbekistan, Tashkent city, "
-msgstr "г. Ташкент, Мирзо-Улугбекский р-н"
-
-msgid "Ahmad Yugnakiy Street, 111"
-msgstr "Улица Ахмада Югнакий, 111"
-
-msgid "Working time"
-msgstr "Время работы"
-
-msgid "MON-SAT"
-msgstr "ПН-СБ"
-
-msgid "SUNDAY"
-msgstr "BC"
-
-msgid "All Right Reserved"
-msgstr "Все права защищены"
-
-msgid "Privacy Policy"
-msgstr "Политика конфиденциальности"
-
-msgid "Made in"
-msgstr "сделано в"
-
-msgid "Open in maps"
-msgstr "Открыть в картах"
-
-msgid "Our history and"
-msgstr "Наша история и"
-
-msgid "achievements"
-msgstr "достижения"
-
-msgid "Over 20 years in apparel manufacturing, creating quality and innovative solutions."
-msgstr "Более 20 лет в швейном производстве, создавая качественные и инновационные решения."
-
-msgid "years of experience and growth"
-msgstr "лет опыта и развития"
-
-msgid "revenue from government contracts"
-msgstr "выручки от государственных заказов"
-
-msgid "customer satisfaction"
-msgstr "удовлетворенности клиентов"
-
-msgid "Read more about the company"
-msgstr "Подробнее о компании"
-
-msgid "Leave a request"
-msgstr "Оставьте заявку"
-
-msgid "Get a consultation or place an order. We are ready to help you with any questions you may have!"
-msgstr "Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми вопросами!"
-
-msgid "Product catalog"
-msgstr "Каталог продукции"
-
-msgid "Send a message"
-msgstr "Напишите нам"
-
-msgid "Our Products"
-msgstr "Наши товары"
-
-msgid "A wide range of products for all conditions."
-msgstr "Широкий ассортимент продукции для любых задач и условий."
-
-msgid "More products"
-msgstr "Посмотреть каталог"
-
-msgid "News and events"
-msgstr "Новости и события"
-
-msgid "Keep up to date with the latest news and achievements of 'ELIMA'."
-msgstr "Будьте в курсе последних новостей и достижений компании 'ELIMA'."
-
-msgid "There are no posts to display. Contact your system administrator."
-msgstr "Нет постов для показа. Обратитесь к системному администратору."
-
-msgid "All news"
-msgstr "Все новости"
-
-msgid "Testimonials from our customers"
-msgstr "Отзывы наших клиентов"
-
-msgid "What those who have trusted the quality of 'ELIMA' products say about us."
-msgstr "Что говорят о нас те, кто доверился качеству продукции 'ELIMA'."
-
-msgid "Frequently asked questions"
-msgstr "Частые вопросы"
-
-msgid "Couldn't find the answer? Contact us"
-msgstr "Не нашли ответ? Напишите нам"
-
-msgid "we're always in touch."
-msgstr "мы всегда на связи."
-
-msgid "Go to catalog"
-msgstr "Перейти в каталог"
-
-msgid "See all"
-msgstr "Посмотреть все"
-
-msgid "Phone number"
-msgstr "Номер телефона"
-
-msgid "Full Name"
-msgstr "ФИО"
-
-msgid "Send"
-msgstr "Отправить"
-
-msgid "Your request has been successfully sent!"
-msgstr "Ваш запрос успешно отправлен!"
-
-msgid "An error occurred, please try again."
-msgstr "Произошла ошибка, попробуйте еще раз."
-
-msgid "Min."
-msgstr "Мин."
-
-msgid "Max."
-msgstr "Макс."
-
-msgid "Apply"
-msgstr "Применить"
-
-msgid "Search"
-msgstr "Поиск"
-
-msgid "Filter"
-msgstr "Фильтры"
-
-msgid "Sort by price"
-msgstr "Сортировать"
-
-msgid "Ascending"
-msgstr "Дешевле"
-
-msgid "Descending"
-msgstr "Дороже"
-
-msgid "There are no products to display. Contact your system administrator."
-msgstr "Нет товаров для показа. Обратитесь к системному администратору."
-
-msgid "There are no products in this category."
-msgstr "В этой категории нет товаров."
-
-msgid "Load more"
-msgstr "Показать еще"
-
-msgid "You've reached the end of the list."
-msgstr "Вы дошли до конца списка."
-
-msgid "We are available to answer your questions, provide product information and help you make the right choice."
-msgstr "Мы готовы ответить на ваши вопросы, предоставить информацию о продукции и помочь сделать правильный выбор."
-
-msgid "of the year in business"
-msgstr "года в бизнеса"
-
-msgid "Products"
-msgstr "Товары"
-
-msgid "Values"
-msgstr "Ценности"
-
-msgid "Driven by the principles of quality, innovation and responsibility, we create products that make life better"
-msgstr "Руководствуясь принципами качества, инноваций и ответственности, мы создаем продукцию, которая делает жизнь лучше"
-
-msgid "Quality"
-msgstr "Качество"
-
-msgid "Quality – is the impeccable precision in cutting, strong seams, durable materials, and reliable hardware that ensure the functionality and comfort of our products under any operating conditions"
-msgstr "Качество – это безупречная точность кроя, прочные швы, долговечные материалы и надежная фурнитура, которые обеспечивают функциональность и комфорт продукции в любых условиях эксплуатации"
-
-msgid "Innovation – is the continuous integration of modern technologies, enhancement of designs, and use of advanced materials to improve the convenience, durability, and efficiency of our products"
-msgstr "Инновация – это постоянное внедрение современных технологий, улучшение конструкций и применение передовых материалов для повышения удобства, прочности и эффективности наших изделий"
-
-msgid "Responsibility – is the strict control at every stage of production, adherence to delivery deadlines, and the guarantee that our products meet the declared specifications, thereby strengthening customer trust"
-msgstr "Ответственность – это строгий контроль на всех этапах производства, соблюдение сроков поставок и гарантия соответствия продукции заявленным характеристикам, что укрепляет доверие клиентов"
-
-msgid "Individual Approach – is the flexibility in designing and manufacturing products, tailoring solutions to meet the specific needs of our clients, and providing personalized service for every customer"
-msgstr "Индивидуальный подход – это гибкость в разработке и изготовлении продукции, адаптация решений под конкретные задачи заказчиков и персонализированный сервис для каждого клиента"
-
-msgid "Innovation"
-msgstr "Инновации"
-
-msgid "Responsibility"
-msgstr "Ответственность"
-
-msgid "Customized approach"
-msgstr "Индивидуальный подход"
-
-msgid "What we do"
-msgstr "Что делаем"
-
-msgid "Making products you can trust"
-msgstr "Производим продукцию, которой можно доверять"
-
-msgid "Specifications"
-msgstr "Характеристики"
-
-msgid "Size"
-msgstr "Размеры"
-
-msgid "Extra small (XS)"
-msgstr "Oчень маленький (XS)"
-
-msgid "Small (S)"
-msgstr "Mаленький (S)"
-
-msgid "Medium (M)"
-msgstr "Cредний (M)"
-
-msgid "Large (L)"
-msgstr "Большой (L)"
-
-msgid "Extra large (XL)"
-msgstr "Oчень большой (XL)"
-
-msgid "Super large (XXL)"
-msgstr "Cупербольшой (XXL)"
-
-msgid "Select size"
-msgstr "Выберите размер"
-
-msgid "Price"
-msgstr "Цена"
-
-msgid "All"
-msgstr "Все"
-
-msgid "Minimum amount"
-msgstr "Мин. объем"
-
-msgid "Enter a phone number"
-msgstr "Введите номер телефона"
-
-msgid "Material"
-msgstr "Материал"
-
-msgid "Warming material"
-msgstr "Утеплитель"
-
-msgid "Filling"
-msgstr "Подкладка"
-
-msgid "Hood"
-msgstr "Капюшон"
-
-msgid "Leave a request "
-msgstr "Оставить заявку "
-
-msgid "Our journey"
-msgstr "Наш путь"
-
-msgid "From a single sewing machine to a market leading manufacturer."
-msgstr "От одной швейной машины до ведущего производителя на рынке."
-
-msgid "The foundation and initial steps"
-msgstr "Основание и начальные шаги"
-
-msgid "Started in 2002 with one rented sewing machine and a small team of enthusiasts."
-msgstr "Начало в 2002 году с одной арендованной швейной машиной и небольшой командой энтузиастов."
-
-msgid "Expansion and modernization"
-msgstr "Расширение и модернизация"
-
-msgid "Over the years, we have expanded our manufacturing space, added new equipment and modernized our processes"
-msgstr "С годами мы расширяли производственные площади, добавляли новое оборудование и модернизировали процессы"
-
-msgid "Transition to modern manufacturing"
-msgstr "Переход к современному производству"
-
-msgid "Renting a spacious 700 m2 space equipped with the latest technology has enabled us to reach a new level of quality."
-msgstr "Аренда просторного помещения в 700 кв.м, оснащенного новейшими технологиями, позволила нам выйти на новый уровень качества."
-
-msgid "Achievements and"
-msgstr "Достижения и"
-
-msgid "recognition"
-msgstr "признание"
-
-msgid "Participation in competitions and exhibitions, as well as successful promotion of products on marketplaces such as UZUM, strengthened our position in the market and customer recognition."
-msgstr "Участие в конкурсах и выставках, а также успешное продвижение продукции на маркетплейсах, таких как UZUM, укрепили наши позиции на рынке и признание клиентов."
-
-msgid "Publications"
-msgstr "Публикации"
-
-msgid "There are no posts in this category."
-msgstr "В этой категории нет постов."
-
-msgid "Other news"
-msgstr "Другие новости"
-
-msgid "Contacts"
-msgstr "Контакты"
-
-msgid "Our office"
-msgstr "Наш офис"
-
-msgid "Address"
-msgstr "Адрес"
-
-msgid "Uzbekistan, Tashkent city, Karasu str. 4, building 2"
-msgstr "Узбекистан, г. Ташкент, ул. Карасу 4, дом 2"
-
-msgid "Work schedule"
-msgstr "График работы"
-
-msgid "Mon-Fri"
-msgstr "Пн-Пт"
-
-msgid "Saturday"
-msgstr "Сб"
-
-msgid "Sunday"
-msgstr "Вс"
-
-msgid "Phone"
-msgstr "Телефон"
-
-msgid "E-mail"
-msgstr "Электронная почта"
-
-msgid "We're on social media"
-msgstr "Мы в соцсетях"
-
-msgid "Fill out the form"
-msgstr "Заполните форму"
-
-msgid "and we'll get back to you as soon as possible"
-msgstr "и мы свяжемся с вами в ближайшее<br>время"
-
-msgid "Name"
-msgstr "Имя"
-
-msgid "Your name"
-msgstr "Ваше имя"
-
-msgid "Message"
-msgstr "Сообщение"
-
-msgid "Day off"
-msgstr "выходной"
-
-msgid "Please enter a valid phone number in international format (e.g., +998912345678)"
-msgstr "Введите правильный номер телефона в международном формате (например, +99891 234 56 78)"
-
-msgid "404 - Page Not Found"
-msgstr "404 - Страница не найдена"
-
-msgid "The page you are looking for does not exist."
-msgstr "Страница, которую вы ищете, не существует."
-
-msgid "Return to home"
-msgstr "Вернуться домой"
-
-
-msgid "Main Carousel Item"
-msgstr "Слайдер"
-
-msgid "Main Carousel Items"
-msgstr "Слайдер"
-
-msgid "Products Carousel Item"
-msgstr "Наши товары"
-
-msgid "Products Carousel Items"
-msgstr "Наши товары"
-
-msgid "Customer Review"
-msgstr "Отзывы"
-
-msgid "Customer Reviews"
-msgstr "Отзывы"
-
-msgid "FAQ"
-msgstr "Часто задаваемые вопросы"
-
-msgid "FAQs"
-msgstr "Часто задаваемые вопросы"
-
-msgid "Showcase Category"
-msgstr "Категория Витрины"
-
-msgid "Showcase Categories"
-msgstr "Категории Витрины"
-
-msgid "Showcase Product"
-msgstr "Продукт Витрины"
-
-msgid "Showcase Products"
-msgstr "Продукты Витрины"
-
+#: blog/models.py:14
 msgid "Post Category"
 msgstr "Разделы новостей"
 
+#: blog/models.py:15
 msgid "Post Categories"
 msgstr "Разделы новостей"
 
+#: blog/models.py:43
 msgid "Post"
 msgstr "Список новостей"
 
+#: blog/models.py:44
 msgid "Posts"
 msgstr "Список новостей"
 
-msgid "Contact Request"
-msgstr "Контактные данные"
+#: blog/models.py:61 blog/models.py:62
+msgid "Заявки"
+msgstr ""
 
-msgid "Contact Requests"
-msgstr "Контактные данные"
+#: blog/templates/blog/post_details.html:9 blog/templates/blog/posts.html:8
+#: pages/templates/base.html:128 pages/templates/base.html:433
+#: pages/templates/base.html:550 pages/templates/contact.html:7
+#: store/templates/store/product_detail.html:8
+#: store/templates/store/products.html:10
+msgid "Home"
+msgstr "Главная"
 
-msgid "Consultation Request"
-msgstr "Заявкa на консультацию"
+#: blog/templates/blog/post_details.html:14 blog/templates/blog/posts.html:9
+#: blog/templates/blog/posts.html:14 pages/templates/base.html:149
+#: pages/templates/base.html:571
+msgid "News"
+msgstr "Новости"
 
-msgid "Consultation Requests"
-msgstr "Заявки на консультацию"
+#: blog/templates/blog/post_details.html:70
+msgid "Other news"
+msgstr "Другие новости"
 
-msgid "Category"
-msgstr "Категории товаров"
+#: blog/templates/blog/post_details.html:105
+#: contentmanagement/templates/contentmanagement/posts-carousel.html:55
+msgid "All news"
+msgstr "Все новости"
 
-msgid "Categories"
-msgstr "Категории товаров"
+#: blog/templates/blog/post_details.html:115 blog/templates/blog/posts.html:118
+#: pages/templates/about.html:211
+msgid "Leave a request"
+msgstr "Оставьте заявку"
 
-msgid "Product "
-msgstr "Товары"
+#: blog/templates/blog/post_details.html:116 blog/templates/blog/posts.html:119
+#: pages/templates/about.html:212
+msgid ""
+"Get a consultation or place an order. We are ready to help you with any "
+"questions you may have!"
+msgstr ""
+"Получите консультацию или оформите заказ. Мы готовы помочь вам с любыми "
+"вопросами!"
 
-msgid "Products "
-msgstr "Товары"
+#: blog/templates/blog/posts.html:32 store/templates/store/products.html:41
+msgid "All"
+msgstr "Все"
 
-msgid "Product Request"
-msgstr "Заявкa на продукцию"
+#: blog/templates/blog/posts.html:54
+msgid "Publications"
+msgstr "Публикации"
 
-msgid "Product Requests"
-msgstr "Заявки на продукцию"
+#: blog/templates/blog/posts.html:70
+#: contentmanagement/templates/contentmanagement/posts-carousel.html:15
+msgid "There are no posts to display. Contact your system administrator."
+msgstr "Нет постов для показа. Обратитесь к системному администратору."
 
+#: blog/templates/blog/posts.html:99 store/templates/store/products.html:173
+msgid "Load more"
+msgstr "Показать еще"
+
+#: blog/templates/blog/posts.html:102
+msgid "You\\"
+msgstr ""
+
+#: blog/templates/blog/posts.html:107
+msgid "There are no posts in this category."
+msgstr "В этой категории нет постов."
+
+#: contentmanagement/apps.py:7
+msgid "Управление контентом"
+msgstr ""
+
+#: contentmanagement/models.py:12
+msgid "Main Carousel Item"
+msgstr "Слайдер"
+
+#: contentmanagement/models.py:13
+msgid "Main Carousel Items"
+msgstr "Слайдер"
+
+#: contentmanagement/models.py:26
+msgid "Products Carousel Item"
+msgstr "Наши товары"
+
+#: contentmanagement/models.py:27
+msgid "Products Carousel Items"
+msgstr "Наши товары"
+
+#: contentmanagement/models.py:43
+msgid "Customer Review"
+msgstr "Отзывы"
+
+#: contentmanagement/models.py:44
+msgid "Customer Reviews"
+msgstr "Отзывы"
+
+#: contentmanagement/models.py:56
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+#: contentmanagement/models.py:57
+msgid "FAQs"
+msgstr "Часто задаваемые вопросы"
+
+#: contentmanagement/models.py:67
+msgid "Showcase Category"
+msgstr "Категория Витрины"
+
+#: contentmanagement/models.py:68
+msgid "Showcase Categories"
+msgstr "Категории Витрины"
+
+#: contentmanagement/models.py:83
+msgid "Showcase Product"
+msgstr "Продукт Витрины"
+
+#: contentmanagement/models.py:84
+msgid "Showcase Products"
+msgstr "Продукты Витрины"
+
+#: contentmanagement/models.py:90
+msgid "Text"
+msgstr ""
+
+#: contentmanagement/models.py:91
+msgid "Statistic"
+msgstr ""
+
+#: contentmanagement/models.py:94 contentmanagement/models.py:95
 msgid "Our history and achievements"
 msgstr "Наши история и достижения"
 
+#: contentmanagement/templates/contentmanagement/customer-reviews-carousel.html:4
+msgid "Testimonials from our customers"
+msgstr "Отзывы наших клиентов"
+
+#: contentmanagement/templates/contentmanagement/customer-reviews-carousel.html:7
+msgid ""
+"What those who have trusted the quality of 'ELIMA' products say about us."
+msgstr "Что говорят о нас те, кто доверился качеству продукции 'ELIMA'."
+
+#: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:4
+msgid "Frequently asked questions"
+msgstr "Частые вопросы"
+
+#: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:5
+#: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:34
+msgid "Couldn't find the answer? Contact us"
+msgstr "Не нашли ответ? Напишите нам"
+
+#: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:5
+#: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:34
+msgid "we're always in touch."
+msgstr "мы всегда на связи."
+
+#: contentmanagement/templates/contentmanagement/history.html:7
+msgid "Advantages of working with us"
+msgstr "Преимущества сотрудничества с нами"
+
+#: contentmanagement/templates/contentmanagement/history.html:12
+msgid ""
+"Over 20 years in apparel manufacturing, creating quality and innovative "
+"solutions."
+msgstr ""
+"Более 20 лет в швейном производстве, создавая качественные и инновационные "
+"решения."
+
+#: contentmanagement/templates/contentmanagement/history.html:26
+msgid "Download the presentation"
+msgstr "Скачать презентацию"
+
+#: contentmanagement/templates/contentmanagement/main-carousel.html:19
+msgid "Calculate the cost"
+msgstr "Рассчитайте стоимость"
+
+#: contentmanagement/templates/contentmanagement/main-carousel.html:29
+msgid "Send a message"
+msgstr "Напишите нам"
+
+#: contentmanagement/templates/contentmanagement/posts-carousel.html:5
+msgid "News and events"
+msgstr "Новости и события"
+
+#: contentmanagement/templates/contentmanagement/posts-carousel.html:8
+msgid "Keep up to date with the latest news and achievements of 'ELIMA'."
+msgstr "Будьте в курсе последних новостей и достижений компании 'ELIMA'."
+
+#: contentmanagement/templates/contentmanagement/products-carousel.html:5
+msgid "Finished products in stock"
+msgstr "Готовая продукция на складе"
+
+#: contentmanagement/templates/contentmanagement/products-carousel.html:8
+#: pages/templates/home.html:241
+#, fuzzy
+#| msgid "A wide range of products for all conditions."
+msgid "A wide range of products for all tasks and conditions."
+msgstr "Широкий ассортимент продукции для любых задач и условий."
+
+#: contentmanagement/templates/contentmanagement/products-carousel.html:33
+msgid "More products"
+msgstr "Посмотреть каталог"
+
+#: contentmanagement/templates/contentmanagement/showcase-carousel.html:29
+msgid "See all"
+msgstr "Посмотреть все"
+
+#: contentmanagement/templates/contentmanagement/showcase-carousel.html:39
+msgid "Go to catalog"
+msgstr "Перейти в каталог"
+
+#: pages/apps.py:6
+msgid "Контакты"
+msgstr ""
+
+#: pages/models.py:13
+msgid "Contact Request"
+msgstr "Контактные данные"
+
+#: pages/models.py:14
+msgid "Contact Requests"
+msgstr "Контактные данные"
+
+#: pages/models.py:28
+msgid "Consultation Request"
+msgstr "Заявкa на консультацию"
+
+#: pages/models.py:29
+msgid "Consultation Requests"
+msgstr "Заявки на консультацию"
+
+#: pages/templates/about.html:11
+msgid "of the year in business"
+msgstr "года в бизнеса"
+
+#: pages/templates/about.html:17 store/models.py:48
+msgid "Products"
+msgstr "Товары"
+
+#: pages/templates/about.html:24
+msgid "Our journey"
+msgstr "Наш путь"
+
+#: pages/templates/about.html:27
+msgid "From a single sewing machine to a market leading manufacturer."
+msgstr "От одной швейной машины до ведущего производителя на рынке."
+
+#: pages/templates/about.html:44
+msgid "The foundation and initial steps"
+msgstr "Основание и начальные шаги"
+
+#: pages/templates/about.html:45
+msgid ""
+"Started in 2002 with one rented sewing machine and a small team of "
+"enthusiasts."
+msgstr ""
+"Начало в 2002 году с одной арендованной швейной машиной и небольшой командой "
+"энтузиастов."
+
+#: pages/templates/about.html:57
+msgid "Expansion and modernization"
+msgstr "Расширение и модернизация"
+
+#: pages/templates/about.html:58
+msgid ""
+"Over the years, we have expanded our manufacturing space, added new "
+"equipment and modernized our processes"
+msgstr ""
+"С годами мы расширяли производственные площади, добавляли новое оборудование "
+"и модернизировали процессы"
+
+#: pages/templates/about.html:78
+msgid "Transition to modern manufacturing"
+msgstr "Переход к современному производству"
+
+#: pages/templates/about.html:79
+msgid ""
+"Renting a spacious 700 m2 space equipped with the latest technology has "
+"enabled us to reach a new level of quality."
+msgstr ""
+"Аренда просторного помещения в 700 кв.м, оснащенного новейшими технологиями, "
+"позволила нам выйти на новый уровень качества."
+
+#: pages/templates/about.html:91
+msgid "Achievements and"
+msgstr "Достижения и"
+
+#: pages/templates/about.html:91
+msgid "recognition"
+msgstr "признание"
+
+#: pages/templates/about.html:92
+msgid ""
+"Participation in competitions and exhibitions, as well as successful "
+"promotion of products on marketplaces such as UZUM, strengthened our "
+"position in the market and customer recognition."
+msgstr ""
+"Участие в конкурсах и выставках, а также успешное продвижение продукции на "
+"маркетплейсах, таких как UZUM, укрепили наши позиции на рынке и признание "
+"клиентов."
+
+#: pages/templates/about.html:107
+msgid "Values"
+msgstr "Ценности"
+
+#: pages/templates/about.html:110
+msgid ""
+"Driven by the principles of quality, innovation and responsibility, we "
+"create products that make life better"
+msgstr ""
+"Руководствуясь принципами качества, инноваций и ответственности, мы создаем "
+"продукцию, которая делает жизнь лучше"
+
+#: pages/templates/about.html:120
+msgid "Quality"
+msgstr "Качество"
+
+#: pages/templates/about.html:128
+msgid ""
+"Quality – is the impeccable precision in cutting, strong seams, durable "
+"materials, and reliable hardware that ensure the functionality and comfort "
+"of our products under any operating conditions"
+msgstr ""
+"Качество – это безупречная точность кроя, прочные швы, долговечные материалы "
+"и надежная фурнитура, которые обеспечивают функциональность и комфорт "
+"продукции в любых условиях эксплуатации"
+
+#: pages/templates/about.html:139
+msgid "Innovation"
+msgstr "Инновации"
+
+#: pages/templates/about.html:147
+msgid ""
+"Innovation – is the continuous integration of modern technologies, "
+"enhancement of designs, and use of advanced materials to improve the "
+"convenience, durability, and efficiency of our products"
+msgstr ""
+"Инновация – это постоянное внедрение современных технологий, улучшение "
+"конструкций и применение передовых материалов для повышения удобства, "
+"прочности и эффективности наших изделий"
+
+#: pages/templates/about.html:159
+msgid "Responsibility"
+msgstr "Ответственность"
+
+#: pages/templates/about.html:167
+msgid ""
+"Responsibility – is the strict control at every stage of production, "
+"adherence to delivery deadlines, and the guarantee that our products meet "
+"the declared specifications, thereby strengthening customer trust"
+msgstr ""
+"Ответственность – это строгий контроль на всех этапах производства, "
+"соблюдение сроков поставок и гарантия соответствия продукции заявленным "
+"характеристикам, что укрепляет доверие клиентов"
+
+#: pages/templates/about.html:179
+msgid "Customized approach"
+msgstr "Индивидуальный подход"
+
+#: pages/templates/about.html:187
+msgid ""
+"Individual Approach – is the flexibility in designing and manufacturing "
+"products, tailoring solutions to meet the specific needs of our clients, and "
+"providing personalized service for every customer"
+msgstr ""
+"Индивидуальный подход – это гибкость в разработке и изготовлении продукции, "
+"адаптация решений под конкретные задачи заказчиков и персонализированный "
+"сервис для каждого клиента"
+
+#: pages/templates/about.html:199
+msgid "What we do"
+msgstr "Что делаем"
+
+#: pages/templates/about.html:200
+msgid "Making products you can trust"
+msgstr "Производим продукцию, которой можно доверять"
+
+#: pages/templates/base.html:135 pages/templates/base.html:557
+#: store/templates/store/product_detail.html:9
+#: store/templates/store/products.html:11
+msgid "Catalog"
+msgstr "Каталог"
+
+#: pages/templates/base.html:142 pages/templates/base.html:438
+#: pages/templates/base.html:564
+msgid "About"
+msgstr "О компании"
+
+#: pages/templates/base.html:156 pages/templates/base.html:578
+#: pages/templates/base.html:861 pages/templates/contact.html:12
+msgid "Contact"
+msgstr "Контакты"
+
+#: pages/templates/base.html:447
+msgid "Quality proven over time"
+msgstr "Качество, проверенное временем"
+
+#: pages/templates/base.html:456
+msgid "We have been in business since 2002"
+msgstr "Работаем с 2002 года"
+
+#: pages/templates/base.html:461
+msgid "Creating reliable solutions for your comfort"
+msgstr "Создаем надежные решения для вашего комфорта"
+
+#: pages/templates/base.html:868
+msgid "Our address"
+msgstr "Наш адрес"
+
+#: pages/templates/base.html:871 pages/templates/contact.html:43
+msgid "Uzbekistan, Tashkent city, "
+msgstr "г. Ташкент, Мирзо-Улугбекский р-н"
+
+#: pages/templates/base.html:874 pages/templates/contact.html:43
+msgid "Ahmad Yugnakiy Street, 111"
+msgstr "Улица Ахмада Югнакий, 111"
+
+#: pages/templates/base.html:879
+msgid "Open in maps"
+msgstr "Открыть в картах"
+
+#: pages/templates/base.html:886
+msgid "Working time"
+msgstr "Время работы"
+
+#: pages/templates/base.html:890 pages/templates/contact.html:56
+msgid "Mon-Fri"
+msgstr "Пн-Пт"
+
+#: pages/templates/base.html:896 pages/templates/contact.html:60
+msgid "Saturday"
+msgstr "Сб"
+
+#: pages/templates/base.html:902 pages/templates/contact.html:64
+msgid "Sunday"
+msgstr "Вс"
+
+#: pages/templates/base.html:905 pages/templates/contact.html:65
+msgid "Day off"
+msgstr "выходной"
+
+#: pages/templates/base.html:1038
+msgid "All Right Reserved"
+msgstr "Все права защищены"
+
+#: pages/templates/base.html:1068
+msgid "Leave a number for consultation and batch calculation."
+msgstr "Оставьте свой номер телефона для консультации и расчета партии."
+
+#: pages/templates/base.html:1069
+msgid "We will call you back."
+msgstr "Мы вам обязательно перезвоним."
+
+#: pages/templates/base.html:1074 pages/templates/contact.html:250
+msgid "Name"
+msgstr "Имя"
+
+#: pages/templates/base.html:1077 pages/templates/contact.html:76
+#: pages/templates/contact.html:258
+msgid "Phone"
+msgstr "Телефон"
+
+#: pages/templates/base.html:1079 pages/templates/consultation_form.html:16
+#: pages/templates/contact.html:265
+msgid "Send"
+msgstr "Отправить"
+
+#: pages/templates/consultation_form.html:5
+msgid "Full Name"
+msgstr "ФИО"
+
+#: pages/templates/consultation_form.html:8
+#, fuzzy
+#| msgid "E-mail"
+msgid "Email"
+msgstr "Электронная почта"
+
+#: pages/templates/consultation_form.html:11
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: pages/templates/consultation_form.html:14
 msgid "Brief description of the reason for the consultation"
 msgstr "Краткое описание причины консультации"
 
+#: pages/templates/consultation_form.html:18 pages/templates/contact.html:266
+#: store/templates/store/products.html:194
+msgid "Your request has been successfully sent!"
+msgstr "Ваш запрос успешно отправлен!"
+
+#: pages/templates/consultation_form.html:19
+#: store/templates/store/products.html:200
+msgid "An error occurred, please try again."
+msgstr "Произошла ошибка, попробуйте еще раз."
+
+#: pages/templates/contact.html:17
+msgid "Contacts"
+msgstr "Контакты"
+
+#: pages/templates/contact.html:31
+msgid "Our office"
+msgstr "Наш офис"
+
+#: pages/templates/contact.html:40
+msgid "Address"
+msgstr "Адрес"
+
+#: pages/templates/contact.html:52
+msgid "Work schedule"
+msgstr "График работы"
+
+#: pages/templates/contact.html:91 pages/templates/contact.html:254
+#: pages/templates/contact.html:255
+msgid "E-mail"
+msgstr "Электронная почта"
+
+#: pages/templates/contact.html:106
+msgid "We\\"
+msgstr ""
+
+#: pages/templates/contact.html:230
+msgid "Fill out the form"
+msgstr "Заполните форму"
+
+#: pages/templates/contact.html:230
+msgid "and we\\"
+msgstr ""
+
+#: pages/templates/contact.html:251
+msgid "Your name"
+msgstr "Ваше имя"
+
+#: pages/templates/contact.html:262 pages/templates/contact.html:263
+msgid "Message"
+msgstr "Сообщение"
+
+#: pages/templates/home.html:18
 msgid "Our Partners"
 msgstr "Наши партнёры"
 
+#: pages/templates/home.html:21
 msgid "Trusted partners supporting innovation and quality at ELIMA"
 msgstr "Надёжные партнёры, поддерживающие инновации и качество ELIMA"
 
-msgid "on request"
-msgstr "По запросу"
+#: pages/templates/home.html:114
+msgid "Get advice and batch calculation for free"
+msgstr "Получите консультацию и расчет партии бесплатно"
+
+#: pages/templates/home.html:115
+msgid ""
+"We will select materials, patterns and sizes, calculate the exact cost of "
+"tailoring and branding without excess and overspending of material."
+msgstr ""
+"Мы подберем материалы, выкройки и размеры, рассчитаем точную стоимость"
+"пошив и брендирование без излишеств и перерасхода материала."
+
+#: pages/templates/home.html:117 pages/templates/home.html:230
+#: pages/templates/home.html:255 pages/templates/home.html:320
+#: pages/templates/success.html:74 store/templates/store/product_detail.html:74
+msgid "Get a payment"
+msgstr "Получить платеж"
+
+#: pages/templates/home.html:119
+msgid "Leave a request and our manager will contact you for a consultation."
+msgstr "Оставьте заявку, и наш менеджер свяжется с вами для консультации."
+
+#: pages/templates/home.html:140
+msgid "How we work"
+msgstr "Как мы работаем"
+
+#: pages/templates/home.html:149
+msgid "You are submitting a request"
+msgstr "Вы оставляете заявку"
+
+#: pages/templates/home.html:155
+msgid "We calculate the cost"
+msgstr "Мы рассчитываем стоимость"
+
+#: pages/templates/home.html:161
+msgid "We conclude an agreement"
+msgstr "Заключаем договор"
+
+#: pages/templates/home.html:167
+#, fuzzy
+#| msgid "News and events"
+msgid "We sew and deliver"
+msgstr "Шьём и доставляем"
+
+#: pages/templates/home.html:175
+msgid "What do you get"
+msgstr "Что вы получаете"
+
+#: pages/templates/home.html:186
+msgid "The sample is free"
+msgstr "Пробник бесплатно"
+
+#: pages/templates/home.html:194
+msgid "Individual pattern"
+msgstr "Индивидуальное лекало"
+
+#: pages/templates/home.html:202
+msgid "Guarantee"
+msgstr "Гарантия"
+
+#: pages/templates/home.html:214
+#, python-format
+msgid "Discounts (up to 20%%)"
+msgstr "Скидки (вплоть до 20%%)"
+
+#: pages/templates/home.html:222
+msgid "Free delivery in Tashkent"
+msgstr "Бесплатная доставка по Ташкенту"
+
+#: pages/templates/home.html:238
+#, fuzzy
+#| msgid "Our office"
+msgid "Our services"
+msgstr "Наши услуги"
+
+#: pages/templates/home.html:242
+msgid "The minimum order quantity is 100 pcs."
+msgstr "Минимальная партия 100 шт."
+
+#: pages/templates/home.html:269 pages/templates/success.html:42
+#: store/templates/store/product_detail.html:42
+#, fuzzy
+#| msgid "Our address"
+msgid "Our cases"
+msgstr "Наш адрес"
+
+#: pages/templates/home.html:281 pages/templates/success.html:57
+#: store/templates/store/product_detail.html:57
+#, fuzzy
+#| msgid "Fill out the form"
+msgid "Find out the cost"
+msgstr "Узнайте стоимость"
+
+#: pages/templates/home.html:292 pages/templates/success.html:45
+#: store/templates/store/product_detail.html:45
+#, fuzzy
+#| msgid "Go to catalog"
+msgid "Go to the catalog"
+msgstr "Перейти в каталог"
+
+#: pages/templates/home.html:317 pages/templates/success.html:71
+#: store/templates/store/product_detail.html:71
+msgid "Would you like to know the cost of your shipment?"
+msgstr "Хотите узнать стоимость вашей партии?"
+
+#: pages/templates/home.html:318 pages/templates/success.html:72
+#: store/templates/store/product_detail.html:72
+msgid "Calculation in 24 hours, the sample is free of charge"
+msgstr "Расчёт за 24 часа, пробник — бесплатно"
+
+#: pages/templates/home.html:321 pages/templates/success.html:75
+#: store/templates/store/product_detail.html:75
+msgid "Leave a request and our manager will contact you."
+msgstr "Оставьте заявку, и наш менеджер свяжется с вами"
+
+#: pages/templates/page_not_found.html:10
+msgid "404 - Page Not Found"
+msgstr "404 - Страница не найдена"
+
+#: pages/templates/page_not_found.html:11
+msgid "The page you are looking for does not exist."
+msgstr "Страница, которую вы ищете, не существует."
+
+#: pages/templates/page_not_found.html:17
+msgid "Return to home"
+msgstr "Вернуться домой"
+
+#: pages/templates/success.html:17
+msgid "Thanks for the request"
+msgstr "Спасибо за заявку"
+
+#: pages/templates/success.html:22
+msgid ""
+"We will contact you for consultation and batch calculation during the "
+"working day. For now, subscribe to our telegram channel."
+msgstr ""
+"Мы свяжемся с вами для консультации и расчета партии в течении "
+"рабочего дня. Пока подпишитесь на наш телеграм- канал."
+
+#: store/apps.py:8
+msgid "Каталог"
+msgstr ""
+
+#: store/models.py:10
+msgid "Category"
+msgstr "Категории товаров"
+
+#: store/models.py:11
+msgid "Categories"
+msgstr "Категории товаров"
+
+#: store/models.py:22
+msgid "Short content"
+msgstr ""
+
+#: store/models.py:25
+msgid "Краткое описание для карточки товара"
+msgstr ""
+
+#: store/models.py:29
+#, fuzzy
+#| msgid "recognition"
+msgid "Description"
+msgstr "признание"
+
+#: store/models.py:32
+msgid "Полное описание с картинками и форматированием"
+msgstr ""
+
+#: store/models.py:47
+#, fuzzy
+#| msgid "Products"
+msgid "Product"
+msgstr "Товары"
+
+#: store/models.py:61
+msgid "Product Request"
+msgstr "Заявкa на продукцию"
+
+#: store/models.py:62
+msgid "Product Requests"
+msgstr "Заявки на продукцию"
+
+#: store/models.py:73 store/models.py:74
+msgid "Услуги"
+msgstr ""
+
+#: store/models.py:82 store/models.py:83
+msgid "Кейсы"
+msgstr ""
+
+#: store/templates/store/product_detail.html:33
+msgid "Submit your application"
+msgstr "Оставить заявку"
+
+#: store/templates/store/product_modal.html:38
+msgid "Leave a request "
+msgstr "Оставить заявку "
+
+#: store/templates/store/products.html:16
+msgid "Our Products"
+msgstr "Наши товары"
+
+#: store/templates/store/products.html:23
+msgid "Search"
+msgstr "Поиск"
+
+#: store/templates/store/products.html:73
+msgid "Filter"
+msgstr "Фильтры"
+
+#: store/templates/store/products.html:79
+msgid "Price"
+msgstr "Цена"
+
+#: store/templates/store/products.html:80
+msgid "Min."
+msgstr "Мин."
+
+#: store/templates/store/products.html:81
+msgid "Max."
+msgstr "Макс."
+
+#: store/templates/store/products.html:87
+msgid "Size"
+msgstr "Размеры"
+
+#: store/templates/store/products.html:89
+msgid "Select size"
+msgstr "Выберите размер"
+
+#: store/templates/store/products.html:90
+msgid "Extra small (XS)"
+msgstr "Oчень маленький (XS)"
+
+#: store/templates/store/products.html:91
+msgid "Small (S)"
+msgstr "Mаленький (S)"
+
+#: store/templates/store/products.html:92
+msgid "Medium (M)"
+msgstr "Cредний (M)"
+
+#: store/templates/store/products.html:93
+msgid "Large (L)"
+msgstr "Большой (L)"
+
+#: store/templates/store/products.html:94
+msgid "Extra large (XL)"
+msgstr "Oчень большой (XL)"
+
+#: store/templates/store/products.html:95
+msgid "Super large (XXL)"
+msgstr "Cупербольшой (XXL)"
+
+#: store/templates/store/products.html:100
+msgid "Apply"
+msgstr "Применить"
+
+#: store/templates/store/products.html:107
+msgid "Sort by price"
+msgstr "Сортировать"
+
+#: store/templates/store/products.html:114
+msgid "Ascending"
+msgstr "Дешевле"
+
+#: store/templates/store/products.html:120
+msgid "Descending"
+msgstr "Дороже"
+
+#: store/templates/store/products.html:138
+msgid "There are no products to display. Contact your system administrator."
+msgstr "Нет товаров для показа. Обратитесь к системному администратору."
+
+#: store/templates/store/products.html:167
+msgid "There are no products in this category."
+msgstr "В этой категории нет товаров."
+
+#: store/templates/store/products.html:179
+#, fuzzy
+#| msgid "You've reached the end of the list."
+msgid "You\\'ve reached the end of the list."
+msgstr "Вы дошли до конца списка."
+
+#: store/templates/store/products.html:209
+msgid ""
+"Please enter a valid phone number in international format (e.g., "
+"+998912345678)"
+msgstr ""
+"Введите правильный номер телефона в международном формате (например, +99891 "
+"234 56 78)"
+
+#~ msgid "MON-SAT"
+#~ msgstr "ПН-СБ"
+
+#~ msgid "SUNDAY"
+#~ msgstr "BC"
+
+#~ msgid "Privacy Policy"
+#~ msgstr "Политика конфиденциальности"
+
+#~ msgid "Made in"
+#~ msgstr "сделано в"
+
+#~ msgid "Our history and"
+#~ msgstr "Наша история и"
+
+#~ msgid "achievements"
+#~ msgstr "достижения"
+
+#~ msgid "years of experience and growth"
+#~ msgstr "лет опыта и развития"
+
+#~ msgid "revenue from government contracts"
+#~ msgstr "выручки от государственных заказов"
+
+#~ msgid "customer satisfaction"
+#~ msgstr "удовлетворенности клиентов"
+
+#~ msgid "Read more about the company"
+#~ msgstr "Подробнее о компании"
+
+#~ msgid "Product catalog"
+#~ msgstr "Каталог продукции"
+
+#~ msgid ""
+#~ "We are available to answer your questions, provide product information "
+#~ "and help you make the right choice."
+#~ msgstr ""
+#~ "Мы готовы ответить на ваши вопросы, предоставить информацию о продукции и "
+#~ "помочь сделать правильный выбор."
+
+#~ msgid "Specifications"
+#~ msgstr "Характеристики"
+
+#~ msgid "Minimum amount"
+#~ msgstr "Мин. объем"
+
+#~ msgid "Enter a phone number"
+#~ msgstr "Введите номер телефона"
+
+#~ msgid "Material"
+#~ msgstr "Материал"
+
+#~ msgid "Warming material"
+#~ msgstr "Утеплитель"
+
+#~ msgid "Filling"
+#~ msgstr "Подкладка"
+
+#~ msgid "Hood"
+#~ msgstr "Капюшон"
+
+#~ msgid "Uzbekistan, Tashkent city, Karasu str. 4, building 2"
+#~ msgstr "Узбекистан, г. Ташкент, ул. Карасу 4, дом 2"
+
+#~ msgid "We're on social media"
+#~ msgstr "Мы в соцсетях"
+
+#~ msgid "and we'll get back to you as soon as possible"
+#~ msgstr "и мы свяжемся с вами в ближайшее<br>время"
+
+#~ msgid "Product "
+#~ msgstr "Товары"
+
+#~ msgid "Products "
+#~ msgstr "Товары"
+
+#~ msgid "on request"
+#~ msgstr "По запросу"

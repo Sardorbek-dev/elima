@@ -2,15 +2,13 @@
 <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
     <div class="border-radius-20 overflow-hidden product-card product-card-img-style">
         <div class="overlay">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modalId{{ product.unique_id }}">
+            <a href="{% url 'product_detail_view' pk=product.pk %}" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
                     <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"></path>
                 </svg>
             </a>
         </div>
         <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
-        <!-- Modal -->
-        {% include 'store/product_modal.html' with product=product %}
     </div>
     <h5 class="heading-5 mt-3">{{ product.name }}</h5>
 </div>

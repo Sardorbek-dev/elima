@@ -13,9 +13,10 @@ import logging
 import requests
 import uuid
 
+from contentmanagement.models import FAQ
 from .filters import ProductFilter
 from .forms import ProductRequestForm
-from .models import Product, Category, ProductRequest
+from .models import Product, Category, ProductRequest, Cases
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +29,7 @@ class ProductListView(ListView):
     def get_queryset(self):
         """Return available products only, filtered if necessary."""
         queryset = Product.objects.filter(availability=True)
-
+        print('queryset -', queryset)
         # Use GET parameters when dealing with filtering
         if self.request.method == 'GET':
             self.filterset = ProductFilter(self.request.GET, queryset=queryset)
@@ -84,6 +85,16 @@ class ProductDetailView(DetailView):
             'image_url': product.image.url if product.image else '',
         })
 
+class ProductDetailPageView(DetailView):
+    template_name = 'store/product_detail.html'
+    model = Product
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cases'] = Cases.objects.filter(availability=True)[:3]
+        context['faqs'] = FAQ.objects.filter(is_active=True)
+
+        return context
 
 class ProductRequestCreateView(CreateView):
     model = ProductRequest

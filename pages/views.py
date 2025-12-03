@@ -3,6 +3,7 @@ from django.http import JsonResponse
 
 from contentmanagement.models import MainCarouselItem, ProductsCarouselItem, CustomerReview, FAQ, ShowcaseProduct, ShowcaseCategory, History
 from blog.models import Post
+from store.models import Services, Cases
 from .models import ContactRequest
 from .forms import ContactForm, ConsultationForm
 
@@ -16,12 +17,24 @@ class HomePageView(TemplateView):
         context['products_carousel_items'] = ProductsCarouselItem.objects.all().order_by('order')
         context['posts'] = Post.objects.filter(show_on_homepage=True)
         context['reviews'] = CustomerReview.objects.filter(publish=True)
+        context['services'] = Services.objects.filter(availability=True)[:8]
+        context['cases'] = Cases.objects.filter(availability=True)[:3]
         context['faqs'] = FAQ.objects.filter(is_active=True)
         context['historys'] = History.objects.filter()
 
         # Add rating range for each review
         for review in context['reviews']:
             review.rating_range = list(range(review.rating))
+
+        return context
+
+class SuccessView(TemplateView):
+    template_name = 'success.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cases'] = Cases.objects.filter(availability=True)[:3]
+        context['faqs'] = FAQ.objects.filter(is_active=True)
 
         return context
 

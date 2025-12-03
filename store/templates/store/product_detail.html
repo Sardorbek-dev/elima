@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <nav class="breadcrumb mt-4">
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">{% trans 'Home' %}</a>
+    <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">{% trans 'Catalog' %}</a>
+    <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">{{ object.name }}</span>
+</nav>
+    <!-- Product Card Section -->
+    <section class="product-card-section">
+        <div class="container">
+            <div class="row">
+                <!-- Product Image -->
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="product-card-image-wrapper bg-grey border-radius-20 overflow-hidden">
+                        <img src="{{ object.image.url}}" alt="WinterGrace" class="product-card-image w-100">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h2 class="heading-2 mb-3">{{ object.name }}</h2>
+                    <p class="body-1 mb-4">{{ object.short_content }}</p>
+
+                    <div class="product_content mb-5">
+                        {{ object.description|safe }}
+                    </div>
+
+
+                    <a href="#" class="btn btn-accent px-5 open-consultation-modal">{% trans 'Submit your application' %}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Cases Section -->
+        <section class="cases-section">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-6">
+                    <h2 class="heading-2 mb-0">{% trans 'Our cases' %}</h2>
+                </div>
+                      <div class="col-6 d-flex justify-content-end align-items-center">
+                <a href="{% url 'product_list' %}" class="btn btn-accent px-5">{% trans 'Go to the catalog' %}</a>
+            </div>
+            </div>
+
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                {% for item in cases %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="case-card">
+                        <div class="case-image-wrapper bg-grey border-radius-20 mb-3 overflow-hidden">
+                            <img src="{{ item.image.url }}" alt="Case" class="case-image w-100">
+                        </div>
+                        <h4 class="heading-4 mb-3">{{ item.title }}</h4>
+                        <a href="!#" class="btn btn-outline-dark w-100 open-consultation-modal" >{% trans 'Find out the cost' %}</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+
+        </section>
+       <!-- CTA Section -->
+        <section class="cta-section" data-aos="fade-up">
+            <div class="cta-bg bg-accent border-radius-20 ps-5 position-relative overflow-hidden">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 order-2 order-lg-1 position-relative z-2">
+                        <h2 class="heading-2 text-white mb-4">{% trans 'Would you like to know the cost of your shipment?' %}</h2>
+                        <p class="body-1 text-white mb-4">{% trans 'Calculation in 24 hours, the sample is free of charge' %}</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="!#" class="btn btn-yellow px-4 open-consultation-modal">{% trans 'Get a payment' %}</a>
+                            <p class="body-3 text-white mb-0 opacity-75 ">{% trans 'Leave a request and our manager will contact you.' %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-1 order-lg-2 mb-4 mb-lg-0 position-relative z-1 text-end ">
+                        <img src="{% static 'img/two.png' %} " alt="Team " class="cta-image img-fluid ">
+                    </div>
+                </div>
+                <!-- Gradient Overlay -->
+                <div class="cta-gradient "></div>
+            </div>
+        </section>
+    <section class="faq-section" data-aos="fade-up" data-aos-duration="1500">
+   {% include 'contentmanagement/frequently-asked-questions.html' %}
+</section>
+</div>
+{% endblock %}

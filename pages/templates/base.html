@@ -18,7 +18,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css"
     />
-    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}?v={{ TEMPLATE_STATIC_VERSION }}" />
+        <link rel="stylesheet" href="{% static '/css/new.css' %}?v={{ TEMPLATE_STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static '/css/flexslider.css' %}" />
     <link rel="stylesheet" href="{% static '/css/aos/aos.css' %}" />
     <link rel="stylesheet" href="{% static '/css/owl/css/owl.carousel.min.css' %}" />
@@ -849,8 +850,9 @@
       </nav>
       {% endif %} {% endblock navbar %}
       <!-- HEADER AREA END -->
-      {% block content %} {% endblock %}
+
     </div>
+    {% block content %} {% endblock %}
     <footer class="bg-black-footer pb-4">
       <div class="container position-relative">
         <div class="row">
@@ -1055,6 +1057,31 @@
         </a>
       </div>
     </footer>
+        <!-- Modal Consultation Form -->
+    <div class="modal fade forma" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content border-0 border-radius-20 ">
+                <div class="modal-header border-0 pb-0 ">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <h3 class="heading-3 mb-3 text-center">{% trans 'Leave a number for consultation and batch calculation.' %}</h3>
+                    <p class="body-3 text-center text-black-opacity mb-4 ">{% trans 'We will call you back.' %}</p>
+
+                    <form id="consultationForm" class="consultation-form">
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-input " id="userName" name="name" placeholder="{% trans 'Name' %} " required>
+                        </div>
+                        <div class="mb-4 ">
+                            <input type="tel" class="form-control form-input " id="userPhone" name="phone" placeholder="{% trans 'Phone' %} " required>
+                        </div>
+                        <button type="submit" class="btn btn-accent w-100 ">{% trans 'Send' %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Main JS -->
     <script src="{% static 'js/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery/custom.jquery.js' %}"></script>
@@ -1109,6 +1136,55 @@
             }      
           });
       });
+    </script>
+      <script>
+        $(document).ready(function() {
+            $('.open-consultation-modal').on('click', function(e) {
+                e.preventDefault();
+                console.log('Consultation modal triggered');
+                $('#consultationModal').modal('show');
+            });
+            $('[data-toggle="consultation "]').on('click', function(e) {
+                e.preventDefault();
+                $('#consultationModal').modal('show');
+            });
+
+            $('#consultationForm').on('submit', function(e) {
+                e.preventDefault();
+
+                var formData = {
+                    name: $('#userName').val(),
+                    phone: $('#userPhone').val()
+                };
+                $.ajax({
+                    url: "{% url 'consultation' %}",
+                    type: 'POST',
+                    headers: {"X-CSRFToken": "{{ csrf_token }}"},
+                    data: JSON.stringify(formData),
+                    processData: false,
+                    contentType: "application/json",
+                    success: function(response) {
+                      window.location.href = "{% url 'success' %}"
+                    },
+                    error: function(error) {
+                        // Ошибка отправки
+                        alert('Произошла ошибка. Попробуйте еще раз.');
+                    }
+                });
+
+            });
+
+            $('#userPhone').on('input', function() {
+                // Разрешаем только цифры, +, -, (, ), пробелы
+                var value = $(this).val();
+                var cleaned = value.replace(/[^\d\+\-\(\)\s]/g, '');
+                $(this).val(cleaned);
+            });
+
+            $('#consultationModal').on('hidden.bs.modal', function() {
+                $('#consultationForm')[0].reset();
+            });
+        });
     </script>
   </body>
 </html>

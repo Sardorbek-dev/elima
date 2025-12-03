@@ -88,7 +88,7 @@ class ShowcaseProduct(models.Model):
     
 class History(models.Model):
     text = models.CharField(max_length=255, verbose_name=_("Text"))
-    statistic = models.IntegerField(default=0, verbose_name=_("Statistic")) 
+    statistic = models.CharField(max_length=255, verbose_name=_("Statistic"))
 
     class Meta:
         verbose_name = _("Our history and achievements")

@@ -50,3 +50,16 @@ class Post(models.Model):
         else: 
             print("Slug already exists or title is missing")
         super().save(*args, **kwargs)
+
+
+class Consultation(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Заявки")
+        verbose_name_plural = _("Заявки")
+
+    def __str__(self):
+        return f"{self.name} - {self.phone}"

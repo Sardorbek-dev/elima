@@ -16,27 +16,26 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: blog/apps.py:7
 msgid "Новости"
 msgstr ""
 
 #: blog/models.py:14
 msgid "Post Category"
-msgstr "Post Kategoriyasi"
+msgstr ""
 
 #: blog/models.py:15
 msgid "Post Categories"
-msgstr "Post Kategoriyalari"
+msgstr ""
 
 #: blog/models.py:43
 msgid "Post"
-msgstr "Post"
+msgstr ""
 
 #: blog/models.py:44
 msgid "Posts"
-msgstr "Postlar"
+msgstr ""
 
 #: blog/models.py:61 blog/models.py:62
 msgid "Заявки"
@@ -48,27 +47,27 @@ msgstr ""
 #: store/templates/store/product_detail.html:8
 #: store/templates/store/products.html:10
 msgid "Home"
-msgstr "Bosh sahifa"
+msgstr ""
 
 #: blog/templates/blog/post_details.html:14 blog/templates/blog/posts.html:9
 #: blog/templates/blog/posts.html:14 pages/templates/base.html:149
 #: pages/templates/base.html:571
 msgid "News"
-msgstr "Yangiliklar"
+msgstr ""
 
 #: blog/templates/blog/post_details.html:70
 msgid "Other news"
-msgstr "Boshqa yangiliklar"
+msgstr ""
 
 #: blog/templates/blog/post_details.html:105
 #: contentmanagement/templates/contentmanagement/posts-carousel.html:55
 msgid "All news"
-msgstr "Barcha yangiliklar"
+msgstr ""
 
 #: blog/templates/blog/post_details.html:115 blog/templates/blog/posts.html:118
 #: pages/templates/about.html:211
 msgid "Leave a request"
-msgstr "Ariza qoldiring"
+msgstr ""
 
 #: blog/templates/blog/post_details.html:116 blog/templates/blog/posts.html:119
 #: pages/templates/about.html:212
@@ -76,27 +75,23 @@ msgid ""
 "Get a consultation or place an order. We are ready to help you with any "
 "questions you may have!"
 msgstr ""
-"Maslahat oling yoki buyurtma bering. Biz sizga har qanday savol bilan yordam "
-"berishga tayyormiz!"
 
 #: blog/templates/blog/posts.html:32 store/templates/store/products.html:41
 msgid "All"
-msgstr "Barchasi"
+msgstr ""
 
 #: blog/templates/blog/posts.html:54
 msgid "Publications"
-msgstr "Nashrlar"
+msgstr ""
 
 #: blog/templates/blog/posts.html:70
 #: contentmanagement/templates/contentmanagement/posts-carousel.html:15
 msgid "There are no posts to display. Contact your system administrator."
 msgstr ""
-"Ko'rsatish uchun postlar mavjud emas. Iltimos, tizim administratoriga "
-"murojaat qiling."
 
 #: blog/templates/blog/posts.html:99 store/templates/store/products.html:173
 msgid "Load more"
-msgstr "Yana ko'rsatish"
+msgstr ""
 
 #: blog/templates/blog/posts.html:102
 msgid "You\\"
@@ -104,7 +99,7 @@ msgstr ""
 
 #: blog/templates/blog/posts.html:107
 msgid "There are no posts in this category."
-msgstr "Ushbu kategoriyada postlar yo'q."
+msgstr ""
 
 #: contentmanagement/apps.py:7
 msgid "Управление контентом"
@@ -112,51 +107,51 @@ msgstr ""
 
 #: contentmanagement/models.py:12
 msgid "Main Carousel Item"
-msgstr "Asosiy Karusel Elementi"
+msgstr ""
 
 #: contentmanagement/models.py:13
 msgid "Main Carousel Items"
-msgstr "Asosiy Karusel Elementlari"
+msgstr ""
 
 #: contentmanagement/models.py:26
 msgid "Products Carousel Item"
-msgstr "Mahsulotlar Karuseli Elementi"
+msgstr ""
 
 #: contentmanagement/models.py:27
 msgid "Products Carousel Items"
-msgstr "Mahsulotlar Karuseli Elementlari"
+msgstr ""
 
 #: contentmanagement/models.py:43
 msgid "Customer Review"
-msgstr "Mijoz Sharhi"
+msgstr ""
 
 #: contentmanagement/models.py:44
 msgid "Customer Reviews"
-msgstr "Mijozlar Sharhlari"
+msgstr ""
 
 #: contentmanagement/models.py:56
 msgid "FAQ"
-msgstr "Savol-Javob"
+msgstr ""
 
 #: contentmanagement/models.py:57
 msgid "FAQs"
-msgstr "Savollar va Javoblar"
+msgstr ""
 
 #: contentmanagement/models.py:67
 msgid "Showcase Category"
-msgstr "Ko‘rgazma Kategoriyasi"
+msgstr ""
 
 #: contentmanagement/models.py:68
 msgid "Showcase Categories"
-msgstr "Ko‘rgazma Kategoriyalari"
+msgstr ""
 
 #: contentmanagement/models.py:83
 msgid "Showcase Product"
-msgstr "Ko‘rgazma Mahsuloti"
+msgstr ""
 
 #: contentmanagement/models.py:84
 msgid "Showcase Products"
-msgstr "Ko‘rgazma Mahsulotlari"
+msgstr ""
 
 #: contentmanagement/models.py:90
 msgid "Text"
@@ -168,88 +163,81 @@ msgstr ""
 
 #: contentmanagement/models.py:94 contentmanagement/models.py:95
 msgid "Our history and achievements"
-msgstr "Tarix va yutuqlarimiz"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/customer-reviews-carousel.html:4
 msgid "Testimonials from our customers"
-msgstr "Biz haqimizda mijozlar fikri"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/customer-reviews-carousel.html:7
 msgid ""
 "What those who have trusted the quality of 'ELIMA' products say about us."
 msgstr ""
-"'ELIMA' mahsulotlarining sifatiga ishonch bildirgan mijozlarning fikrlari."
 
 #: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:4
 msgid "Frequently asked questions"
-msgstr "Tez-tez so'raladigan savollar"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:5
 #: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:34
 msgid "Couldn't find the answer? Contact us"
-msgstr "Javobni topa olmadingizmi? Biz bilan bog'laning"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:5
 #: contentmanagement/templates/contentmanagement/frequently-asked-questions.html:34
 msgid "we're always in touch."
-msgstr "tez orada javob beramiz."
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/history.html:7
 msgid "Advantages of working with us"
-msgstr "Biz bilan ishlashning afzalliklari"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/history.html:12
 msgid ""
 "Over 20 years in apparel manufacturing, creating quality and innovative "
 "solutions."
 msgstr ""
-"20 yildan ortiq kiyim-kechak ishlab chiqarishda sifatli va innovatsion "
-"yechimlar yaratamiz."
 
 #: contentmanagement/templates/contentmanagement/history.html:26
 msgid "Download the presentation"
-msgstr "Taqdimotni yuklab oling"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/main-carousel.html:19
 msgid "Calculate the cost"
-msgstr "Xarajatlarni hisoblang"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/main-carousel.html:29
 msgid "Send a message"
-msgstr "Bizga xabar yozing"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/posts-carousel.html:5
 msgid "News and events"
-msgstr "Yangiliklar va tadbirlar"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/posts-carousel.html:8
 msgid "Keep up to date with the latest news and achievements of 'ELIMA'."
 msgstr ""
-"'ELIMA' kompaniyasining so'nggi yangiliklari va yutuqlari bilan tanishib "
-"boring."
 
 #: contentmanagement/templates/contentmanagement/products-carousel.html:5
 msgid "Finished products in stock"
-msgstr "Tayyor mahsulotlar mavjud"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/products-carousel.html:8
 #: pages/templates/home.html:241
-#, fuzzy
-#| msgid "A wide range of products for all conditions."
 msgid "A wide range of products for all tasks and conditions."
-msgstr "Barcha sharoitlar uchun keng mahsulot assortimenti."
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/products-carousel.html:33
 msgid "More products"
-msgstr "Katalogni ko'rish"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/showcase-carousel.html:29
 msgid "See all"
-msgstr "Barchasini ko'rish"
+msgstr ""
 
 #: contentmanagement/templates/contentmanagement/showcase-carousel.html:39
 msgid "Go to catalog"
-msgstr "Katalogga o'tish"
+msgstr ""
 
 #: pages/apps.py:6
 msgid "Контакты"
@@ -257,82 +245,73 @@ msgstr ""
 
 #: pages/models.py:13
 msgid "Contact Request"
-msgstr "Aloqa So‘rovi"
+msgstr ""
 
 #: pages/models.py:14
 msgid "Contact Requests"
-msgstr "Aloqa So‘rovlari"
+msgstr ""
 
 #: pages/models.py:28
 msgid "Consultation Request"
-msgstr "Konsultatsiya So‘rovi"
+msgstr ""
 
 #: pages/models.py:29
 msgid "Consultation Requests"
-msgstr "Konsultatsiya So‘rovlari"
+msgstr ""
 
 #: pages/templates/about.html:11
 msgid "of the year in business"
-msgstr "yildan beri biznesda"
+msgstr ""
 
 #: pages/templates/about.html:17 store/models.py:48
 msgid "Products"
-msgstr "Mahsulotlar"
+msgstr ""
 
 #: pages/templates/about.html:24
 msgid "Our journey"
-msgstr "Korxonamiz tarixi"
+msgstr ""
 
 #: pages/templates/about.html:27
 msgid "From a single sewing machine to a market leading manufacturer."
 msgstr ""
-"Birgina tikuv mashinasidan bozorning eng yetakchi ishlab chiqaruvchisi "
-"bo'lish."
 
 #: pages/templates/about.html:44
 msgid "The foundation and initial steps"
-msgstr "Asos va dastlabki qadamlar"
+msgstr ""
 
 #: pages/templates/about.html:45
 msgid ""
 "Started in 2002 with one rented sewing machine and a small team of "
 "enthusiasts."
 msgstr ""
-"Bizning faoliyatimiz 2002 yilda birgina ijaraga olingan tikuv mashinasi va "
-"kichik bir tikuvchilar jamoasi bilan boshlandi."
 
 #: pages/templates/about.html:57
 msgid "Expansion and modernization"
-msgstr "Kengayish va modernizatsiya"
+msgstr ""
 
 #: pages/templates/about.html:58
 msgid ""
 "Over the years, we have expanded our manufacturing space, added new "
 "equipment and modernized our processes"
 msgstr ""
-"Yillar o'tishi bilan biz ishlab chiqarish maydonini kengaytirdik, yangi "
-"uskunalar qo'shdik va barcha ishlab chiqarish bosqichlarini modernizatsiya "
-"qildik."
 
 #: pages/templates/about.html:78
 msgid "Transition to modern manufacturing"
-msgstr "Zamonaviy ishlab chiqarishga o'tish"
+msgstr ""
 
 #: pages/templates/about.html:79
 msgid ""
 "Renting a spacious 700 m2 space equipped with the latest technology has "
 "enabled us to reach a new level of quality."
 msgstr ""
-"Yangi texnologiyalar bilan jihozlangan 700 kv.m. keng maydonni ijaraga "
-"olish, bizga sifatning yangi darajasiga erishish imkonini berdi."
 
 #: pages/templates/about.html:91
 msgid "Achievements and"
-msgstr "Bizning"
+msgstr ""
 
 #: pages/templates/about.html:91
 msgid "recognition"
-msgstr "yutuqlarimiz"
+msgstr ""
 
 #: pages/templates/about.html:92
 msgid ""
@@ -340,25 +319,20 @@ msgid ""
 "promotion of products on marketplaces such as UZUM, strengthened our "
 "position in the market and customer recognition."
 msgstr ""
-"Tanlovlar va ko'rgazmalarda ishtirok etish, shuningdek, UZUM kabi bozor "
-"joylarida mahsulotlarni muvaffaqiyatli ilgari surish, bizning bozor o'rnimiz "
-"va mijozlar tomonidan tan olinishi kuchaytirdi."
 
 #: pages/templates/about.html:107
 msgid "Values"
-msgstr "Qadriyatlarimiz"
+msgstr ""
 
 #: pages/templates/about.html:110
 msgid ""
 "Driven by the principles of quality, innovation and responsibility, we "
 "create products that make life better"
 msgstr ""
-"Sifat, innovatsiya va mas'uliyat tamoyillari asosida, biz hayotni "
-"yaxshilovchi mahsulotlar yaratamiz."
 
 #: pages/templates/about.html:120
 msgid "Quality"
-msgstr "Sifat"
+msgstr ""
 
 #: pages/templates/about.html:128
 msgid ""
@@ -366,13 +340,10 @@ msgid ""
 "materials, and reliable hardware that ensure the functionality and comfort "
 "of our products under any operating conditions"
 msgstr ""
-"Sifat – bu kesishning mukammal aniqligi, mustahkam tikishlar, uzoq umrli "
-"materiallar va ishonchli armatura bo‘lib, ular mahsulotlarimizning har "
-"qanday ekspluatatsiya sharoitida funksionalligi va qulayligini ta’minlaydi"
 
 #: pages/templates/about.html:139
 msgid "Innovation"
-msgstr "Innovatsiyalar"
+msgstr ""
 
 #: pages/templates/about.html:147
 msgid ""
@@ -380,13 +351,10 @@ msgid ""
 "enhancement of designs, and use of advanced materials to improve the "
 "convenience, durability, and efficiency of our products"
 msgstr ""
-"Innovatsiya – bu zamonaviy texnologiyalarni doimiy joriy etish, dizaynlarni "
-"takomillashtirish va ilg‘or materiallardan foydalanish orqali "
-"mahsulotlarimizning qulayligi, mustahkamligi va samaradorligini oshirishdir"
 
 #: pages/templates/about.html:159
 msgid "Responsibility"
-msgstr "Mas'uliyat"
+msgstr ""
 
 #: pages/templates/about.html:167
 msgid ""
@@ -394,14 +362,10 @@ msgid ""
 "adherence to delivery deadlines, and the guarantee that our products meet "
 "the declared specifications, thereby strengthening customer trust"
 msgstr ""
-"Mas’uliyat – bu ishlab chiqarishning barcha bosqichlarida qat’iy nazorat, "
-"yetkazib berish muddatlariga rioya qilish va mahsulotlarimizning e’lon "
-"qilingan xususiyatlarga mosligini kafolatlash orqali mijozlar ishonchini "
-"mustahkamlashdir"
 
 #: pages/templates/about.html:179
 msgid "Customized approach"
-msgstr "Shaxsiy yondashuv"
+msgstr ""
 
 #: pages/templates/about.html:187
 msgid ""
@@ -409,156 +373,151 @@ msgid ""
 "products, tailoring solutions to meet the specific needs of our clients, and "
 "providing personalized service for every customer"
 msgstr ""
-"Shaxsiy yondashuv – bu mahsulotlarni ishlab chiqish va ishlab chiqarishda "
-"moslashuvchanlik, mijozlarning aniq talablariga mos yechimlarni ishlab "
-"chiqish va har bir mijozga shaxsiy xizmat ko‘rsatishdir"
 
 #: pages/templates/about.html:199
 msgid "What we do"
-msgstr "Biz nima qilamiz"
+msgstr ""
 
 #: pages/templates/about.html:200
 msgid "Making products you can trust"
-msgstr "Yuqori sifatli mahsulotlar ishlab chiqaramiz"
+msgstr ""
 
 #: pages/templates/base.html:135 pages/templates/base.html:557
 #: store/templates/store/product_detail.html:9
 #: store/templates/store/products.html:11
 msgid "Catalog"
-msgstr "Katalog"
+msgstr ""
 
 #: pages/templates/base.html:142 pages/templates/base.html:438
 #: pages/templates/base.html:564
 msgid "About"
-msgstr "Biz haqimizda"
+msgstr ""
 
 #: pages/templates/base.html:156 pages/templates/base.html:578
 #: pages/templates/base.html:861 pages/templates/contact.html:12
 msgid "Contact"
-msgstr "Aloqa"
+msgstr ""
 
 #: pages/templates/base.html:447
 msgid "Quality proven over time"
-msgstr "Vaqt sinovidan o'tgan oliy sifat"
+msgstr ""
 
 #: pages/templates/base.html:456
 msgid "We have been in business since 2002"
-msgstr "2002 yildan beri faoliyat yuritamiz"
+msgstr ""
 
 #: pages/templates/base.html:461
 msgid "Creating reliable solutions for your comfort"
-msgstr "Sizning qulayligingiz uchun ishonchli yechimlar yaratamiz"
+msgstr ""
 
 #: pages/templates/base.html:868
 msgid "Our address"
-msgstr "Bizning manzilimiz"
+msgstr ""
 
 #: pages/templates/base.html:871 pages/templates/contact.html:43
 msgid "Uzbekistan, Tashkent city, "
-msgstr "Toshkent shahri, "
+msgstr ""
 
 #: pages/templates/base.html:874 pages/templates/contact.html:43
 msgid "Ahmad Yugnakiy Street, 111"
-msgstr "Mirzo Ulug'bek tumani, Ahmad Yugnakiy ko'chasi, 111"
+msgstr ""
 
 #: pages/templates/base.html:879
 msgid "Open in maps"
-msgstr "Xaritada ochish"
+msgstr ""
 
 #: pages/templates/base.html:886
 msgid "Working time"
-msgstr "Ish vaqti"
+msgstr ""
 
 #: pages/templates/base.html:890 pages/templates/contact.html:56
 msgid "Mon-Fri"
-msgstr "Dush-Pay"
+msgstr ""
 
 #: pages/templates/base.html:896 pages/templates/contact.html:60
 msgid "Saturday"
-msgstr "Shanba"
+msgstr ""
 
 #: pages/templates/base.html:902 pages/templates/contact.html:64
 msgid "Sunday"
-msgstr "Yakshanba"
+msgstr ""
 
 #: pages/templates/base.html:905 pages/templates/contact.html:65
 msgid "Day off"
-msgstr "Dam olish kuni"
+msgstr ""
 
 #: pages/templates/base.html:1038
 msgid "All Right Reserved"
-msgstr "Barcha huquqlar himoyalangan"
+msgstr ""
 
 #: pages/templates/base.html:1068
 msgid "Leave a number for consultation and batch calculation."
-msgstr "Maslahat va partiyani hisoblash uchun raqamni qoldiring."
+msgstr ""
 
 #: pages/templates/base.html:1069
 msgid "We will call you back."
-msgstr "Biz sizga qo'ng'iroq qilamiz."
+msgstr ""
 
 #: pages/templates/base.html:1074 pages/templates/contact.html:250
 msgid "Name"
-msgstr "Ism"
+msgstr ""
 
 #: pages/templates/base.html:1077 pages/templates/contact.html:76
 #: pages/templates/contact.html:258
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
 #: pages/templates/base.html:1079 pages/templates/consultation_form.html:16
 #: pages/templates/contact.html:265
 msgid "Send"
-msgstr "Yuborish"
+msgstr ""
 
 #: pages/templates/consultation_form.html:5
 msgid "Full Name"
-msgstr "To'liq ismingiz"
+msgstr ""
 
 #: pages/templates/consultation_form.html:8
-#, fuzzy
-#| msgid "E-mail"
 msgid "Email"
-msgstr "Elektron pochta"
+msgstr ""
 
 #: pages/templates/consultation_form.html:11
 msgid "Phone number"
-msgstr "Telefon raqami"
+msgstr ""
 
 #: pages/templates/consultation_form.html:14
 msgid "Brief description of the reason for the consultation"
-msgstr "Konsultatsiya sababining qisqacha tavsifi"
+msgstr ""
 
 #: pages/templates/consultation_form.html:18 pages/templates/contact.html:266
 #: store/templates/store/products.html:194
 msgid "Your request has been successfully sent!"
-msgstr "Sizning so'rovingiz muvaffaqiyatli yuborildi!"
+msgstr ""
 
 #: pages/templates/consultation_form.html:19
 #: store/templates/store/products.html:200
 msgid "An error occurred, please try again."
-msgstr "Xato yuz berdi, iltimos, qayta urinib ko'ring."
+msgstr ""
 
 #: pages/templates/contact.html:17
 msgid "Contacts"
-msgstr "Aloqalar"
+msgstr ""
 
 #: pages/templates/contact.html:31
 msgid "Our office"
-msgstr "Bizning ofisimiz"
+msgstr ""
 
 #: pages/templates/contact.html:40
 msgid "Address"
-msgstr "Manzil"
+msgstr ""
 
 #: pages/templates/contact.html:52
 msgid "Work schedule"
-msgstr "Ish tartibi"
+msgstr ""
 
 #: pages/templates/contact.html:91 pages/templates/contact.html:254
 #: pages/templates/contact.html:255
 msgid "E-mail"
-msgstr "Elektron pochta"
+msgstr ""
 
 #: pages/templates/contact.html:106
 msgid "We\\"
@@ -566,7 +525,7 @@ msgstr ""
 
 #: pages/templates/contact.html:230
 msgid "Fill out the form"
-msgstr "Formani to'ldiring"
+msgstr ""
 
 #: pages/templates/contact.html:230
 msgid "and we\\"
@@ -574,158 +533,144 @@ msgstr ""
 
 #: pages/templates/contact.html:251
 msgid "Your name"
-msgstr "Sizning ismingiz"
+msgstr ""
 
 #: pages/templates/contact.html:262 pages/templates/contact.html:263
 msgid "Message"
-msgstr "Xabar"
+msgstr ""
 
 #: pages/templates/home.html:18
 msgid "Our Partners"
-msgstr "Hamkorlarimiz"
+msgstr ""
 
 #: pages/templates/home.html:21
 msgid "Trusted partners supporting innovation and quality at ELIMA"
-msgstr "ELIMA innovatsiya va sifatini qo‘llab-quvvatlovchi ishonchli hamkorlar"
+msgstr ""
 
 #: pages/templates/home.html:114
 msgid "Get advice and batch calculation for free"
-msgstr "Maslahat va ommaviy hisoblashni bepul oling"
+msgstr ""
 
 #: pages/templates/home.html:115
 msgid ""
 "We will select materials, patterns and sizes, calculate the exact cost of "
 "tailoring and branding without excess and overspending of material."
 msgstr ""
-"Biz materiallarni, naqshlarni va o'lchamlarni tanlaymiz,"
-"ortiqcha va ortiqcha xarajatlarsiz tikish va markalashning aniq narxini hisoblaymiz."
 
 #: pages/templates/home.html:117 pages/templates/home.html:230
 #: pages/templates/home.html:255 pages/templates/home.html:320
 #: pages/templates/success.html:74 store/templates/store/product_detail.html:74
 msgid "Get a payment"
-msgstr "Hisob-kitobni oling"
+msgstr ""
 
 #: pages/templates/home.html:119
 msgid "Leave a request and our manager will contact you for a consultation."
-msgstr "So'rov qoldiring va menejerimiz maslahat uchun siz bilan bog'lanadi."
+msgstr ""
 
 #: pages/templates/home.html:140
 msgid "How we work"
-msgstr "Biz qanday ishlaymiz"
+msgstr ""
 
 #: pages/templates/home.html:149
 msgid "You are submitting a request"
-msgstr "Siz so'rov yuboryapsiz"
+msgstr ""
 
 #: pages/templates/home.html:155
 msgid "We calculate the cost"
-msgstr "Biz xarajatlarni hisoblaymiz"
+msgstr ""
 
 #: pages/templates/home.html:161
 msgid "We conclude an agreement"
-msgstr "Biz shartnoma tuzamiz"
+msgstr ""
 
 #: pages/templates/home.html:167
-#, fuzzy
-#| msgid "News and events"
 msgid "We sew and deliver"
-msgstr "Biz tikamiz va etkazib beramiz"
+msgstr ""
 
 #: pages/templates/home.html:175
 msgid "What do you get"
-msgstr "Siz nima olasiz"
+msgstr ""
 
 #: pages/templates/home.html:186
 msgid "The sample is free"
-msgstr "Namuna bepul"
+msgstr ""
 
 #: pages/templates/home.html:194
 msgid "Individual pattern"
-msgstr "Shaxsiy naqsh"
+msgstr ""
 
 #: pages/templates/home.html:202
 msgid "Guarantee"
-msgstr "Kafolat"
+msgstr ""
 
 #: pages/templates/home.html:214
 #, python-format
 msgid "Discounts (up to 20%%)"
-msgstr "Chegirmalar (20%%gacha)"
+msgstr ""
 
 #: pages/templates/home.html:222
 msgid "Free delivery in Tashkent"
-msgstr "Toshkentda bepul yetkazib berish"
+msgstr ""
 
 #: pages/templates/home.html:238
-#, fuzzy
-#| msgid "Our office"
 msgid "Our services"
-msgstr "Bizning xizmatlar"
+msgstr ""
 
 #: pages/templates/home.html:242
 msgid "The minimum order quantity is 100 pcs."
-msgstr "Minimal buyurtma miqdori - 100 dona."
+msgstr ""
 
 #: pages/templates/home.html:269 pages/templates/success.html:42
 #: store/templates/store/product_detail.html:42
-#, fuzzy
-#| msgid "Our address"
 msgid "Our cases"
-msgstr "Bizning manzilimiz"
+msgstr ""
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
 #: store/templates/store/product_detail.html:57
-#, fuzzy
-#| msgid "Fill out the form"
 msgid "Find out the cost"
-msgstr "Narxini bilib oling"
+msgstr ""
 
 #: pages/templates/home.html:292 pages/templates/success.html:45
 #: store/templates/store/product_detail.html:45
-#, fuzzy
-#| msgid "Go to catalog"
 msgid "Go to the catalog"
-msgstr "Katalogga o'tish"
+msgstr ""
 
 #: pages/templates/home.html:317 pages/templates/success.html:71
 #: store/templates/store/product_detail.html:71
 msgid "Would you like to know the cost of your shipment?"
-msgstr "Yuk tashish narxini bilishni xohlaysizmi?"
+msgstr ""
 
 #: pages/templates/home.html:318 pages/templates/success.html:72
 #: store/templates/store/product_detail.html:72
 msgid "Calculation in 24 hours, the sample is free of charge"
-msgstr "24 soat ichida hisoblash, namuna bepul"
+msgstr ""
 
 #: pages/templates/home.html:321 pages/templates/success.html:75
 #: store/templates/store/product_detail.html:75
 msgid "Leave a request and our manager will contact you."
-msgstr "So'rov qoldiring va menejerimiz siz bilan bog'lanadi."
+msgstr ""
 
 #: pages/templates/page_not_found.html:10
 msgid "404 - Page Not Found"
-msgstr "404 - Sahifa topilmadi"
+msgstr ""
 
 #: pages/templates/page_not_found.html:11
 msgid "The page you are looking for does not exist."
-msgstr "Siz qidirayotgan sahifa mavjud emas."
+msgstr ""
 
 #: pages/templates/page_not_found.html:17
 msgid "Return to home"
-msgstr "Bosh sahifaga qaytish"
+msgstr ""
 
 #: pages/templates/success.html:17
 msgid "Thanks for the request"
-msgstr "So'rov uchun rahmat"
+msgstr ""
 
 #: pages/templates/success.html:22
 msgid ""
 "We will contact you for consultation and batch calculation during the "
 "working day. For now, subscribe to our telegram channel."
 msgstr ""
-"Biz ish kuni davomida maslahat va ommaviy hisoblash uchun sizga murojaat qiladi. "
-"Hozircha telegram kanalimizga obuna bo'ling."
 
 #: store/apps.py:8
 msgid "Каталог"
@@ -733,11 +678,11 @@ msgstr ""
 
 #: store/models.py:10
 msgid "Category"
-msgstr "Kategoriya"
+msgstr ""
 
 #: store/models.py:11
 msgid "Categories"
-msgstr "Kategoriyalar"
+msgstr ""
 
 #: store/models.py:22
 msgid "Short content"
@@ -748,10 +693,8 @@ msgid "Краткое описание для карточки товара"
 msgstr ""
 
 #: store/models.py:29
-#, fuzzy
-#| msgid "recognition"
 msgid "Description"
-msgstr "yutuqlarimiz"
+msgstr ""
 
 #: store/models.py:32
 msgid "Полное описание с картинками и форматированием"
@@ -759,15 +702,15 @@ msgstr ""
 
 #: store/models.py:47
 msgid "Product"
-msgstr "Mahsulot"
+msgstr ""
 
 #: store/models.py:61
 msgid "Product Request"
-msgstr "Mahsulot So‘rovi"
+msgstr ""
 
 #: store/models.py:62
 msgid "Product Requests"
-msgstr "Mahsulot So‘rovlari"
+msgstr ""
 
 #: store/models.py:73 store/models.py:74
 msgid "Услуги"
@@ -779,177 +722,98 @@ msgstr ""
 
 #: store/templates/store/product_detail.html:33
 msgid "Submit your application"
-msgstr "Arizangizni yuboring"
+msgstr ""
 
 #: store/templates/store/product_modal.html:38
 msgid "Leave a request "
-msgstr "Ariza qoldirish "
+msgstr ""
 
 #: store/templates/store/products.html:16
 msgid "Our Products"
-msgstr "Mahsulotlarimiz"
+msgstr ""
 
 #: store/templates/store/products.html:23
 msgid "Search"
-msgstr "Qidirish"
+msgstr ""
 
 #: store/templates/store/products.html:73
 msgid "Filter"
-msgstr "Filtrlar"
+msgstr ""
 
 #: store/templates/store/products.html:79
 msgid "Price"
-msgstr "Narx"
+msgstr ""
 
 #: store/templates/store/products.html:80
 msgid "Min."
-msgstr "Min."
+msgstr ""
 
 #: store/templates/store/products.html:81
 msgid "Max."
-msgstr "Maks."
+msgstr ""
 
 #: store/templates/store/products.html:87
 msgid "Size"
-msgstr "O'lcham"
+msgstr ""
 
 #: store/templates/store/products.html:89
 msgid "Select size"
-msgstr "O'lchamni tanlash"
+msgstr ""
 
 #: store/templates/store/products.html:90
 msgid "Extra small (XS)"
-msgstr "XS"
+msgstr ""
 
 #: store/templates/store/products.html:91
 msgid "Small (S)"
-msgstr "S"
+msgstr ""
 
 #: store/templates/store/products.html:92
 msgid "Medium (M)"
-msgstr "M"
+msgstr ""
 
 #: store/templates/store/products.html:93
 msgid "Large (L)"
-msgstr "L"
+msgstr ""
 
 #: store/templates/store/products.html:94
 msgid "Extra large (XL)"
-msgstr "XL"
+msgstr ""
 
 #: store/templates/store/products.html:95
 msgid "Super large (XXL)"
-msgstr "XXL"
+msgstr ""
 
 #: store/templates/store/products.html:100
 msgid "Apply"
-msgstr "Qo'llash"
+msgstr ""
 
 #: store/templates/store/products.html:107
 msgid "Sort by price"
-msgstr "Saralash"
+msgstr ""
 
 #: store/templates/store/products.html:114
 msgid "Ascending"
-msgstr "O'sish"
+msgstr ""
 
 #: store/templates/store/products.html:120
 msgid "Descending"
-msgstr "Kamayish"
+msgstr ""
 
 #: store/templates/store/products.html:138
 msgid "There are no products to display. Contact your system administrator."
 msgstr ""
-"Ko'rsatish uchun mahsulotlar mavjud emas. Iltimos, tizim administratoriga "
-"murojaat qiling."
 
 #: store/templates/store/products.html:167
 msgid "There are no products in this category."
-msgstr "Ushbu kategoriyada mahsulotlar yo'q."
+msgstr ""
 
 #: store/templates/store/products.html:179
-#, fuzzy
-#| msgid "You've reached the end of the list."
 msgid "You\\'ve reached the end of the list."
-msgstr "Ro'yxatning oxiriga yetib keldingiz."
+msgstr ""
 
 #: store/templates/store/products.html:209
 msgid ""
 "Please enter a valid phone number in international format (e.g., "
 "+998912345678)"
 msgstr ""
-"Iltimos, telefon raqamingizni xalqaro formatda kiriting (masalan, "
-"+998912345678)"
-
-#~ msgid "MON-SAT"
-#~ msgstr "DUSH-SHAN"
-
-#~ msgid "SUNDAY"
-#~ msgstr "YAK"
-
-#~ msgid "Privacy Policy"
-#~ msgstr "Maxfiylik siyosati"
-
-#~ msgid "Made in"
-#~ msgstr "Ishlab chiqarilgan"
-
-#~ msgid "Our history and"
-#~ msgstr "Bizning tariximiz va"
-
-#~ msgid "achievements"
-#~ msgstr "yutuqlarimiz"
-
-#~ msgid "years of experience and growth"
-#~ msgstr "yillik tajriba va rivojlanish"
-
-#~ msgid "revenue from government contracts"
-#~ msgstr "davlat shartnomalaridan tushgan daromad"
-
-#~ msgid "customer satisfaction"
-#~ msgstr "mijozlarning qoniqishi"
-
-#~ msgid "Read more about the company"
-#~ msgstr "Kompaniya haqida ko'proq ma'lumot"
-
-#~ msgid "Product catalog"
-#~ msgstr "Mahsulotlar katalogi"
-
-#~ msgid "Enter a phone number"
-#~ msgstr "Telefon raqamini kiriting"
-
-#~ msgid ""
-#~ "We are available to answer your questions, provide product information "
-#~ "and help you make the right choice."
-#~ msgstr ""
-#~ "Biz sizning savollaringizga javob berishga, mahsulotlar haqida ma'lumot "
-#~ "berishga va to'g'ri tanlov qilishda yordam berishga tayyormiz."
-
-#~ msgid "Specifications"
-#~ msgstr "Mahsulot xususiyatlari"
-
-#~ msgid "Minimum amount"
-#~ msgstr "Minimal miqdor"
-
-#~ msgid "Material"
-#~ msgstr "Material"
-
-#~ msgid "Warming material"
-#~ msgstr "Isituvchi material"
-
-#~ msgid "Filling"
-#~ msgstr "Astar"
-
-#~ msgid "Hood"
-#~ msgstr "Hood"
-
-#~ msgid "Uzbekistan, Tashkent city, Karasu str. 4, building 2"
-#~ msgstr "O'zbekiston, Toshkent shahri, Qorasuv ko'chasi 4, bino 2"
-
-#~ msgid "We're on social media"
-#~ msgstr "Bizning ijtimoiy tarmoqlarimiz"
-
-#~ msgid "and we'll get back to you as soon as possible"
-#~ msgstr "va biz siz bilan tez orada bog'lanamiz"
-
-#~ msgid "on request"
-#~ msgstr "so'rovga asosan"

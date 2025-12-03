@@ -1,10 +1,10 @@
 {% load static %}
 {% load i18n %}
-<div class="row mb-4" data-aos="fade-up" data-aos-duration="500">
+<div class="row mb-5 posts-title" data-aos="fade-up" data-aos-duration="500">
     <div class="col-lg-6 col-10">
         <h2 class="heading-2 mb-3 mb-lg-2">{% trans "News and events" %}</h2>
     </div>
-    <div class="col-lg-5 col-10">
+    <div class="col-lg-6 col-10">
         <p class="body-1 mb-lg-0 mb-3">{% trans "Keep up to date with the latest news and achievements of 'ELIMA'." %}</p>
     </div>
 </div>
@@ -18,10 +18,10 @@
     </div>
 {% endif %}
 <div class="flexslider carousel mb-2" data-aos="fade-up" data-aos-duration="700">
-    <ul class="slides">
+    <div class="slides">
         {% for post in posts %}
             <li>
-                <div class="bg-grey border-radius-20 p-3">
+                <div class="bg-grey border-radius-20 p-3 posts">
                     <div class="mb-5 pb-4 justify-content-between flower-card">
                         <div class="row">
                             <div class="col-6">
@@ -47,10 +47,11 @@
                 </div>
             </li>
         {% endfor %}
-    </ul>
+    </div>
 </div>
-<div  data-aos="fade-up" data-aos-duration="500">
-    <div class="col-12 mt-4 pt-2">
-        <a href="{% url 'news' %}" class="btn btn-accent-light w-100">{% trans "All news" %}</a>
+
+<div class="row mt-5" data-aos="fade-up" data-aos-duration="500">
+    <div class="col-12 text-center">
+        <a href="{% url 'news' %}" class="btn btn-outline-light-gray px-5">{% trans "All news" %}</a>
     </div>
 </div>

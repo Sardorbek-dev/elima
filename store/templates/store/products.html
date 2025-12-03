@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+
+
 <nav class="breadcrumb mt-4">
     <a class="breadcrumb-item link-1 text-black-opacity text-uppercase" href="{% url 'home' %}">{% trans "Home" %}</a>
     <span class="breadcrumb-item link-1 text-accent text-uppercase" aria-current="page">{% trans "Catalog" %}</span>
@@ -141,15 +144,13 @@
                         <div class="col-lg-3 col-md-6 col-sm-3 mb-4">
                             <div class="border-radius-20 overflow-hidden product-card product-card-img-style">
                                 <div class="overlay">
-                                    <a href="#" data-bs-toggle="modal" id="leaveProductRequestModal" data-bs-target="#modalId{{ product.unique_id }}">
+                                    <a href="{% url 'product_detail_view' pk=product.pk %}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="30" viewBox="0 0 24 24">
                                             <path fill="#fff" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
                                         </svg>
                                     </a>
                                 </div>
                                 <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.name }}">
-                                <!-- Modal -->
-                                {% include 'store/product_modal.html' with product=product %}
                             </div>
                             <h5 class="heading-5 mt-3">{{ product.name }}</h5>
                         </div>
@@ -184,59 +185,9 @@
         </div>
     </div>
 </section>
-<section class="leaveRequest-section mb-4">
-    <div class="bg-grey border-radius-20 px-4 pt-4 pb-5">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <h2 class="heading-2 mb-3 mb-lg-4">{% trans 'Leave a request' %}</h2>
-                <p class="body-2 mb-4 mb-lg-0 pb-2">{% trans 'Get a consultation or place an order. We are ready to help you with any questions you may have!' %}</p>
-            </div>
-            <div class="col-lg-6">
-                {% include 'consultation_form.html' %}
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Modal -->
-<div
-    class="modal fade"
-    id="leaveinrequest-modal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="modalTitleId"
-    aria-hidden="true"
->
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content border-radius-40">
-            <div class="modal-body">
-                <div class="mt-2 mt-lg-0">
-                    <button
-                        type="button"
-                        class="btn-close position-absolute top-0 end-0 bg-accent-light rounded-circle me-lg-3 me-4 mt-lg-3 mt-4"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-                            <path fill="black" d="m12 13.4l-2.917 2.925q-.277.275-.704.275t-.704-.275q-.275-.275-.275-.7t.275-.7L10.6 12L7.675 9.108Q7.4 8.831 7.4 8.404t.275-.704q.275-.275.7-.275t.7.275L12 10.625L14.892 7.7q.277-.275.704-.275t.704.275q.3.3.3.713t-.3.687L13.375 12l2.925 2.917q.275.277.275.704t-.275.704q-.3.3-.712.3t-.688-.3z" />
-                        </svg>
-                    </button>
-                    <h5 class="heading-4 mb-2">{% trans 'Leave a request' %}</h5>
-                    <p class="body-3 mb-4 me-5">{% trans 'We are available to answer your questions, provide product information and help you make the right choice.' %}</p>
-                    <form>
-                        <div class="mb-3">
-                            <input type="name" class="form-control" name="full_name_request" id="full_name_request" placeholder="{% trans 'Full Name' %}">
-                        </div>
-                        <div class="mb-4 pb-2">
-                            <input type="tel" class="form-control" name="phone_number_request" id="phone_number_request" placeholder="{% trans 'Phone number' %}">
-                        </div>
-                        <button type="submit" id="send-product-request" class="btn btn-accent w-100">{% trans 'Send' %}</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
+
 
 <!-- Leave Request for Product Success Alert -->
 <div id="leave-request-for-product-success-alert" style="display: none;" class="alert alert-success mt-4 alert-dismissible custom-alert-success" >
@@ -437,72 +388,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // When the 'Leave a request' button is clicked, capture the product ID
-    $(document).on('click', '#product-modal-open-request', function () {
-        selectedProductId = $(this).data('product-id'); // Get the product ID from data attribute
-    });
 
-    // Leave request for product
-    $('#leaveinrequest-modal button[type="submit"]').on('click', function(e) {
-        e.preventDefault();
 
-          // Clear previous error messages
-         $('.error-message').remove();
-
-        const requestFullname = $('#full_name_request').val().trim();
-        const requestPhoneNumber = $('#phone_number_request').val().trim();
-
-         // Client-side validation for phone number format
-        const phonePattern = /^\+\d{12}$/; // Pattern for phone number starting with +998 followed by 9 digits
-        if (!phonePattern.test(requestPhoneNumber)) {
-            const inputPhoneNumberRequest = $(`#phone_number_request`)
-            if (inputPhoneNumberRequest.length > 0) {
-                // Only add error message if it doesn't already exist
-                if (inputPhoneNumberRequest.next('.error-message').length === 0) {
-                    const errorMessage = `<small class="text-danger error-message">${regex_messages.phoneNumberError}</small>`;
-                    inputPhoneNumberRequest.after(errorMessage);
-                }
-            }
-            return; // Exit the function if validation fails
-        }
-
-        $.ajax({
-            type: 'POST',
-            url: '{% url "product_request" %}',
-            data: {
-                'csrfmiddlewaretoken': '{{ csrf_token }}',
-                'product_id': selectedProductId,
-                'full_name_request': requestFullname,
-                'phone_number_request': requestPhoneNumber,
-            },
-            success: function(response) {
-                $('#leave-request-for-product-success-alert').show().delay(4000).fadeOut()
-                $('#leaveinrequest-modal').modal('hide');
-
-                // Clear the form fields
-                $('#full_name_request').val('');
-                $('#phone_number_request').val('');
-            },
-            error: function(xhr) {
-                if (xhr.status === 0) {
-                    // Server not responding or network error
-                    $('#leave-request-for-product-error-alert').show().delay(4000).fadeOut()
-                } else {
-                    const errors = xhr.responseJSON.errors;
-                    for (const key in errors) {
-                        const inputField = $(`#${key}`);
-                        if (inputField.length) {
-                            // Only add error message if it doesn't already exist
-                            if (inputField.next('.error-message').length === 0) {
-                                const errorMessage = `<small class="text-danger error-message">${errors[key][0]}</small>`;
-                                inputField.after(errorMessage);
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    });
 });
 
 </script>

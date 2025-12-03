@@ -1,173 +1,334 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
-
 {% block content %}
+    <div class="container">
+        <!-- Bootstrap Carousel Section -->
+        <section class="slider-section pt-0">
+            {% include 'contentmanagement/main-carousel.html' %}
+        </section>
 
-<!-- Bootstrap Carousel Section -->
-<section class="slider-section pt-0">
-    {% include 'contentmanagement/main-carousel.html' %}
-</section>
+        <section class="statistics-section">
+            {% include 'contentmanagement/history.html' %}
+        </section>
 
-<section class="history-section">
-    {% include 'contentmanagement/history.html' %}
-</section>
+        <section>
+            <div class="row mb-5" data-aos="fade-up" data-aos-duration="500">
+                <div class="col-lg-6">
+                    <h2 class="heading-2 mb-0">{% trans "Our Partners" %}</h2>
+                </div>
+                <div class="col-lg-4">
+                    <p class="body-1 mb-0">{% trans "Trusted partners supporting innovation and quality at ELIMA" %}</p>
+                </div>
+            </div>
+            <div class="owl-carousel" data-aos="fade-up" data-aos-duration="500">
+                <div class="logo-container-special">
+                    <img src="{% static 'img/AmirSoy-01_qNLgY5e.png' %}"  alt="Brand 1" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/tg_image_2421191004.png' %}" alt="Brand 2" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/МЧС_FVV-01.png' %}" alt="Brand 3" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/Sevimli-01.png' %}" alt="Brand 5" class="brand-logo-special">
+                </div>
 
-<section>
-    <div class="row mb-5" data-aos="fade-up" data-aos-duration="500">
-        <div class="col-lg-6">
-            <h2 class="heading-2 mb-0">{% trans "Our Partners" %}</h2>
-        </div>
-        <div class="col-lg-4">
-            <p class="body-1 mb-0">{% trans "Trusted partners supporting innovation and quality at ELIMA" %}</p>
-        </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/IIV-01.png' %}" alt="Brand 4" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/Ташкенский_зоопарк-01.png' %}" alt="Brand 6" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-02-26_23-06-36.jpg' %}" alt="Brand 7" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-02-26_23-06-42.jpg' %}" alt="Brand 8" class="brand-logo-special">
+                </div>
+
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-02-26_23-06-47.jpg' %}" alt="Brand 7" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-02-26_23-06-51.jpg' %}" alt="Brand 8" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-02-26_23-06-54.jpg' %}" alt="Brand 8" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-34.jpg' %}" alt="Brand 9" class="brand-logo-special">
+                </div>
+
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-36.jpg' %}" alt="Brand 10" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-38.jpg' %}" alt="Brand 11" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-40.jpg' %}" alt="Brand 12" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-42.jpg' %}" alt="Brand 13" class="brand-logo-special">
+                </div>
+
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-44.jpg' %}" alt="Brand 14" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-45.jpg' %}" alt="Brand 15" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-47.jpg' %}" alt="Brand 16" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-49.jpg' %}" alt="Brand 17" class="brand-logo-special">
+                </div>
+
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-51.jpg' %}" alt="Brand 18" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-53.jpg' %}" alt="Brand 19" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-55.jpg' %}" alt="Brand 20" class="brand-logo-special">
+                </div>
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-07-58.jpg' %}" alt="Brand 21" class="brand-logo-special">
+                </div>
+
+                <div class="logo-container-special">
+                    <img src="{% static 'img/photo_2025-03-04_23-08-00.png' %}" alt="Brand 22" class="brand-logo-special">
+                </div>
+              </div>
+        </section>
     </div>
-    <div class="owl-carousel" data-aos="fade-up" data-aos-duration="500">
-        <div class="logo-container-special">
-            <img src="{% static 'img/AmirSoy-01_qNLgY5e.png' %}"  alt="Brand 1" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/tg_image_2421191004.png' %}" alt="Brand 2" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/МЧС_FVV-01.png' %}" alt="Brand 3" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/Sevimli-01.png' %}" alt="Brand 5" class="brand-logo-special">
-        </div>
-
-        <div class="logo-container-special">
-            <img src="{% static 'img/IIV-01.png' %}" alt="Brand 4" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/Ташкенский_зоопарк-01.png' %}" alt="Brand 6" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-02-26_23-06-36.jpg' %}" alt="Brand 7" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-02-26_23-06-42.jpg' %}" alt="Brand 8" class="brand-logo-special">
+    <section class="consultation-section bg-grey py-0">
+        <div class="container">
+            <div class=" px-3 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                        <h2 class="heading-2 mb-5">{% trans 'Get advice and batch calculation for free'%}</h2>
+                        <p class="body-1 mb-5">{% trans 'We will select materials, patterns and sizes, calculate the exact cost of tailoring and branding without excess and overspending of material.'%}</p>
+                        <div class="d-flex align-items-start gap-3">
+                            <a href="!#" class="btn btn-accent px-4 open-consultation-modal">{% trans 'Get a payment'%}</a>
+                            <div class="consultation-note">
+                                <p class="body-3 mb-0">{% trans 'Leave a request and our manager will contact you for a consultation.'%}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 text-center" data-aos="fade-left">
+                        <div class="consultant-image-wrapper position-relative">
+                            <img src="{% static 'img/cons.png' %}" alt="Consultant" class="consultant-img img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-02-26_23-06-47.jpg' %}" alt="Brand 7" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-02-26_23-06-51.jpg' %}" alt="Brand 8" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-02-26_23-06-54.jpg' %}" alt="Brand 8" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-34.jpg' %}" alt="Brand 9" class="brand-logo-special">
-        </div>
+    </section>
 
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-36.jpg' %}" alt="Brand 10" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-38.jpg' %}" alt="Brand 11" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-40.jpg' %}" alt="Brand 12" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-42.jpg' %}" alt="Brand 13" class="brand-logo-special">
-        </div>
+    <div class="container">
 
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-44.jpg' %}" alt="Brand 14" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-45.jpg' %}" alt="Brand 15" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-47.jpg' %}" alt="Brand 16" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-49.jpg' %}" alt="Brand 17" class="brand-logo-special">
-        </div>
+                <!-- How We Work Section -->
+        <section class="how-we-work-section">
+            <div class="row mb-3 mt-5" data-aos="fade-up">
+                <div class="col-12">
+                    <h2 class="heading-2 mb-5">{% trans 'How we work' %}</h2>
+                </div>
+            </div>
 
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-51.jpg' %}" alt="Brand 18" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-53.jpg' %}" alt="Brand 19" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-55.jpg' %}" alt="Brand 20" class="brand-logo-special">
-        </div>
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-07-58.jpg' %}" alt="Brand 21" class="brand-logo-special">
-        </div>
+            <!-- 4 Steps -->
+            <div class="row g-3 mb-5" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6">
+                    <div class="work-step-card border-radius-20 p-3">
+                        <div class="step-number bg-black text-white rounded-circle ">01</div>
+                        <h4 class="heading-4">{% trans 'You are submitting a request' %}</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="work-step-card border-radius-20 p-3">
+                        <div class="step-number bg-black text-white rounded-circle">02</div>
+                        <h4 class="heading-4">{% trans 'We calculate the cost' %}</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="work-step-card border-radius-20 p-3">
+                        <div class="step-number bg-black text-white rounded-circle">03</div>
+                        <h4 class="heading-4">{% trans 'We conclude an agreement' %}</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="work-step-card border-radius-20 p-3">
+                        <div class="step-number bg-black text-white rounded-circle ">04</div>
+                        <h4 class="heading-4">{% trans 'We sew and deliver' %}</h4>
+                    </div>
+                </div>
+            </div>
 
-        <div class="logo-container-special">
-            <img src="{% static 'img/photo_2025-03-04_23-08-00.png' %}" alt="Brand 22" class="brand-logo-special">
-        </div>
-      </div>
-</section>
+            <!-- What You Get -->
+            <div class="row mb-3" data-aos="fade-up">
+                <div class="col-12">
+                    <h3 class="heading-3">{% trans 'What do you get' %}</h3>
+                </div>
+            </div>
 
-<section class="product-section">
+            <!-- Benefits - Row 1 -->
+            <div class="row g-3 mb-3" data-aos="fade-up">
+                <div class="col-lg-4">
+                    <div class="benefit-card bg-grey border-radius-20 p-4 d-flex align-items-center">
+                        <div class="benefit-icon me-3">
+                            <img src="{% static 'img/g1.png' %}" alt="">
+                        </div>
+                        <h5 class="heading-5 mb-0">{% trans 'The sample is free' %}</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card bg-grey border-radius-20 p-4 d-flex align-items-center">
+                        <div class="benefit-icon me-3">
+                            <img src="{% static 'img/g2.png' %}" alt="">
+                        </div>
+                        <h5 class="heading-5 mb-0">{% trans 'Individual pattern' %}</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card bg-grey border-radius-20 p-4 d-flex align-items-center">
+                        <div class="benefit-icon me-3">
+                            <img src="{% static 'img/g3.png' %}" alt="">
+                        </div>
+                        <h5 class="heading-5 mb-0">{% trans 'Guarantee' %}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits - Row 2 -->
+            <div class="row g-3 mb-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <div class="benefit-card bg-grey border-radius-20 p-4 d-flex align-items-center">
+                        <div class="benefit-icon me-3">
+                            <img src="{% static 'img/g4.png' %}" alt="">
+                        </div>
+                        <h5 class="heading-5 mb-0">{% trans 'Discounts (up to 20%)' %}</h5>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="benefit-card bg-grey border-radius-20 p-4 d-flex align-items-center">
+                        <div class="benefit-icon me-3">
+                            <img src="{% static 'img/g5.png' %}" alt="">
+                        </div>
+                        <h5 class="heading-5 mb-0">{% trans 'Free delivery in Tashkent' %}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="row" data-aos="fade-up">
+                <div class="col-12 text-center">
+                    <a href="!#" class="btn btn-accent px-5 open-consultation-modal">{% trans 'Get a payment' %}</a>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="row mb-4" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <h2 class="heading-2 mb-0">{% trans 'Our services' %}</h2>
+                </div>
+                <div class="col-lg-5">
+                    <p class="body-1 mb-2">{% trans 'A wide range of products for all tasks and conditions.' %}</p>
+                    <p class="body-3 text-black-opacity">* {% trans 'The minimum order quantity is 100 pcs.' %}</p>
+                </div>
+            </div>
+
+            <!-- First Row - 4 cards -->
+            <div class="row mb-4" data-aos="fade-up">
+                {% for item in services %}
+                <div class="col-lg-3 mb-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image-wrapper bg-grey border-radius-20 mb-3 overflow-hidden">
+                            <img src="{{ item.image.url }}" alt="Service" class="service-image w-100">
+                        </div>
+                        <h4 class="heading-4 mb-3">{{ item.title }}</h4>
+                        <a href="!#" class="btn btn-accent w-100 open-consultation-modal" >{% trans 'Get a payment' %}</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+
+        </section>
+        <!-- Cases Section -->
+        <section class="cases-section">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-12">
+                    <h2 class="heading-2 mb-0">{% trans 'Our cases' %}</h2>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5" data-aos="fade-up">
+                {% for item in cases %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="case-card">
+                        <div class="case-image-wrapper bg-grey border-radius-20 mb-3 overflow-hidden">
+                            <img src="{{ item.image.url }}" alt="Case" class="case-image w-100">
+                        </div>
+                        <h4 class="heading-4 mb-3">{{ item.title }}</h4>
+                        <a href="!#" class="btn btn-outline-dark w-100 open-consultation-modal" >{% trans 'Find out the cost' %}</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+
+            <!-- Bottom Button -->
+            <div class="row" data-aos="fade-up">
+                <div class="col-12 text-center">
+                    <a href="{% url 'product_list' %}" class="btn btn-accent px-5">{% trans 'Go to the catalog' %}</a>
+                </div>
+            </div>
+        </section>
+
+    <section class="product-section">
  {% include 'contentmanagement/products-carousel.html' %}
 </section>
 
-<section class="newsevent-section">
+        <section class="feedback-section" data-aos="fade-up" data-aos-duration="500">
+   {% include 'contentmanagement/customer-reviews-carousel.html' %}
+</section>
+<section class="news-section">
  {% include 'contentmanagement/posts-carousel.html' %}
 </section>
 
-<section class="feedback-section" data-aos="fade-up" data-aos-duration="500">
-   {% include 'contentmanagement/customer-reviews-carousel.html' %}
-</section>
+
 <section class="faq-section" data-aos="fade-up" data-aos-duration="1500">
    {% include 'contentmanagement/frequently-asked-questions.html' %}
 </section>
-<section
-  class="leaveRequest-section"
-  data-aos="fade-up"
-  data-aos-duration="1200"
->
-  <div class="row justify-content-between">
-    <div class="col-lg-6">
-      <h2 class="heading-3 mb-4">
-        {% trans 'Fill out the form' %},<br />{% trans 'and we\'ll get back to you as soon as possible' %}
-      </h2>
-    </div>
-    <div class="col-lg-6">
-      <script data-b24-form="inline/6/gjml08" data-skip-moving="true">
-        (function (w, d, u) {
-          var s = d.createElement("script");
-          s.async = true;
-          s.src = u + "?" + ((Date.now() / 180000) | 0);
-          var h = d.getElementsByTagName("script")[0];
-          h.parentNode.insertBefore(s, h);
-        })(
-          window,
-          document,
-          "https://elima.space/upload/crm/form/loader_6_gjml08.js"
-        );
-      </script>
-      <!-- <form id="contactForm" method="post">
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="name" class="body-3 fw-semibold">{% trans 'Name' %}</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="{% trans 'Your name' %}">
+        <!-- CTA Section -->
+        <section class="cta-section" data-aos="fade-up">
+            <div class="cta-bg bg-accent border-radius-20 ps-5 position-relative overflow-hidden">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 order-2 order-lg-1 position-relative z-2">
+                        <h2 class="heading-2 text-white mb-4">{% trans 'Would you like to know the cost of your shipment?' %}</h2>
+                        <p class="body-1 text-white mb-4">{% trans 'Calculation in 24 hours, the sample is free of charge' %}</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="!#" class="btn btn-yellow px-4 open-consultation-modal">{% trans 'Get a payment' %}</a>
+                            <p class="body-3 text-white mb-0 opacity-75 ">{% trans 'Leave a request and our manager will contact you.' %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-1 order-lg-2 mb-4 mb-lg-0 position-relative z-1 text-end ">
+                        <img src="{% static 'img/two.png' %} " alt="Team " class="cta-image img-fluid ">
+                    </div>
+                </div>
+                <!-- Gradient Overlay -->
+                <div class="cta-gradient "></div>
             </div>
-            <div class="mb-4">
-                <label for="email" class="body-3 fw-semibold">{% trans 'E-mail' %}</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="{% trans 'E-mail' %}">
-            </div>
-            <div class="mb-4">
-                <label for="phone_number" class="body-3 fw-semibold">{% trans 'Phone' %}</label>
-                <input type="tel" class="form-control" name="phone_number" id="phone_number" required>
-            </div>
-            <div class="mb-4">
-                <label for="message" class="body-3 fw-semibold">{% trans 'Message' %}</label>
-                <textarea name="message" class="form-control" id="message" placeholder="{% trans 'Message' %}" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-accent px-5 mt-4 w-100-m">{% trans 'Send' %}</button>
-            <div id="form-success" class="alert alert-success mt-4" style="display:none;">{% trans 'Your request has been successfully sent!' %}</div>
-        </form> -->
-    </div>
-  </div>
-</section>
+        </section>
+</div>
+
 {% endblock  %}

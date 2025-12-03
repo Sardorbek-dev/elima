@@ -1,0 +1,1057 @@
+/* Statistics Section Styles */
+
+.statistics-section {
+    padding: 70px 0;
+}
+
+
+/* Typography for statistics */
+
+.heading-2 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52px;
+    color: var(--Black);
+}
+
+.body-1 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    color: var(--Black);
+}
+
+.display-1-later-version {
+    font-size: 80px !important;
+    font-weight: 300;
+    line-height: 110px;
+}
+
+.heading-4 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--Black);
+}
+
+
+/* Stat card */
+
+.stat-card {
+    transition: transform 0.3s ease;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.text-accent {
+    color: var(--Accent);
+}
+
+.bg-grey {
+    background: var(--Gray);
+}
+
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+
+/* Button */
+
+.btn {
+    font-size: 15px;
+    padding: 13px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-accent {
+    background: var(--Accent);
+    color: var(--Accent-light);
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: var(--Black);
+    color: var(--Accent-light);
+}
+
+
+/* Responsive styles for statistics section */
+
+@media (max-width: 991px) {
+    .statistics-section {
+        padding: 50px 0;
+    }
+    .heading-2 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+    .body-1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .display-1-later-version {
+        font-size: 54px !important;
+        line-height: 50px;
+    }
+    .heading-4 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .statistics-section {
+        padding: 35px 0;
+    }
+    .heading-2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .body-1 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .display-1-later-version {
+        font-size: 40px !important;
+        line-height: 44px;
+    }
+    .heading-4 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+}
+
+
+/* Consultation Section Styles */
+
+.consultation-section {
+    padding: 70px 0;
+}
+
+
+/* Typography */
+
+.consultation-section .heading-2 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 52px;
+    color: var(--Black);
+}
+
+.consultation-section .body-1 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    color: var(--Black);
+}
+
+.consultation-section .body-3 {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 17px;
+    color: var(--Black);
+}
+
+
+/* Background and utilities */
+
+.bg-grey {
+    background: var(--Gray);
+}
+
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+
+/* Consultation note */
+
+.consultation-note {
+    max-width: 200px;
+}
+
+
+/* Consultant image with circle */
+
+.consultant-image-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.consultant-img {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+}
+
+
+/* Button */
+
+.btn {
+    font-size: 15px;
+    padding: 13px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.consultation-section .btn-accent {
+    background: var(--Accent);
+    color: var(--Accent-light);
+    border: none;
+    padding: 14px 40px;
+}
+
+.consultation-section .btn-accent:hover {
+    background-color: var(--Black);
+    color: var(--Accent-light);
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .consultation-section {
+        padding: 50px 0;
+    }
+    .heading-2 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+    .body-1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .circle-border {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .consultation-section {
+        padding: 35px 0;
+    }
+    .heading-2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .body-1 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .body-3 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .consultation-note {
+        max-width: 100%;
+    }
+    .d-flex.gap-3 {
+        flex-direction: column;
+    }
+}
+
+
+/* How We Work Section Styles */
+
+.how-we-work-section {
+    padding: 70px 0;
+}
+
+
+/* Typography */
+
+.heading-2 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52px;
+    color: var(--Black);
+}
+
+.heading-3 {
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: 500;
+    color: var(--Black);
+}
+
+.heading-4 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--Black);
+}
+
+.heading-5 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Black);
+}
+
+
+/* Work Step Card */
+
+.work-step-card {
+    border: 2px solid rgba(38, 38, 38, 0.1);
+    background: var(--White);
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.work-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.step-number {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.work-step-card .heading-4 {
+    font-weight: 400;
+}
+
+
+/* Benefit Card */
+
+.benefit-card {
+    transition: all 0.3s ease;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.benefit-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.benefit-card .heading-5 {
+    font-size: 24px;
+}
+
+
+/* Background and utilities */
+
+.bg-grey {
+    background: var(--Gray);
+}
+
+.bg-black {
+    background: var(--Black);
+}
+
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+
+/* Button */
+
+.btn {
+    font-size: 15px;
+    padding: 13px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-accent {
+    background: var(--Accent);
+    color: var(--Accent-light);
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: var(--Black);
+    color: var(--Accent-light);
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .how-we-work-section {
+        padding: 50px 0;
+    }
+    .heading-2 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+    .heading-3 {
+        font-size: 25px;
+        line-height: 28px;
+    }
+    .heading-4 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .work-step-card {
+        min-height: 140px;
+    }
+}
+
+@media (max-width: 767px) {
+    .how-we-work-section {
+        padding: 35px 0;
+    }
+    .heading-2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .heading-3 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .heading-4 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .heading-5 {
+        font-size: 16px;
+    }
+    .work-step-card {
+        min-height: 120px;
+    }
+    .benefit-card {
+        min-height: 80px;
+    }
+    .benefit-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* Services Section Styles */
+
+.services-section {
+    padding: 70px 0;
+}
+
+
+/* Service Card */
+
+.service-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image-wrapper {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.05);
+}
+
+.services-section .text-black-opacity {
+    background-color: #E9EEEC;
+    border-radius: 20px;
+    width: max-content;
+    padding: 6px 8px;
+    max-width: max-content;
+}
+
+.service-card .heading-4 {
+    font-weight: 400;
+    height: 78px;
+}
+.slides li{
+    height: 100%;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .services-section {
+        padding: 50px 0;
+    }
+    .service-image-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-section {
+        padding: 35px 0;
+    }
+    .service-image-wrapper {
+        height: 250px;
+    }
+}
+
+
+/* Cases Section Styles */
+
+.cases-section {
+    padding: 70px 0;
+}
+
+
+/* Case Card */
+
+.case-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.case-card:hover {
+    transform: translateY(-5px);
+}
+
+.case-image-wrapper {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-card:hover .case-image {
+    transform: scale(1.05);
+}
+
+.btn-outline-dark {
+    background: #E9EEEC;
+    color: var(--Black);
+    border-color: transparent;
+}
+
+.btn-outline-dark:hover {
+    background: #006B3C;
+    color: var(--White);
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .cases-section {
+        padding: 50px 0;
+    }
+    .case-image-wrapper {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cases-section {
+        padding: 35px 0;
+    }
+    .case-image-wrapper {
+        height: 350px;
+    }
+}
+
+.news-section {
+    padding: 70px 0;
+}
+
+
+/* News Card */
+
+.news-card-link {
+    display: block;
+    height: 100%;
+}
+
+.news-card {
+    transition: all 0.3s ease;
+    min-height: 280px;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* News Image Container */
+
+.news-image-container {
+    width: 195px;
+    height: 186px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* News Date */
+
+.news-date {
+    white-space: nowrap;
+}
+
+
+/* News Arrow */
+
+.news-arrow {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-arrow {
+    transform: translateX(5px);
+}
+
+@media (max-width: 991px) {
+    .news-section {
+        padding: 50px 0;
+    }
+    .news-image-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .news-section {
+        padding: 35px 0;
+    }
+    .news-image-container {
+        width: 80px;
+        height: 80px;
+    }
+    .news-card {
+        min-height: 240px;
+    }
+    .news-arrow svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.btn-outline-light-gray {
+    background: var(--Gray);
+    color: var(--Black);
+    border: none;
+}
+
+.btn-outline-light-gray:hover {
+    background: var(--Accent);
+    color: var(--Accent-light);
+}
+
+
+/* CTA Section Styles */
+
+.cta-section {
+    padding: 70px 0;
+}
+
+
+/* CTA Background */
+
+.cta-bg {
+    position: relative;
+    background: linear-gradient(135deg, var(--Accent) 0%, #008B4D 100%);
+}
+
+
+/* CTA Gradient Overlay */
+
+.cta-gradient {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(139, 195, 74, 0.3) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Typography */
+
+.heading-2 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52px;
+}
+
+.body-1 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+.body-3 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    max-width: 200px;
+}
+
+
+/* CTA Image */
+
+.cta-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Background and utilities */
+
+.bg-accent {
+    background: var(--Accent);
+}
+
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+.text-white {
+    color: var(--White);
+}
+
+.cta-section .heading-2 {
+    font-size: 64px;
+    line-height: 100%;
+}
+
+.cta-section .body-1 {
+    font-weight: 300;
+}
+
+
+/* Z-index layers */
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.btn-yellow {
+    background: #FFD700;
+    color: var(--Black);
+    border: none;
+}
+
+.btn-yellow:hover {
+    background: #FFC700;
+    color: var(--Black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .cta-section {
+        padding: 50px 0;
+    }
+    .cta-gradient {
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(180deg, transparent 0%, rgba(139, 195, 74, 0.2) 100%);
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-section {
+        padding: 35px 0;
+    }
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 15px !important;
+    }
+}
+
+.text-accent-light {
+    color: var(--Accent-light);
+}
+
+.text-accent-extra-light {
+    color: var(--Accent-extra-light);
+}
+
+
+/* Modal Consultation Styles */
+
+
+/* Modal Dialog */
+
+.modal-dialog {
+    max-width: 500px;
+}
+
+.modal-content {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Modal Header */
+
+.modal-header {
+    padding: 20px 20px 0;
+}
+
+.modal-header .btn-close {
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E") center/0.7em auto no-repeat;
+    opacity: 0.5;
+    padding: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #E9EEEC;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+.forma .heading-3 {
+    text-align: start!important;
+}
+
+.forma .body-3 {
+    text-align: start!important;
+}
+
+
+/* Modal Body */
+
+.modal-body {
+    padding: 30px 40px 40px;
+}
+
+.text-black-opacity {
+    color: var(--Black-opacity);
+}
+
+
+/* Form Styles */
+
+.consultation-form {
+    width: 100%;
+}
+
+.form-input {
+    height: 56px;
+    border: 1px solid rgba(38, 38, 38, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--Black);
+    transition: all 0.3s ease;
+    background: var(--White);
+}
+
+.form-input:focus {
+    border-color: var(--Accent);
+    box-shadow: 0 0 0 3px rgba(0, 107, 60, 0.1);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(38, 38, 38, 0.4);
+}
+
+
+/* Modal Backdrop */
+
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .modal-dialog {
+        margin: 20px;
+    }
+    .modal-body {
+        padding: 20px 30px 30px;
+    }
+    .form-input {
+        height: 50px;
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+}
+
+.btn-telegram {
+    display: flex;
+    align-items: center;
+    color: var(--Black);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.btn-telegram i {
+    margin-right: 10px;
+}
+
+.success-content .body-1 {
+    font-weight: 300;
+    letter-spacing: normal;
+    font-size: 25px;
+}
+
+
+/* Product Card Section Styles */
+
+.product-card-section {
+    padding: 70px 0;
+}
+
+
+/* Product Image */
+
+.product-card-image-wrapper {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s ease;
+}
+
+.product-card-image-wrapper:hover .product-card-image {
+    transform: scale(1.05);
+}
+
+
+/* Product Specifications */
+
+.product-spec {
+    padding: 0;
+}
+
+.spec-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--Black);
+    margin-bottom: 4px;
+}
+
+.spec-value {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--Black);
+    line-height: 22px;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 991px) {
+    .product-card-section {
+        padding: 50px 0;
+    }
+    .product-card-image-wrapper {
+        height: 500px;
+    }
+    .spec-label {
+        font-size: 15px;
+    }
+    .spec-value {
+        font-size: 17px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-card-section {
+        padding: 35px 0;
+    }
+    .product-card-image-wrapper {
+        height: 400px;
+    }
+    .spec-label {
+        font-size: 14px;
+    }
+    .spec-value {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+.product-card-section .body-1 {
+    font-weight: 300;
+}
+.posts {
+    min-height: 375px;
+}
