@@ -50,6 +50,39 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class ProductImage(models.Model):
+    """Дополнительные изображения товара"""
+
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="images",
+        verbose_name=_("Product"),
+    )
+    image = models.ImageField(
+        upload_to="products_images/gallery/",
+        verbose_name=_("Image"),
+    )
+    alt_text = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name=_("Alt text"),
+        help_text=_("Текст для SEO и доступности"),
+    )
+    ordering = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Ordering"),
+        help_text=_("Порядок показа в галерее"),
+    )
+
+    class Meta:
+        verbose_name = _("Product image")
+        verbose_name_plural = _("Product images")
+        ordering = ["ordering", "id"]
+
+    def __str__(self):
+        return f"{self.product.name} #{self.pk}"
 
 class ProductRequest(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='requests')

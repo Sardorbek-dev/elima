@@ -597,7 +597,7 @@ msgstr ""
 #: pages/templates/home.html:255 pages/templates/home.html:320
 #: pages/templates/success.html:74 store/templates/store/product_detail.html:74
 msgid "Get a payment"
-msgstr "Получить платеж"
+msgstr "Получить расчёт"
 
 #: pages/templates/home.html:119
 msgid "Leave a request and our manager will contact you for a consultation."
@@ -665,7 +665,7 @@ msgstr "Минимальная партия 100 шт."
 #, fuzzy
 #| msgid "Our address"
 msgid "Our cases"
-msgstr "Наш адрес"
+msgstr "Наши кейсы"
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
 #: store/templates/store/product_detail.html:57

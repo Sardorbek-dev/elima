@@ -672,7 +672,7 @@ msgstr "Minimal buyurtma miqdori - 100 dona."
 #, fuzzy
 #| msgid "Our address"
 msgid "Our cases"
-msgstr "Bizning manzilimiz"
+msgstr "Bizning ishlarimiz"
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
 #: store/templates/store/product_detail.html:57
