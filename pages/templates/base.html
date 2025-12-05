@@ -1113,7 +1113,7 @@
       }); // Initialize AOS
 
       $(document).ready(function(){
-          $(".owl-carousel").owlCarousel({
+          $(".partners").owlCarousel({
             loop: true,          
             margin: 0,
             touchDrag: true,           
@@ -1184,6 +1184,19 @@
             $('#consultationModal').on('hidden.bs.modal', function() {
                 $('#consultationForm')[0].reset();
             });
+                    $('.product-gallery-owl').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            smartSpeed: 600 // скорость анимации (мс)
+        });
         });
     </script>
   </body>

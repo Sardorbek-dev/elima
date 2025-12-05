@@ -1164,8 +1164,8 @@ input[type="number"] {
 .post-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    /*object-position: center;*/
 }
 
 .post-details-image-box {
@@ -1177,8 +1177,8 @@ input[type="number"] {
 .post-details-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    /*object-position: top center;*/
 }
 
 .product-card-img-style {
@@ -1231,4 +1231,11 @@ input[type="number"] {
 .accordion .heading-3{
     font-weight: 400;
     font-size: 28px;
+}
+.product-gallery-owl .owl-item{
+    height: 100%;
+}
+.product-gallery-owl .item{
+    width: 100%;
+    height: 100%;
 }

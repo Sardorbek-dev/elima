@@ -274,7 +274,7 @@ msgstr "года в бизнеса"
 
 #: pages/templates/about.html:17 store/models.py:48
 msgid "Products"
-msgstr "Товары"
+msgstr "Товаров"
 
 #: pages/templates/about.html:24
 msgid "Our journey"

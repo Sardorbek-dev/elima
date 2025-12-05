@@ -16,7 +16,24 @@
                 <!-- Product Image -->
                 <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="product-card-image-wrapper bg-grey border-radius-20 overflow-hidden">
-                        <img src="{{ object.image.url}}" alt="WinterGrace" class="product-card-image w-100">
+                        <div class="owl-carousel product-gallery-owl">
+                            {% if object.images.all %}
+                {% for img in object.images.all %}
+                    <div class="item">
+                        <img src="{{ img.image.url }}" alt="{{ object.name }}" class="product-card-image w-100">
+                    </div>
+                {% endfor %}
+                                        <div class="item">
+                    <img src="{{ object.image.url }}" alt="{{ object.name }}" class="product-card-image w-100">
+                </div>
+            {% else %}
+                {# fallback – одно основное фото #}
+                <div class="item">
+                    <img src="{{ object.image.url }}" alt="{{ object.name }}" class="product-card-image w-100">
+                </div>
+            {% endif %}
+                        </div>
+
                     </div>
                 </div>
 
@@ -87,4 +104,5 @@
    {% include 'contentmanagement/frequently-asked-questions.html' %}
 </section>
 </div>
+
 {% endblock %}
