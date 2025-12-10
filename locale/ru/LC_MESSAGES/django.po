@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 20:15+0000\n"
+"POT-Creation-Date: 2025-12-10 16:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -590,12 +590,12 @@ msgid ""
 "We will select materials, patterns and sizes, calculate the exact cost of "
 "tailoring and branding without excess and overspending of material."
 msgstr ""
-"Мы подберем материалы, выкройки и размеры, рассчитаем точную стоимость"
-"пошив и брендирование без излишеств и перерасхода материала."
+"Мы подберем материалы, выкройки и размеры, рассчитаем точную стоимостьпошив "
+"и брендирование без излишеств и перерасхода материала."
 
 #: pages/templates/home.html:117 pages/templates/home.html:230
 #: pages/templates/home.html:255 pages/templates/home.html:320
-#: pages/templates/success.html:74 store/templates/store/product_detail.html:74
+#: pages/templates/success.html:74 store/templates/store/product_detail.html:91
 msgid "Get a payment"
 msgstr "Получить расчёт"
 
@@ -630,12 +630,12 @@ msgid "What do you get"
 msgstr "Что вы получаете"
 
 #: pages/templates/home.html:186
-msgid "The sample is free"
-msgstr "Пробник бесплатно"
+msgid "I need a free sample, so I'm asking you exactly what you can provide."
+msgstr "Мне нужен бесплатный пробник, поэтому уточняю, что именно вы можете предоставить."
 
 #: pages/templates/home.html:194
-msgid "Individual pattern"
-msgstr "Индивидуальное лекало"
+msgid "Exact order execution dates"
+msgstr "Tочные сроки исполнения заказа"
 
 #: pages/templates/home.html:202
 msgid "Guarantee"
@@ -647,8 +647,8 @@ msgid "Discounts (up to 20%%)"
 msgstr "Скидки (вплоть до 20%%)"
 
 #: pages/templates/home.html:222
-msgid "Free delivery in Tashkent"
-msgstr "Бесплатная доставка по Ташкенту"
+msgid "For shipments over 10 million"
+msgstr "При партиях свыше 10млн"
 
 #: pages/templates/home.html:238
 #, fuzzy
@@ -661,38 +661,38 @@ msgid "The minimum order quantity is 100 pcs."
 msgstr "Минимальная партия 100 шт."
 
 #: pages/templates/home.html:269 pages/templates/success.html:42
-#: store/templates/store/product_detail.html:42
+#: store/templates/store/product_detail.html:59
 #, fuzzy
 #| msgid "Our address"
 msgid "Our cases"
 msgstr "Наши кейсы"
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
-#: store/templates/store/product_detail.html:57
+#: store/templates/store/product_detail.html:74
 #, fuzzy
 #| msgid "Fill out the form"
 msgid "Find out the cost"
 msgstr "Узнайте стоимость"
 
 #: pages/templates/home.html:292 pages/templates/success.html:45
-#: store/templates/store/product_detail.html:45
+#: store/templates/store/product_detail.html:62
 #, fuzzy
 #| msgid "Go to catalog"
 msgid "Go to the catalog"
 msgstr "Перейти в каталог"
 
 #: pages/templates/home.html:317 pages/templates/success.html:71
-#: store/templates/store/product_detail.html:71
+#: store/templates/store/product_detail.html:88
 msgid "Would you like to know the cost of your shipment?"
 msgstr "Хотите узнать стоимость вашей партии?"
 
 #: pages/templates/home.html:318 pages/templates/success.html:72
-#: store/templates/store/product_detail.html:72
+#: store/templates/store/product_detail.html:89
 msgid "Calculation in 24 hours, the sample is free of charge"
 msgstr "Расчёт за 24 часа, пробник — бесплатно"
 
 #: pages/templates/home.html:321 pages/templates/success.html:75
-#: store/templates/store/product_detail.html:75
+#: store/templates/store/product_detail.html:92
 msgid "Leave a request and our manager will contact you."
 msgstr "Оставьте заявку, и наш менеджер свяжется с вами"
 
@@ -717,8 +717,8 @@ msgid ""
 "We will contact you for consultation and batch calculation during the "
 "working day. For now, subscribe to our telegram channel."
 msgstr ""
-"Мы свяжемся с вами для консультации и расчета партии в течении "
-"рабочего дня. Пока подпишитесь на наш телеграм- канал."
+"Мы свяжемся с вами для консультации и расчета партии в течении рабочего дня. "
+"Пока подпишитесь на наш телеграм- канал."
 
 #: store/apps.py:8
 msgid "Каталог"
@@ -750,29 +750,61 @@ msgstr "признание"
 msgid "Полное описание с картинками и форматированием"
 msgstr ""
 
-#: store/models.py:47
+#: store/models.py:47 store/models.py:60
 #, fuzzy
 #| msgid "Products"
 msgid "Product"
 msgstr "Товары"
 
-#: store/models.py:61
+#: store/models.py:64
+msgid "Image"
+msgstr ""
+
+#: store/models.py:70
+msgid "Alt text"
+msgstr ""
+
+#: store/models.py:71
+msgid "Текст для SEO и доступности"
+msgstr ""
+
+#: store/models.py:75
+msgid "Ordering"
+msgstr ""
+
+#: store/models.py:76
+msgid "Порядок показа в галерее"
+msgstr ""
+
+#: store/models.py:80
+#, fuzzy
+#| msgid "Product "
+msgid "Product image"
+msgstr "Товары"
+
+#: store/models.py:81
+#, fuzzy
+#| msgid "Product "
+msgid "Product images"
+msgstr "Товары"
+
+#: store/models.py:94
 msgid "Product Request"
 msgstr "Заявкa на продукцию"
 
-#: store/models.py:62
+#: store/models.py:95
 msgid "Product Requests"
 msgstr "Заявки на продукцию"
 
-#: store/models.py:73 store/models.py:74
+#: store/models.py:106 store/models.py:107
 msgid "Услуги"
 msgstr ""
 
-#: store/models.py:82 store/models.py:83
+#: store/models.py:115 store/models.py:116
 msgid "Кейсы"
 msgstr ""
 
-#: store/templates/store/product_detail.html:33
+#: store/templates/store/product_detail.html:50
 msgid "Submit your application"
 msgstr "Оставить заявку"
 
@@ -874,6 +906,15 @@ msgstr ""
 "Введите правильный номер телефона в международном формате (например, +99891 "
 "234 56 78)"
 
+#~ msgid "The sample is free"
+#~ msgstr "Пробник бесплатно"
+
+#~ msgid "Individual pattern"
+#~ msgstr "Индивидуальное лекало"
+
+#~ msgid "Free delivery in Tashkent"
+#~ msgstr "Бесплатная доставка по Ташкенту"
+
 #~ msgid "MON-SAT"
 #~ msgstr "ПН-СБ"
 
@@ -943,9 +984,6 @@ msgstr ""
 
 #~ msgid "and we'll get back to you as soon as possible"
 #~ msgstr "и мы свяжемся с вами в ближайшее<br>время"
-
-#~ msgid "Product "
-#~ msgstr "Товары"
 
 #~ msgid "Products "
 #~ msgstr "Товары"

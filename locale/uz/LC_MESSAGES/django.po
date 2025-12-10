@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 20:15+0000\n"
+"POT-Creation-Date: 2025-12-10 16:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -597,12 +597,12 @@ msgid ""
 "We will select materials, patterns and sizes, calculate the exact cost of "
 "tailoring and branding without excess and overspending of material."
 msgstr ""
-"Biz materiallarni, naqshlarni va o'lchamlarni tanlaymiz,"
-"ortiqcha va ortiqcha xarajatlarsiz tikish va markalashning aniq narxini hisoblaymiz."
+"Biz materiallarni, naqshlarni va o'lchamlarni tanlaymiz,ortiqcha va ortiqcha "
+"xarajatlarsiz tikish va markalashning aniq narxini hisoblaymiz."
 
 #: pages/templates/home.html:117 pages/templates/home.html:230
 #: pages/templates/home.html:255 pages/templates/home.html:320
-#: pages/templates/success.html:74 store/templates/store/product_detail.html:74
+#: pages/templates/success.html:74 store/templates/store/product_detail.html:91
 msgid "Get a payment"
 msgstr "Hisob-kitobni oling"
 
@@ -637,12 +637,12 @@ msgid "What do you get"
 msgstr "Siz nima olasiz"
 
 #: pages/templates/home.html:186
-msgid "The sample is free"
-msgstr "Namuna bepul"
+msgid "I need a free sample, so I'm asking you exactly what you can provide."
+msgstr "Menga bepul namuna kerak, shuning uchun siz aniq nima taqdim eta olishingizni aniqlab beraman."
 
 #: pages/templates/home.html:194
-msgid "Individual pattern"
-msgstr "Shaxsiy naqsh"
+msgid "Exact order execution dates"
+msgstr "Buyurtmani bajarishning aniq muddatlari"
 
 #: pages/templates/home.html:202
 msgid "Guarantee"
@@ -654,8 +654,8 @@ msgid "Discounts (up to 20%%)"
 msgstr "Chegirmalar (20%%gacha)"
 
 #: pages/templates/home.html:222
-msgid "Free delivery in Tashkent"
-msgstr "Toshkentda bepul yetkazib berish"
+msgid "For shipments over 10 million"
+msgstr "10 milliondan ortiq partiyalar uchun"
 
 #: pages/templates/home.html:238
 #, fuzzy
@@ -668,38 +668,38 @@ msgid "The minimum order quantity is 100 pcs."
 msgstr "Minimal buyurtma miqdori - 100 dona."
 
 #: pages/templates/home.html:269 pages/templates/success.html:42
-#: store/templates/store/product_detail.html:42
+#: store/templates/store/product_detail.html:59
 #, fuzzy
 #| msgid "Our address"
 msgid "Our cases"
 msgstr "Bizning ishlarimiz"
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
-#: store/templates/store/product_detail.html:57
+#: store/templates/store/product_detail.html:74
 #, fuzzy
 #| msgid "Fill out the form"
 msgid "Find out the cost"
 msgstr "Narxini bilib oling"
 
 #: pages/templates/home.html:292 pages/templates/success.html:45
-#: store/templates/store/product_detail.html:45
+#: store/templates/store/product_detail.html:62
 #, fuzzy
 #| msgid "Go to catalog"
 msgid "Go to the catalog"
 msgstr "Katalogga o'tish"
 
 #: pages/templates/home.html:317 pages/templates/success.html:71
-#: store/templates/store/product_detail.html:71
+#: store/templates/store/product_detail.html:88
 msgid "Would you like to know the cost of your shipment?"
 msgstr "Yuk tashish narxini bilishni xohlaysizmi?"
 
 #: pages/templates/home.html:318 pages/templates/success.html:72
-#: store/templates/store/product_detail.html:72
+#: store/templates/store/product_detail.html:89
 msgid "Calculation in 24 hours, the sample is free of charge"
 msgstr "24 soat ichida hisoblash, namuna bepul"
 
 #: pages/templates/home.html:321 pages/templates/success.html:75
-#: store/templates/store/product_detail.html:75
+#: store/templates/store/product_detail.html:92
 msgid "Leave a request and our manager will contact you."
 msgstr "So'rov qoldiring va menejerimiz siz bilan bog'lanadi."
 
@@ -724,8 +724,8 @@ msgid ""
 "We will contact you for consultation and batch calculation during the "
 "working day. For now, subscribe to our telegram channel."
 msgstr ""
-"Biz ish kuni davomida maslahat va ommaviy hisoblash uchun sizga murojaat qiladi. "
-"Hozircha telegram kanalimizga obuna bo'ling."
+"Biz ish kuni davomida maslahat va ommaviy hisoblash uchun sizga murojaat "
+"qiladi. Hozircha telegram kanalimizga obuna bo'ling."
 
 #: store/apps.py:8
 msgid "Каталог"
@@ -757,27 +757,59 @@ msgstr "yutuqlarimiz"
 msgid "Полное описание с картинками и форматированием"
 msgstr ""
 
-#: store/models.py:47
+#: store/models.py:47 store/models.py:60
 msgid "Product"
 msgstr "Mahsulot"
 
-#: store/models.py:61
+#: store/models.py:64
+msgid "Image"
+msgstr ""
+
+#: store/models.py:70
+msgid "Alt text"
+msgstr ""
+
+#: store/models.py:71
+msgid "Текст для SEO и доступности"
+msgstr ""
+
+#: store/models.py:75
+msgid "Ordering"
+msgstr ""
+
+#: store/models.py:76
+msgid "Порядок показа в галерее"
+msgstr ""
+
+#: store/models.py:80
+#, fuzzy
+#| msgid "Product catalog"
+msgid "Product image"
+msgstr "Mahsulotlar katalogi"
+
+#: store/models.py:81
+#, fuzzy
+#| msgid "Products"
+msgid "Product images"
+msgstr "Mahsulotlar"
+
+#: store/models.py:94
 msgid "Product Request"
 msgstr "Mahsulot So‘rovi"
 
-#: store/models.py:62
+#: store/models.py:95
 msgid "Product Requests"
 msgstr "Mahsulot So‘rovlari"
 
-#: store/models.py:73 store/models.py:74
+#: store/models.py:106 store/models.py:107
 msgid "Услуги"
 msgstr ""
 
-#: store/models.py:82 store/models.py:83
+#: store/models.py:115 store/models.py:116
 msgid "Кейсы"
 msgstr ""
 
-#: store/templates/store/product_detail.html:33
+#: store/templates/store/product_detail.html:50
 msgid "Submit your application"
 msgstr "Arizangizni yuboring"
 
@@ -881,6 +913,15 @@ msgstr ""
 "Iltimos, telefon raqamingizni xalqaro formatda kiriting (masalan, "
 "+998912345678)"
 
+#~ msgid "The sample is free"
+#~ msgstr "Namuna bepul"
+
+#~ msgid "Individual pattern"
+#~ msgstr "Shaxsiy naqsh"
+
+#~ msgid "Free delivery in Tashkent"
+#~ msgstr "Toshkentda bepul yetkazib berish"
+
 #~ msgid "MON-SAT"
 #~ msgstr "DUSH-SHAN"
 
@@ -910,9 +951,6 @@ msgstr ""
 
 #~ msgid "Read more about the company"
 #~ msgstr "Kompaniya haqida ko'proq ma'lumot"
-
-#~ msgid "Product catalog"
-#~ msgstr "Mahsulotlar katalogi"
 
 #~ msgid "Enter a phone number"
 #~ msgstr "Telefon raqamini kiriting"

@@ -1180,6 +1180,10 @@ input[type="number"] {
     object-fit: contain;
     /*object-position: top center;*/
 }
+.post-details-image-box video{
+      width: 100%!important;s
+    height: 100%!important;
+}
 
 .product-card-img-style {
     width: 320px;

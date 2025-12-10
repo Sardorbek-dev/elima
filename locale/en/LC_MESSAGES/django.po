@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 20:15+0000\n"
+"POT-Creation-Date: 2025-12-10 16:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: blog/apps.py:7
 msgid "Новости"
 msgstr ""
@@ -559,7 +560,7 @@ msgstr ""
 
 #: pages/templates/home.html:117 pages/templates/home.html:230
 #: pages/templates/home.html:255 pages/templates/home.html:320
-#: pages/templates/success.html:74 store/templates/store/product_detail.html:74
+#: pages/templates/success.html:74 store/templates/store/product_detail.html:91
 msgid "Get a payment"
 msgstr ""
 
@@ -592,11 +593,11 @@ msgid "What do you get"
 msgstr ""
 
 #: pages/templates/home.html:186
-msgid "The sample is free"
+msgid "I need a free sample, so I'm asking you exactly what you can provide."
 msgstr ""
 
 #: pages/templates/home.html:194
-msgid "Individual pattern"
+msgid "Exact order execution dates"
 msgstr ""
 
 #: pages/templates/home.html:202
@@ -609,7 +610,7 @@ msgid "Discounts (up to 20%%)"
 msgstr ""
 
 #: pages/templates/home.html:222
-msgid "Free delivery in Tashkent"
+msgid "For shipments over 10 million"
 msgstr ""
 
 #: pages/templates/home.html:238
@@ -621,32 +622,32 @@ msgid "The minimum order quantity is 100 pcs."
 msgstr ""
 
 #: pages/templates/home.html:269 pages/templates/success.html:42
-#: store/templates/store/product_detail.html:42
+#: store/templates/store/product_detail.html:59
 msgid "Our cases"
 msgstr ""
 
 #: pages/templates/home.html:281 pages/templates/success.html:57
-#: store/templates/store/product_detail.html:57
+#: store/templates/store/product_detail.html:74
 msgid "Find out the cost"
 msgstr ""
 
 #: pages/templates/home.html:292 pages/templates/success.html:45
-#: store/templates/store/product_detail.html:45
+#: store/templates/store/product_detail.html:62
 msgid "Go to the catalog"
 msgstr ""
 
 #: pages/templates/home.html:317 pages/templates/success.html:71
-#: store/templates/store/product_detail.html:71
+#: store/templates/store/product_detail.html:88
 msgid "Would you like to know the cost of your shipment?"
 msgstr ""
 
 #: pages/templates/home.html:318 pages/templates/success.html:72
-#: store/templates/store/product_detail.html:72
+#: store/templates/store/product_detail.html:89
 msgid "Calculation in 24 hours, the sample is free of charge"
 msgstr ""
 
 #: pages/templates/home.html:321 pages/templates/success.html:75
-#: store/templates/store/product_detail.html:75
+#: store/templates/store/product_detail.html:92
 msgid "Leave a request and our manager will contact you."
 msgstr ""
 
@@ -700,27 +701,55 @@ msgstr ""
 msgid "Полное описание с картинками и форматированием"
 msgstr ""
 
-#: store/models.py:47
+#: store/models.py:47 store/models.py:60
 msgid "Product"
 msgstr ""
 
-#: store/models.py:61
+#: store/models.py:64
+msgid "Image"
+msgstr ""
+
+#: store/models.py:70
+msgid "Alt text"
+msgstr ""
+
+#: store/models.py:71
+msgid "Текст для SEO и доступности"
+msgstr ""
+
+#: store/models.py:75
+msgid "Ordering"
+msgstr ""
+
+#: store/models.py:76
+msgid "Порядок показа в галерее"
+msgstr ""
+
+#: store/models.py:80
+msgid "Product image"
+msgstr ""
+
+#: store/models.py:81
+msgid "Product images"
+msgstr ""
+
+#: store/models.py:94
 msgid "Product Request"
 msgstr ""
 
-#: store/models.py:62
+#: store/models.py:95
 msgid "Product Requests"
 msgstr ""
 
-#: store/models.py:73 store/models.py:74
+#: store/models.py:106 store/models.py:107
 msgid "Услуги"
 msgstr ""
 
-#: store/models.py:82 store/models.py:83
+#: store/models.py:115 store/models.py:116
 msgid "Кейсы"
 msgstr ""
 
-#: store/templates/store/product_detail.html:33
+#: store/templates/store/product_detail.html:50
 msgid "Submit your application"
 msgstr ""
 
