@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-10 16:20+0000\n"
+"POT-Creation-Date: 2025-12-11 06:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -630,8 +630,8 @@ msgid "What do you get"
 msgstr "Что вы получаете"
 
 #: pages/templates/home.html:186
-msgid "I need a free sample, so I'm asking you exactly what you can provide."
-msgstr "Мне нужен бесплатный пробник, поэтому уточняю, что именно вы можете предоставить."
+msgid "Sample development"
+msgstr "Pазработка образца"
 
 #: pages/templates/home.html:194
 msgid "Exact order execution dates"
@@ -905,6 +905,12 @@ msgid ""
 msgstr ""
 "Введите правильный номер телефона в международном формате (например, +99891 "
 "234 56 78)"
+
+#~ msgid ""
+#~ "I need a free sample, so I'm asking you exactly what you can provide."
+#~ msgstr ""
+#~ "Мне нужен бесплатный пробник, поэтому уточняю, что именно вы можете "
+#~ "предоставить."
 
 #~ msgid "The sample is free"
 #~ msgstr "Пробник бесплатно"

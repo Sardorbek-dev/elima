@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-10 16:20+0000\n"
+"POT-Creation-Date: 2025-12-11 06:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -637,8 +637,8 @@ msgid "What do you get"
 msgstr "Siz nima olasiz"
 
 #: pages/templates/home.html:186
-msgid "I need a free sample, so I'm asking you exactly what you can provide."
-msgstr "Menga bepul namuna kerak, shuning uchun siz aniq nima taqdim eta olishingizni aniqlab beraman."
+msgid "Sample development"
+msgstr "Namunani ishlab chiqish"
 
 #: pages/templates/home.html:194
 msgid "Exact order execution dates"
@@ -912,6 +912,12 @@ msgid ""
 msgstr ""
 "Iltimos, telefon raqamingizni xalqaro formatda kiriting (masalan, "
 "+998912345678)"
+
+#~ msgid ""
+#~ "I need a free sample, so I'm asking you exactly what you can provide."
+#~ msgstr ""
+#~ "Menga bepul namuna kerak, shuning uchun siz aniq nima taqdim eta "
+#~ "olishingizni aniqlab beraman."
 
 #~ msgid "The sample is free"
 #~ msgstr "Namuna bepul"
