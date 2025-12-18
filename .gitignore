@@ -1,4 +1,5 @@
-
+Makefile
+backup_db.py
 .idea
 # Ignore static files
 /staticfiles/
